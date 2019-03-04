@@ -1,0 +1,57 @@
+<!-- banner container -->
+<div class="banner-container" style="<%= is_post() && page.cover ? `background-image: url(${page.cover})` : '' %>">
+  <div class="banner-inner">
+
+    <%# index banner %>
+    <% if (is_home()) { %>
+      <h1 class="header-title"><a href="<%- url_for() %>"><%= config.title %></a></h1>
+      <% if (config.subtitle) { %>
+        <h2 class="header-subtitle"><%= config.subtitle %></h2>
+      <% } %>
+    <% } %>
+
+    <%# archive banner %>
+    <% if (is_archive()) { %>
+      <h1 class="header-title"><a href="<%- url_for(page.current_url) %>">归档</a></h1>
+      <h2 class="header-subtitle">共有<%= site.posts.length %>篇文章</h2>
+    <% } %>
+
+    <%# category banner %>
+    <% if (is_category()) { %>
+      <%
+        var length = 0;
+        site.categories.each(function (categorie) {
+          if (categorie.name === page.category) length = categorie.length
+        })
+      %>
+      <h1 class="header-title"><a href="<%- url_for(page.current_url) %>"><%= page.category %></a></h1>
+      <h2 class="header-subtitle">当前分类下共有<%= length %>篇文章</h2>
+    <% } %>
+
+    <%# tag banner %>
+    <% if (is_tag()) { %>
+      <%
+        var length = 0;
+        site.tags.each(function (tag) {
+          if (tag.name === page.tag) length = tag.length
+        })
+      %>
+      <h1 class="header-title"><a href="<%- url_for(page.current_url) %>"><%= page.tag %></a></h1>
+      <h2 class="header-subtitle">当前标签下共有<%= length %>篇文章</h2>
+    <% } %>
+    
+
+    <%# post banner %>
+    <% if (is_post()) { %>
+      <h1 class="header-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
+      <h2 class="header-subtitle"><%- partial('./date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %></h2>
+    <% } %>
+
+    <%# page banner %>
+    <% if (is_page()) { %>
+      <h1 class="header-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
+      <h2 class="header-subtitle"><%= page.desc %></h2>
+    <% } %>
+
+  </div>
+</div>

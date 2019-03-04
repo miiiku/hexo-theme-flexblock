@@ -1,0 +1,39 @@
+<!-- 文章内容 -->
+
+<div class="main-container">
+  <article id="article-content" class="article-content">
+    <!--
+    <div class="article-header">
+      <h1><%= page.title %></h1>
+    </div>
+    
+    <div class="article-meta">
+      <strong><%= page.author || config.author %></strong>
+      <span>发布于</span>
+      <%- partial('./date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: true }) %>
+      <strong><%= page.pageview %></strong>次观看
+    </div>
+    -->
+    <% if (page.photos && page.photos.length) { %>
+    <div class="article-gallery">
+      <div class="article-gallery-photos">
+        <% page.photos.forEach(function(photo, i){ %>
+          <a class="article-gallery-img" href="<%- url_for(photo) %>" target="_blank" rel="gallery_<%= page._id %>">
+            <img src="<%- url_for(photo) %>" itemprop="image">
+          </a>
+        <% }) %>
+      </div>
+    </div>
+    <% } %>
+    <div class="article-entry"><%- page.content %></div>
+    <div class="article-footer">
+      <%- list_tags(page.tags, {
+        class: "article-tag",
+        show_count: false,
+        transform: function (tag) {
+          return "#" + tag;
+        }
+      }) %>
+    </div>
+  </article>
+</div>

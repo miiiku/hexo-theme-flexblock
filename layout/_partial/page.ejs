@@ -1,0 +1,36 @@
+<!-- 自定义内容 -->
+
+<div class="main-container">
+  <%# 输出文章内容 %>
+  <% if (page.content) { %>
+  <article id="article-content" class="article-content">
+    <div class="article-entry"><%- page.content %></div>
+  </article>
+  <% } %>
+
+  <%# 输出分类内容 %>
+  <% if (page.layout === "categories") { %>
+    <div class="card-container card-categories">
+      <div class="card-wrap">
+        <% site.categories.each(function(categorie) { %>
+          <div class="card-item">
+            <a href="<%= url_for('/categories/'+categorie.name) %>"><%= categorie.name %> (<%= categorie.length %>)</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+
+  <%# 输出标签内容 %>
+  <% if (page.layout === "tags") { %>
+    <div class="card-container card-tags">
+      <div class="card-wrap">
+        <% site.tags.each(function(tag) { %>
+          <div class="card-item">
+            <a href="<%= url_for('/tags/'+tag.name) %>"><%= tag.name %> (<%= tag.length %>)</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+</div>

@@ -1,0 +1,83 @@
+@import "_util/variables"
+@import "_util/color"
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul,
+li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  vertical-align: baseline
+  font: inherit
+  font-size: 100%
+
+body
+  font-size: 14px
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ""
+  content: none
+
+table
+  border-spacing: 0
+  border-collapse: collapse
+
+img
+  max-width: 100%
+
+html
+  box-sizing: border-box
+  font-family: sans-serif
+
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+*, *:before, *:after
+  box-sizing: inherit
+
+a
+  background-color: transparent
+  text-decoration: none
+  color: inherit
+
+a:active, a:hover
+  outline: 0
+
+b, strong
+  font-weight: bold
+
+i, em, dfn
+  font-style: italic
+
+h1
+  margin: 0.67em 0
+  font-size: 2em
+
+small
+  font-size: 80%
+
+
+
+
+.main-container
+  margin-top: -(banner-margin)
+  position: relative
+
+
+@import "_partial/header"
+@import "_partial/banner"
+@import "_partial/footer"
+@import "_partial/card"
+@import "_partial/pagination"
+@import "_partial/content"
+@import "_page/page"

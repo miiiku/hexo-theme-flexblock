@@ -1,0 +1,114 @@
+
+// 文章列表样式
+.card-container.card-articles
+  .post-card-content
+    position: relative
+    padding-right: 10%
+    height: 100%
+    width: 100%
+
+    .article-link
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+    
+    .article-title
+      font-size: 33px
+      font-weight: 700
+      line-height: 1.3
+      margin-bottom: 20px
+
+    .article-meta
+      margin-bottom: 60px
+      line-height: 1.3
+    
+    .article-category
+      position: absolute
+      bottom: 0
+      left: -8px
+      z-index: 2
+
+      .article-category-link
+        border-radius: 20px
+        padding: 4px 8px
+        transition: all 0.2s ease
+
+        &:hover
+          color: #000000
+          background-color: #ffffff
+
+// 分类列表样式
+.card-container.card-categories
+  .card-item
+    a
+      display: flex
+      height: 100%
+      justify-content: center
+      align-items: center
+      font-size: 32px
+      font-weight: bolder
+      word-break: break-all
+
+// 标签列表样式
+.card-container.card-tags
+  .card-item
+    a
+      display: flex
+      height: 100%
+      justify-content: center
+      align-items: center
+      font-size: 24px
+      font-weight: bolder
+      word-break: break-all
+
+// 文章内容样式
+.article-content
+  width: 100%
+  max-width: max-content-width
+  margin: 0 auto
+  min-height: banner-margin * 2
+  background-color: #ffffff
+  padding: 20px 40px
+  border-radius: 40px
+
+  .article-header, .article-meta, .article-footer
+    padding: 0 20px
+
+  .article-tag-list
+    display: flex
+    padding-bottom: 20px
+
+    a
+      display: block
+      color: #999999
+      margin-right: 10px
+
+      &:hover
+        color: #555555
+
+@media screen and (max-width: 760px)
+  .card-container.card-articles .post-card-content
+    padding-right: 0
+    .article-title
+      font-size: 24px
+    .article-meta
+      margin-bottom: 45px
+
+  .card-container.card-categories .card-item a
+    font-size: 24px
+
+  .card-container.card-tags .card-item a
+    font-size: 14px
+
+  .article-content
+    width: auto
+    min-width: 70vw
+    margin: 0 15px
+    padding: 30px 0
+
+  

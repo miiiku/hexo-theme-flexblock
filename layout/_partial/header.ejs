@@ -1,0 +1,30 @@
+<!-- header -->
+<header id="header" class="header">
+  <div class="header-container <%= theme.transparent ? 'transparent' : '' %>">
+    <nav class="header-navbar">
+      <div class="header-navbar-left">
+        <h1 class="header-navbar-logo">
+          <a href="<%= url_for() %>">
+            <% if (theme.logo) { %>
+              <img src="<%= theme.logo %>" alt="<%= config.title %>" />
+            <% } else { %>
+              <%= config.title %>
+            <% } %>
+          </a>
+        </h1>
+      </div>
+      <div class="header-navbar-right">
+        <div class="header-navbar-btn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="header-navbar-list">
+          <% for (var i in theme.menu) { %>
+            <li class="header-navbar-item"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

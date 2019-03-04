@@ -1,0 +1,218 @@
+// 文章内容样式
+
+.article-entry
+  color: #555
+  padding: 0 20px
+
+  &:before, &:after
+    content: ""
+    display: table
+
+  &:after
+    clear: both
+  
+  p, table
+    line-height: 1.6em
+    margin: 1.6em 0
+  
+  table
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+
+  th
+    font-weight: bold
+    border-bottom: 3px solid #ddd
+    padding-bottom: 0.5em
+
+  td
+    border-bottom: 1px solid #ddd
+    padding: 10px 0
+    
+  h1, h2, h3, h4, h5, h6
+    font-weight: bold
+    line-height: 1.1em
+    margin: 1.1em 0
+  
+  a
+    color: #258fb8
+    text-decoration: none
+    word-break: break-all
+    
+    &:hover
+      text-decoration: underline
+  
+  ul, ol, dl
+    margin-top: 1.6em
+    margin-bottom: 1.6em
+  
+  img, video
+    max-width: 100%
+    height: auto
+    display: block
+    margin: auto
+  
+  iframe
+    border: none
+    
+  blockquote
+    font-family: Georgia, "Times New Roman", serif
+    font-size: 1.4em
+    margin: 1.6em 20px
+    text-align: center
+
+  blockquote footer
+    font-size: 14px
+    margin: 1.6em 0
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+
+  blockquote footer cite:before
+    content: "—"
+    padding: 0 0.5em
+
+  .pullquote
+    text-align: left
+    width: 45%
+    margin: 0
+
+  .pullquote.left
+    margin-left: 0.5em
+    margin-right: 1em
+
+  .pullquote.right
+    margin-right: 0.5em
+    margin-left: 1em
+
+  .caption
+    color: #999
+    display: block
+    font-size: 0.9em
+    margin-top: 0.5em
+    position: relative
+    text-align: center
+
+  .video-container
+    position: relative
+    padding-top: 56.25%
+    height: 0
+    overflow: hidden
+
+  .video-container iframe, .video-container object, .video-container embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    margin-top: 0
+
+  pre, .highlight
+    background: #2d2d2d
+    padding: 15px 20px
+    border-style: solid
+    border-color: #ddd
+    border-width: 1px 0
+    overflow: auto
+    color: #ccc
+    line-height: 22.400000000000002px
+
+  .highlight .gutter pre, .gist .gist-file .gist-data .line-numbers
+    color: #666
+    font-size: 0.85em
+
+  pre, code
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
+
+  code
+    background: #eee
+    text-shadow: 0 1px #fff
+    padding: 0 0.3em
+
+  pre code
+    background: none
+    text-shadow: none
+    padding: 0
+
+  .highlight pre
+    border: none
+    margin: 0
+    padding: 0
+
+  .highlight table
+    margin: 0
+    width: auto
+
+  .highlight td
+    border: none
+    padding: 0
+
+  .highlight figcaption
+    font-size: 0.85em
+    color: #999
+    line-height: 1em
+    margin-bottom: 1em
+
+  .highlight figcaption:before, .highlight figcaption:after
+    content: ""
+    display: table
+
+  .highlight figcaption:after
+    clear: both
+
+  .highlight figcaption a
+    float: right
+
+  .highlight .gutter pre
+    text-align: right
+    padding-right: 20px
+
+  .highlight .line
+    height: 22.400000000000002px
+
+  .highlight .line.marked
+    background: #515151
+
+  .gist
+    margin: 0 -20px
+    border-style: solid
+    border-color: #ddd
+    border-width: 1px 0
+    background: #2d2d2d
+    padding: 15px 20px 15px 0
+
+  .gist .gist-file
+    border: none
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
+    margin: 0
+
+  .gist .gist-file .gist-data
+    background: none
+    border: none
+
+  .gist .gist-file .gist-data .line-numbers
+    background: none
+    border: none
+    padding: 0 20px 0 0
+
+  .gist .gist-file .gist-data .line-data
+    padding: 0 !important
+
+  .gist .gist-file .highlight
+    margin: 0
+    padding: 0
+    border: none
+
+  .gist .gist-file .gist-meta
+    background: #2d2d2d
+    color: #999
+    font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+    text-shadow: 0 0
+    padding: 0
+    margin-top: 1em
+    margin-left: 20px
+
+  .gist .gist-file .gist-meta a
+    color: #258fb8
+    font-weight: normal
+
+  .gist .gist-file .gist-meta a:hover
+    text-decoration: underline

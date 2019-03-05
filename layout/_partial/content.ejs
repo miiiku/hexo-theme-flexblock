@@ -2,18 +2,6 @@
 
 <div class="main-container">
   <article id="article-content" class="article-content">
-    <!--
-    <div class="article-header">
-      <h1><%= page.title %></h1>
-    </div>
-    
-    <div class="article-meta">
-      <strong><%= page.author || config.author %></strong>
-      <span>发布于</span>
-      <%- partial('./date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: true }) %>
-      <strong><%= page.pageview %></strong>次观看
-    </div>
-    -->
     <% if (page.photos && page.photos.length) { %>
     <div class="article-gallery">
       <div class="article-gallery-photos">

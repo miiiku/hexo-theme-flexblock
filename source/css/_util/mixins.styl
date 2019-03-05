@@ -29,3 +29,21 @@ color-block-yellow()
   color: #ffffff
   background-color: #ffd62e
   background-image: linear-gradient(40deg, #ffb040, #ffd62e)
+
+
+// Card
+
+card(margin, padding, minWidth, minHeight, borderRadius, number)
+  $basis = (100 / number)%
+  .card-wrap
+    margin: 0 (-(margin))
+    .card-item
+      flex: 1 1 $basis
+      &.large
+        flex: 1 1 $basis * 2
+      article
+        margin: margin
+        padding: padding
+        min-width: minWidth
+        min-height: minHeight
+        border-radius: borderRadius

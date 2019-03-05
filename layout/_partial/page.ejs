@@ -8,26 +8,56 @@
   </article>
   <% } %>
 
-  <%# 输出分类内容 %>
+  <%# 输出自定义分类内容 %>
   <% if (page.layout === "categories") { %>
     <div class="card-container card-categories">
       <div class="card-wrap">
         <% site.categories.each(function(categorie) { %>
           <div class="card-item">
-            <a href="<%= url_for('/categories/'+categorie.name) %>"><%= categorie.name %> (<%= categorie.length %>)</a>
+            <article>
+              <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
+              <div class="text-info"><%= categorie.name %> (<%= categorie.length %>)</div>
+            </article>
           </div>
         <% }) %>
       </div>
     </div>
   <% } %>
 
-  <%# 输出标签内容 %>
+  <%# 输出自定义标签内容 %>
   <% if (page.layout === "tags") { %>
     <div class="card-container card-tags">
       <div class="card-wrap">
         <% site.tags.each(function(tag) { %>
           <div class="card-item">
-            <a href="<%= url_for('/tags/'+tag.name) %>"><%= tag.name %> (<%= tag.length %>)</a>
+            <article>
+              <a class="card-link" href="<%= url_for('/tags/'+tag.name) %>"></a>
+              <div class="text-info"><%= tag.name %> (<%= tag.length %>)</div>
+            </article>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+
+  <%# 输出自定义友链内容 %>
+  <% if (page.layout === "links") { %>
+    <div class="card-container card-links">
+      <div class="card-wrap">
+        <% site.data.links.forEach(function(link) { %>
+          <div class="card-item<%= link.cover ? ' img' : '' %>">
+            <article>
+              <% if (link.cover) { %>
+              <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>
+              <% } %>
+              <a class="card-link" href="<%= link.link %>" target="_blank"></a>
+              <div class="text-info">
+                <h3><%= link.name %></h3>
+                <% if (link.describe) { %>
+                <p><%= link.describe %></p>
+                <% } %>
+              </div>
+            </article>
           </div>
         <% }) %>
       </div>

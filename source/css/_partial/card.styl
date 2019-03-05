@@ -9,33 +9,20 @@
     flex-wrap: wrap
 
     .card-item
-      position: relative
-      overflow: hidden
-      transition: transform 0.2s ease
+      &:nth-child(1n) article
+        color-block-orange()
 
-      &:hover
-        transform: translateY(-5px)
+      &:nth-child(2n) article
+        color-block-red()
 
-      &:nth-child(1n)
-        color-block-default ""
+      &:nth-child(3n) article
+        color-block-violet()
 
-      &:nth-child(2n)
-        color-block-orange ""
+      &:nth-child(4n) article
+        color-block-blue()
 
-      &:nth-child(3n)
-        color-block-red ""
-
-      &:nth-child(4n)
-        color-block-violet ""
-
-      &:nth-child(5n)
-        color-block-blue ""
-
-      &:nth-child(6n)
-        color-block-yellow ""
-
-      &.large
-        flex: 1 1 60%
+      &:nth-child(5n) article
+        color-block-yellow()
 
       &.img
         .card-cover
@@ -57,68 +44,56 @@
             background-color: #394245
             background-image: linear-gradient(234deg, #394245 0%, #000 100%)
 
+      article
+        position: relative
+        overflow: hidden
+        transition: transform 0.2s ease
+
+        &:hover
+          transform: translateY(-5px)
+
+        .card-link
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          width: 100%
+          height: 100%
+          z-index: 1
+
 // 文章卡片
 .card-container.card-articles
-  .card-wrap
-    margin: 0 -15px
-    .card-item
-      margin: 15px
-      padding: 40px 38px 45px
-      min-width: 350px
-      min-height: 370px
-      border-radius: 24px
-      flex: 1 1 30%
+  card(15px, 40px 38px 45px, 350px, 370px, 24px, 3)
 
 // 分类卡片
 .card-container.card-categories
-  .card-wrap
-    margin: 0 -15px
-    .card-item
-      margin: 15px
-      padding: 40px 38px 45px
-      min-width: 250px
-      min-height: 110px
-      border-radius: 24px
-      flex: 1 1 20%
+  card(15px, 40px 38px 45px, 250px, 110px, 24px, 4)
 
 // 标签卡片
 .card-container.card-tags
-  .card-wrap
-    margin: 0 -8px
-    .card-item
-      margin: 8px
-      padding: 20px 9px 20px
-      min-width: 130px
-      min-height: 90px
-      border-radius: 12px
-      flex: 1 1 15%
+  card(8px, 20px 9px 20px, 130px, 90px, 12px, 6)
 
+// 链接卡片
+.card-container.card-links
+  card(15px, 20px 9px 20px, 200px, 120px, 12px, 5)
 
 @media screen and (max-width: 760px)
   .card-container.card-articles
-    .card-wrap
-      margin: 0
-      .card-item
-        min-width: 70vw
-        min-height: 200px
-        margin: 0 15px 15px
-        padding: 30px 30px 40px
+    card(0, 30px 30px 40px, 70vw, 200px, 24px, 1)
+    .card-item
+      margin: 0 15px 15px
   
   .card-container.card-categories
-    .card-wrap
-      margin: 0
-      .card-item
-        min-width: 70vw
-        min-height: 120px
-        margin: 0 15px 15px
-        padding: 30px 30px 40px
+    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    .card-item
+      margin: 0 15px 15px
   
   .card-container.card-tags
     padding: 15px
-    .card-wrap
-      margin: 0 -15px
-      .card-item
-        min-width: 30vw
-        min-height: 60px
-        margin: 0 15px 15px
-        padding: 10px 10px 15px
+    card(7.5px, 10px 10px 15px, 30vw, 60px, 24px, 2)
+  
+  .card-container.card-links
+    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    .card-item
+      margin: 0 15px 15px

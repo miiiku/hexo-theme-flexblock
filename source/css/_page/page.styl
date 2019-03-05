@@ -42,29 +42,31 @@
           color: #000000
           background-color: #ffffff
 
-// 分类列表样式
-.card-container.card-categories
-  .card-item
-    a
-      display: flex
-      height: 100%
-      justify-content: center
-      align-items: center
-      font-size: 32px
-      font-weight: bolder
+// 分类列表样式 标签列表样式 链接列表样式
+.card-container.card-categories, .card-container.card-tags, .card-container.card-links
+  article
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .text-info
+      position: relative
+      text-align: center
       word-break: break-all
 
-// 标签列表样式
-.card-container.card-tags
-  .card-item
-    a
-      display: flex
-      height: 100%
-      justify-content: center
-      align-items: center
+  &.card-container.card-categories
+    .text-info
+      font-size: 32px
+      font-weight: bolder
+
+  &.card-container.card-tags
+    .text-info
       font-size: 24px
       font-weight: bolder
-      word-break: break-all
+
+  &.card-container.card-links
+    .text-info h3
+      margin: 20px 0
 
 // 文章内容样式
 .article-content
@@ -99,11 +101,14 @@
     .article-meta
       margin-bottom: 45px
 
-  .card-container.card-categories .card-item a
+  .card-container.card-categories .text-info
     font-size: 24px
 
-  .card-container.card-tags .card-item a
+  .card-container.card-tags .text-info
     font-size: 14px
+  
+  .card-container.card-links .text-info h3
+    margin: 10px 0
 
   .article-content
     width: auto

@@ -1,36 +1,30 @@
 
 // 文章列表样式
 .card-container.card-articles
-  .post-card-content
-    position: relative
-    padding-right: 10%
-    height: 100%
+  .article-link
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
     width: 100%
+    height: 100%
+    z-index: 1
+  
+  .article-title
+    font-size: 33px
+    font-weight: 700
+    line-height: 1.3
+    margin-bottom: 20px
 
-    .article-link
+  .article-meta
+    margin-bottom: 60px
+    line-height: 1.3
+  
+  .article-category
       position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      width: 100%
-      height: 100%
-      z-index: 1
-    
-    .article-title
-      font-size: 33px
-      font-weight: 700
-      line-height: 1.3
-      margin-bottom: 20px
-
-    .article-meta
-      margin-bottom: 60px
-      line-height: 1.3
-    
-    .article-category
-      position: absolute
-      bottom: 0
-      left: -8px
+      bottom: 45px
+      left: 30px
       z-index: 2
 
       .article-category-link
@@ -78,7 +72,7 @@
   padding: 20px 40px
   border-radius: 40px
 
-  .article-header, .article-meta, .article-footer
+  .article-header, .article-meta, .article-footer, .comment-container
     padding: 0 20px
 
   .article-tag-list
@@ -94,8 +88,7 @@
         color: #555555
 
 @media screen and (max-width: 760px)
-  .card-container.card-articles .post-card-content
-    padding-right: 0
+  .card-container.card-articles
     .article-title
       font-size: 24px
     .article-meta

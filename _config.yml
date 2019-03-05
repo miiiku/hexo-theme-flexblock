@@ -8,24 +8,6 @@ menu:
   About: /about
 logo: https://nurui.fueko.net/content/images/2018/12/nurui.svg
 
-# Content
-excerpt_link: Read More
-fancybox: true
-
-# Sidebar
-sidebar: right
-widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
-
-# display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
-# - category
-# - tagcloud
-# - archive
 
 # widget behavior
 archive_type: 'monthly'
@@ -40,3 +22,7 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+# commit
+commit:
+  valine: true

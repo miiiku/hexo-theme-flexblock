@@ -50,17 +50,15 @@
     <%# page banner %>
     <% if (is_page()) { %>
       <h1 class="header-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
-
-      <% if (page.layout === "categories") { %>
+      <% if (page.subtitle) { %>
+      <h2 class="header-subtitle"><%= page.subtitle %></h2>
+      <% } else if (page.layout === "categories") { %>
       <h2 class="header-subtitle">共有<%= site.categories.length %>个分类</h2>
       <% } else if (page.layout === "tags") { %>
       <h2 class="header-subtitle">共有<%= site.tags.length %>个标签</h2>
       <% } else if (page.layout === "links") { %>
       <h2 class="header-subtitle">共有<%= site.data.links.length %>只小伙伴</h2>
-      <% } else if (page.subtitle) { %>
-      <h2 class="header-subtitle"><%= page.subtitle %></h2>
       <% } %>
-
     <% } %>
   </div>
 </div>

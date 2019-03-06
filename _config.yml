@@ -6,7 +6,7 @@ menu:
   Tags: /tags
   Links: /links
   About: /about
-logo: https://nurui.fueko.net/content/images/2018/12/nurui.svg
+logo: 
 
 
 # widget behavior
@@ -23,6 +23,9 @@ google_plus:
 fb_admins:
 fb_app_id:
 
-# commit
-commit:
+# comment
+comment:
   valine: true
+
+# src
+dplayer: true

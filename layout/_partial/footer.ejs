@@ -5,8 +5,18 @@
   </div>
 </footer>
 
-<% if (theme.commit.valine) { %>
+<% if (theme.comment.valine) { %>
+<!-- valine 评论 -->
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<%- js('lib/initValine') %>
 <% } %>
+
+<% if (theme.dplayer) { %>
+<!-- dplayer 视频 -->
+<%- css('lib/DPlayer.min') %>
+<%- js('lib/DPlayer.min') %>
+<%- js('lib/initDPlayer') %>
+<% } %>
+
 <%- js('js/script') %>

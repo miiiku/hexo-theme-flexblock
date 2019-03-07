@@ -19,4 +19,10 @@
 <%- js('lib/initDPlayer') %>
 <% } %>
 
+<% if (theme.macy) { %>
+<!-- 瀑布流 -->
+<%- js('lib/macy') %>
+<%- js('lib/initMacy') %>
+<% } %>
+
 <%- js('js/script') %>

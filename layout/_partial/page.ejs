@@ -3,7 +3,7 @@
 <div class="main-container">
   <%# 输出文章内容 %>
   <% if (page.content) { %>
-  <article id="article-content" class="article-content">
+  <article class="article-content">
     <div class="article-entry"><%- page.content %></div>
   </article>
   <% } %>
@@ -85,6 +85,13 @@
           </div>
         <% }) %>
       </div>
+    </div>
+  <% } %>
+
+  <%# 输出自定义留言板内容 %>
+  <% if (page.layout === "messages") { %>
+    <div class="article-content">
+      <div class="comment-container"></div>
     </div>
   <% } %>
 </div>

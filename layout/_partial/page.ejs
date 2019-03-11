@@ -13,7 +13,15 @@
     <div class="card-container card-categories">
       <div class="card-wrap">
         <% site.categories.each(function(categorie) { %>
-          <div class="card-item">
+          <%
+            let isLarge = false;
+            if (theme.large_legnth && theme.large_legnth.short) {
+              if (categorie.name.length > theme.large_legnth.short) {
+                isLarge = true
+              }
+            }
+          %>
+          <div class="card-item<%= isLarge ? ' large' : '' %>">
             <article>
               <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
               <div class="text-info"><%= categorie.name %> (<%= categorie.length %>)</div>
@@ -29,7 +37,15 @@
     <div class="card-container card-tags">
       <div class="card-wrap">
         <% site.tags.each(function(tag) { %>
-          <div class="card-item">
+          <%
+            let isLarge = false;
+            if (theme.large_legnth && theme.large_legnth.short) {
+              if (tag.name.length > theme.large_legnth.short) {
+                isLarge = true
+              }
+            }
+          %>
+          <div class="card-item<%= isLarge ? ' large' : '' %>">
             <article>
               <a class="card-link" href="<%= url_for('/tags/'+tag.name) %>"></a>
               <div class="text-info"><%= tag.name %> (<%= tag.length %>)</div>
@@ -45,7 +61,15 @@
     <div class="card-container card-links">
       <div class="card-wrap">
         <% site.data.links.forEach(function(link) { %>
-          <div class="card-item<%= link.cover ? ' img' : '' %>">
+          <%
+            let isLarge = false;
+            if (theme.large_legnth && theme.large_legnth.long) {
+              if (link.name.length > theme.large_legnth.long || link.describe.length > theme.large_legnth.long) {
+                isLarge = true
+              }
+            }
+          %>
+          <div class="card-item<%= isLarge ? ' large' : '' %><%= link.cover ? ' img' : '' %>">
             <article>
               <% if (link.cover) { %>
               <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>

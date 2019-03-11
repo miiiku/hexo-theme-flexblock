@@ -3,7 +3,15 @@
   <div class="card-container card-articles">
     <div class="card-wrap">
       <% page.posts.each(function(post, i) { %>
-        <div class="card-item<%= post.title.length > theme.large_legnth ? ' large' : '' %><%= post.cover ? ' img' : '' %>">
+        <%
+          let isLarge = false;
+          if (theme.large_legnth && theme.large_legnth.long) {
+            if (post.title.length > theme.large_legnth.long) {
+              isLarge = true
+            }
+          }
+        %>
+        <div class="card-item<%= isLarge ? ' large' : '' %><%= post.cover ? ' img' : '' %>">
           <article>
             <% if (post.cover) { %>
               <div class="card-cover" style="background-image: url(<%= post.cover %>)"></div>

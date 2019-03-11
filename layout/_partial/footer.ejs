@@ -1,7 +1,11 @@
 <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
-    © 2019 <a href="/"><%= config.author %></a>
+    <p>© 2019 <a href="/"><%= config.author %></a></p>
+    <% if (theme.hitokoto && theme.hitokoto.enable) { %>
+      <p id="hitokoto"></p>
+      <script src="https://v1.hitokoto.cn/?<%= theme.hitokoto.type ? 'c=' + theme.hitokoto.type + '&' : '' %>encode=js&select=%23hitokoto" defer></script>
+    <% } %>
   </div>
 </footer>
 
@@ -23,6 +27,16 @@
 <!-- 瀑布流 -->
 <%- js('lib/macy') %>
 <%- js('lib/initMacy') %>
+<% } %>
+
+<% if (theme.zoom) { %>
+<!-- 图片预览 -->
+<%- js('lib/zoom.min') %>
+<script>
+  document.querySelector(".zoom") && zoom(".zoom", {
+    filter: "gallery"
+  });
+</script>
 <% } %>
 
 <%- js('js/script') %>

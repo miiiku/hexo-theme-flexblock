@@ -8,13 +8,43 @@ menu:
   About: /about
 logo: 
 
+# large cover
+# long: [article, link]
+# short: [category, tag]
+large_legnth:
+  long: 20
+  short: 5
+
+# comment
+# valine docs: https://valine.js.org/configuration.html
+comment:
+  valine: true
+
+# 一言
+# docs: https://hitokoto.cn/api
+# type: [a, b, c, d, e, f, g]
+hitokoto:
+  enable: true
+  type: a
+
+# dplayer 视频播放
+# docs: http://dplayer.js.org/#/zh-Hans/
+dplayer: true
+
+# macy 瀑布流
+# docs: https://github.com/bigbite/macy.js
+macy: true
+
+# zoom 图片预览
+# docs: https://github.com/miiiku/zoom
+zoom: true
+
 
 # widget behavior
 archive_type: 'monthly'
 show_count: false
 
 # Miscellaneous
-large_legnth: 20
 google_analytics:
 gauges_analytics:
 favicon: /favicon.png
@@ -22,32 +52,3 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
-
-# comment
-comment:
-  valine: true
-
-dplayer: true
-
-macy: true
-macyConfig:
-  margin:
-    y: 16
-    x: '2%'
-  breakAt:
-    1200:
-      margin:
-        x: 20
-      columns: 4
-    940:
-      margin:
-        x: 20
-      columns: 3
-    520:
-      margin:
-        x: 10
-      columns: 2
-    400:
-      margin:
-        x: 0
-      columns: 1

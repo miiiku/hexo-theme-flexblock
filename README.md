@@ -8,12 +8,70 @@
 ### 问题
 * ~~~本地文件管理优化~~~
 * ~~~文章上一篇，下一篇添加封面~~~
-* 评论去版本号
 * ~~~站点添加keyword，文章添加keyword，为SEO优化，添加了其他meta头~~~
+* ~~~除开文章，其他采用card的targe是否有效~~~
 * 文章ID使用系统生成的还是使用20190301143002这样
+* 评论去版本号
 * 自定义的分类和标签页是否需要从新设计样式，如云标签
 * 资源文件CDN配置，如插件
-* 除开文章，其他采用card的targe是否有效
+* 新增一个可以自定义添加脚本的入口(配置)
+
+
+# 可自定义的相关页面
+
+## 添加`分类`页面
+
+``` bash
+hexo new page categories
+```
+
+找到新建的页面并修改```Front-matter```，添加如下内容
+
+``` markdown
+layout: categories
+```
+
+## 添加`标签`页面
+
+``` bash
+hexo new page tags
+```
+
+找到新建的页面并修改```Front-matter```，添加如下内容
+
+``` markdown
+layout: tags
+```
+
+## 添加`友链`页面
+
+``` bash
+hexo new page links
+```
+
+找到新建的页面并修改```Front-matter```，添加如下内容
+
+``` markdown
+layout: links
+```
+
+## 添加`留言`页面
+
+``` bash
+hexo new page messages
+```
+
+找到新建的页面并修改```Front-matter```，添加如下内容
+
+``` markdown
+layout: messages
+```
+
+## 添加其他自定义页面，如`关于`页面
+
+``` bash
+hexo new page about
+```
 
 
 # SEO优化相关
@@ -49,9 +107,9 @@ large_legnth:
   short: 5
 ```
 
-**long:** 作用与`文章`和`友链`卡片
+**long:** 作用于`文章`和`友链`卡片
 
-**short:** 作用与`分类`和`标签`卡片
+**short:** 作用于`分类`和`标签`卡片
 
 设置Card封面的大小，如 `long: 20` 表示如果文章标题长度大于20，文章卡片显示为长文章
 

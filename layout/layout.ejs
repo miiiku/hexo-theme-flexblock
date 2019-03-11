@@ -5,17 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <% if (config.description) { %>
+    <meta name="description" content="<%= config.description %>">
+  <% } %>
+
+  <% if (config.keywords) { %>
+    <meta name="keywords" content="<%= config.keywords %>">
+  <% } %>
+
+  <% if (config.author) { %>
+    <meta name="author" content="<%= config.author %>">
+  <% } %>
+
+  <% if (config.copyright) { %>
+    <meta name="copyright" content="<%= config.copyright %>">
+  <% } %>
+
   <%
   var title = page.title;
 
   if (is_archive()){
     title = __('archive_a');
-
-    if (is_month()){
-      title += ': ' + page.year + '/' + page.month;
-    } else if (is_year()){
-      title += ': ' + page.year;
-    }
   } else if (is_category()){
     title = __('category') + ': ' + page.category;
   } else if (is_tag()){
@@ -24,6 +34,8 @@
   %>
 
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+  <%- partial('_partial/google-analytics') %>
 
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">

@@ -1,16 +1,30 @@
 <% if (post.prev || post.next){ %>
-<nav class="article-nav">
-  <% if (post.prev){ %>
-    <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link">
-      <div class="article-nav-caption"><%= __('newer') %></div>
-      <div class="article-nav-title"><%= post.prev.title %></div>
-    </a>
-  <% } %>
-  <% if (post.next){ %>
-    <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link">
-      <div class="article-nav-caption"><%= __('older') %></div>
-      <div class="article-nav-title"><%= post.next.title %></div>
-    </a>
-  <% } %>
+<nav class="card-container card-article-nav">
+  <div class="card-wrap">
+    <% if (post.prev){ %>
+      <div class="card-item<%= post.prev.cover ? ' img' : '' %>">
+        <article>
+          <% if (post.prev.cover) { %>
+            <div class="card-cover" style="background-image: url(<%= post.prev.cover %>)"></div>
+          <% } %>
+          <a class="card-link article-nav-link" href="<%= url_for(post.prev.path) %>"></a>
+          <div class="article-nav-caption"><%= __('newer') %></div>
+          <div class="article-nav-title"><%= post.prev.title %></div>
+        </article>
+      </div>
+    <% } %>
+    <% if (post.next){ %>
+      <div class="card-item<%= post.next.cover ? ' img' : '' %>">
+        <article>
+          <% if (post.next.cover) { %>
+            <div class="card-cover" style="background-image: url(<%= post.next.cover %>)"></div>
+          <% } %>
+          <a class="card-link article-nav-link" href="<%= url_for(post.next.path) %>"></a>
+          <div class="article-nav-caption"><%= __('older') %></div>
+          <div class="article-nav-title"><%= post.next.title %></div>
+        </article>
+      </div>
+    <% } %>
+  </div>
 </nav>
 <% } %>

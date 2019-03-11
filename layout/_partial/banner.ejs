@@ -44,7 +44,7 @@
     <%# post banner %>
     <% if (is_post()) { %>
       <h1 class="header-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
-      <h2 class="header-subtitle"><%- partial('./date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %></h2>
+      <h2 class="header-subtitle"><%- partial('../_widget/date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %></h2>
     <% } %>
 
     <%# page banner %>

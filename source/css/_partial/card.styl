@@ -80,6 +80,10 @@
 .card-container.card-links
   card(15px, 20px 9px 20px, 200px, 120px, 12px, 5)
 
+// 文章导航卡片
+.card-container.card-article-nav
+  card(15px, 40px 38px 45px, 30vw, 90px, 24px, 2)
+
 @media screen and (max-width: 760px)
   .card-container.card-articles
     card(0, 30px 30px 40px, 70vw, 200px, 24px, 1)
@@ -99,3 +103,8 @@
     card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
     .card-item
       margin: 0 15px 15px
+
+  .card-container.card-article-nav
+    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    .card-item
+      margin-bottom: 20px

@@ -72,12 +72,11 @@
   padding: 20px 40px
   border-radius: 40px
 
-  .article-header, .article-meta, .article-footer, .comment-container
+  .article-header, .article-meta, .article-footer, .article-navs, .comment-container
     padding: 0 20px
 
   .article-tag-list
     display: flex
-    padding-bottom: 20px
 
     a
       display: block
@@ -87,6 +86,18 @@
       &:hover
         color: #555555
 
+  .card-article-nav
+    text-align: center;
+  
+    .article-nav-caption
+      font-weight: 600
+
+    .article-nav-title
+      font-size: 28px
+      margin-top: 20px
+    
+
+// 移动端样式
 @media screen and (max-width: 760px)
   .card-container.card-articles
     .article-title

@@ -30,3 +30,24 @@ comment:
 dplayer: true
 
 macy: true
+macyConfig:
+  margin:
+    y: 16
+    x: '2%'
+  breakAt:
+    1200:
+      margin:
+        x: 20
+      columns: 4
+    940:
+      margin:
+        x: 20
+      columns: 3
+    520:
+      margin:
+        x: 10
+      columns: 2
+    400:
+      margin:
+        x: 0
+      columns: 1

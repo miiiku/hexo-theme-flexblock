@@ -47,7 +47,7 @@
 
   function initCss() {
     const cssStyle = document.createElement("style")
-    cssStyle.innerText = `.waterfall-container p { display: block; border-radius: 4px; overflow: hidden; }`
+    cssStyle.innerText = `.waterfall-container p { display: block; border-radius: 4px; overflow: hidden; margin: 0; }`
     document.head.appendChild(cssStyle);
   }
 })();

@@ -2,28 +2,25 @@
 
 <div class="main-container">
   <article id="article-content" class="article-content">
+    <%# 如果文章设置了photos内容 %>
     <% if (page.photos && page.photos.length) { %>
     <div class="article-gallery">
-      <div class="article-gallery-photos">
-        <% page.photos.forEach(function(photo, i){ %>
-          <a class="article-gallery-img" href="<%- url_for(photo) %>" target="_blank" rel="gallery_<%= page._id %>">
-            <img src="<%- url_for(photo) %>" itemprop="image">
-          </a>
-        <% }) %>
-      </div>
+      <%- partial("../_widget/gallery", { class_name: "article-gallery-photos", post: page }) %>
     </div>
     <% } %>
-    <div class="article-entry"><%- page.content %></div>
-    <div class="article-footer">
-      <%- list_tags(page.tags, {
-        class: "article-tag",
-        show_count: false,
-        transform: function (tag) {
-          return "#" + tag;
-        }
-      }) %>
+
+    <div class="article-entry">
+      <%- page.content %>
     </div>
-    <%- partial('./article-nav', { post: page }) %>
+
+    <div class="article-footer">
+      <%- partial("../_widget/tags", { class_name: "article-tag", post: page }) %>
+    </div>
+
+    <div class="article-navs">
+      <%- partial('./article-nav', { post: page }) %>
+    </div>
+    
     <div class="comment-container"></div>
   </article>
 </div>

@@ -1,0 +1,9 @@
+<%-
+  list_tags(page.tags, {
+    class: class_name || "article-tag",
+    show_count: false,
+    transform: function (tag) {
+      return "#" + tag;
+    }
+  })
+%>

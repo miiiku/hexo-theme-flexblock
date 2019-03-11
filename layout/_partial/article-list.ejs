@@ -1,4 +1,4 @@
-<!-- post container -->
+<!-- post list container -->
 <div class="main-container">
   <div class="card-container card-articles">
     <div class="card-wrap">
@@ -17,15 +17,10 @@
             <div class="article-meta">
               <strong><%= post.author || config.author %></strong>
               <span>发布于</span>
-              <%- partial('./date', { class_name: 'article-date', post: post, date_format: null, link: true }) %>
+              <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null, link: true }) %>
             </div>
             <div class="article-category">
-              <%- list_categories(post.categories, {
-                  show_count: false,
-                  style: 'none',
-                  class: 'article-category',
-                  separator: ''
-                }) %>
+              <%- partial("../_widget/category", { class_name: "article-category", post: post }) %>
             </div>
           </article>
         </div>

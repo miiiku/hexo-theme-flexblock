@@ -194,7 +194,7 @@ hitokoto:
 
 **注意: 需要开启`dplayer`插件才能正常使用本内置标签**
 
-## 插入瀑布流
+## 插入瀑布流 waterfall
 
 ``` markdown
 {% waterfall %}

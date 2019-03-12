@@ -1,0 +1,24 @@
+<% if (theme.dplayer) { %>
+<!-- dplayer 视频 -->
+<%- css('lib/DPlayer.min') %>
+<%- js('lib/DPlayer.min') %>
+<script type="text/javascript">
+  const dplayer = document.querySelectorAll(".dplayer");
+  dplayer && initDPlayer(dplayer);
+  function initDPlayer(els) {
+    let elsArr = Array.from(els);
+    elsArr.forEach(el => {
+      let url = el.dataset.url;
+      let cover = el.dataset.cover;
+      new DPlayer({
+        container: el,
+        video: { url: url, pic: cover },
+        theme: "<%= theme.dplayer.theme %>",
+        autoplay: <%= theme.dplayer.autoplay %>,
+        loop: <%= theme.dplayer.loop %>,
+        mutex: <%= theme.dplayer.mutex %>,
+      });
+    });
+  }
+</script>
+<% } %>

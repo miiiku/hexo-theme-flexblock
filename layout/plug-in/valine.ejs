@@ -1,0 +1,17 @@
+<% if (theme.valine.enable && theme.valine.appId && theme.valine.appKey && page.comments) { %>
+<!-- valine 评论 -->
+<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: "#comment-container",
+    appId: "<%= theme.valine.appId %>",
+    appKey: "<%= theme.valine.appKey %>",
+    avatar: "<%= theme.valine.avatar %>",
+    placeholder: "<%= theme.valine.placeholder %>",
+    notify: <%= theme.valine.notify %>,
+    visitor: <%= theme.valine.visitor %>,
+    pageSize: <%= theme.valine.pageSize %>,
+  });
+</script>
+<% } %>

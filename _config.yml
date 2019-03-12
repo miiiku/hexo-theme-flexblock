@@ -16,11 +16,6 @@ large_legnth:
   long: 20
   short: 5
 
-# comment
-# valine docs: https://valine.js.org/configuration.html
-comment:
-  valine: true
-
 # 一言
 # docs: https://hitokoto.cn/api
 # type: [a, b, c, d, e, f, g]
@@ -28,17 +23,42 @@ hitokoto:
   enable: true
   type: a
 
+# valine 评论
+# docs: https://valine.js.org
+# You can get your appid and appkey from https://leancloud.cn
+valine:
+  enable: true
+  appId: oTmfgIaoB7PfPATvA9tsOwTu-gzGzoHsz
+  appKey: PPbJycuezKD3BJlhHUy8zOnG
+  avatar: mm
+  placeholder: 随便说点什么叭～
+  notify: false
+  visitor: false
+  pageSize: 10
+
 # dplayer 视频播放
 # docs: http://dplayer.js.org/#/zh-Hans/
-dplayer: true
+dplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
 
 # macy 瀑布流
 # docs: https://github.com/bigbite/macy.js
+# Specific configuration information go to `layout/plug-in/macy.ejs`
 macy: true
 
 # zoom 图片预览
 # docs: https://github.com/miiiku/zoom
-zoom: true
+zoom:
+  enable: true
+  margin: 15
+  padding: 15
+  radius: 5
+  specify:
+  filter: "gallery" # filter Front-matter photos
 
 
 # widget behavior
@@ -48,7 +68,7 @@ show_count: false
 # Miscellaneous
 google_analytics:
 gauges_analytics:
-favicon: /favicon.png
+favicon: /favicon.ico
 twitter:
 google_plus:
 fb_admins:

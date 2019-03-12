@@ -1,42 +1,10 @@
 <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
-    <p>© 2019 <a href="/"><%= config.author %></a></p>
+    <p>&copy; <%= date(new Date(), 'YYYY') %> <a href="/"><%= config.author %></a></p>
     <% if (theme.hitokoto && theme.hitokoto.enable) { %>
       <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?<%= theme.hitokoto.type ? 'c=' + theme.hitokoto.type + '&' : '' %>encode=js&select=%23hitokoto" defer></script>
     <% } %>
   </div>
 </footer>
-
-<% if (theme.comment.valine) { %>
-<!-- valine 评论 -->
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<%- js('lib/initValine') %>
-<% } %>
-
-<% if (theme.dplayer) { %>
-<!-- dplayer 视频 -->
-<%- css('lib/DPlayer.min') %>
-<%- js('lib/DPlayer.min') %>
-<%- js('lib/initDPlayer') %>
-<% } %>
-
-<% if (theme.macy) { %>
-<!-- 瀑布流 -->
-<%- js('lib/macy') %>
-<%- js('lib/initMacy') %>
-<% } %>
-
-<% if (theme.zoom) { %>
-<!-- 图片预览 -->
-<%- js('lib/zoom.min') %>
-<script>
-  document.querySelector(".zoom") && zoom(".zoom", {
-    filter: "gallery"
-  });
-</script>
-<% } %>
-
-<%- js('js/script') %>

@@ -1,0 +1,13 @@
+<% if (theme.zoom.enable) { %>
+<!-- 图片预览 -->
+<%- js('lib/zoom.min') %>
+<script>
+  document.querySelector(".zoom") && zoom(".zoom", {
+    margin: <%= theme.zoom.margin %>,
+    padding: <%= theme.zoom.padding %>,
+    radius: <%= theme.zoom.radius %>,
+    specify: "<%= theme.zoom.specify %>",
+    filter: "<%= theme.zoom.filter %>",
+  });
+</script>
+<% } %>

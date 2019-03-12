@@ -91,7 +91,7 @@
   <%# 输出自定义留言板内容 %>
   <% if (page.layout === "messages") { %>
     <div class="article-content">
-      <div class="comment-container"></div>
+      <%- partial('../_widget/comment', { post: page }) %>
     </div>
   <% } %>
 </div>

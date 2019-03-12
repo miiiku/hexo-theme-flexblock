@@ -6,11 +6,6 @@
 
 
 ### 问题
-* ~~~本地文件管理优化~~~
-* ~~~文章上一篇，下一篇添加封面~~~
-* ~~~站点添加keyword，文章添加keyword，为SEO优化，添加了其他meta头~~~
-* ~~~除开文章，其他采用card的targe是否有效~~~
-* ~~~新增一个可以自定义添加脚本的入口(配置)~~~
 * 文章ID使用系统生成的还是使用20190301143002这样
 * 资源文件CDN配置，如插件
 * 自定义的分类和标签页是否需要从新设计样式，如云标签
@@ -189,3 +184,24 @@ hitokoto:
 
 
 # 内建标签
+
+## 插入视频 dplayer
+
+``` markdown
+<!-- url 必填 cover 可选 -->
+{% dplayer url [cover] %}
+```
+
+**注意: 需要开启`dplayer`插件才能正常使用本内置标签**
+
+## 插入瀑布流
+
+``` markdown
+{% waterfall %}
+![imgname](imgsrc)
+![imgname](imgsrc)
+![imgname](imgsrc)
+{% endwaterfall %}
+```
+
+**注意: 需要开启`macy`插件才能正常使用本内置标签**

@@ -1,5 +1,5 @@
 <!-- banner container -->
-<div class="banner-container" style="<%= is_post() && page.cover ? `background-image: url(${page.cover})` : '' %>">
+<div class="banner-container" style="<%= is_post() && page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>">
   <div class="banner-inner">
 
     <%# index banner %>

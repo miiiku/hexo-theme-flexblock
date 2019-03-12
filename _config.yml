@@ -8,6 +8,8 @@ menu:
   留言: /messages
   关于: /about
 logo: 
+banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
+# banner: css/images/banner.jpg
 
 # large cover
 # long: [article, link]

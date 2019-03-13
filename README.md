@@ -6,10 +6,8 @@
 
 
 ### 问题
-* 文章ID使用系统生成的还是使用20190301143002这样
 * 资源文件CDN配置，如插件
-* 自定义的分类和标签页是否需要从新设计样式，如云标签
-* 评论去版本号
+* 归档页是否需要从新设计样式，如云标签
 
 
 # 可自定义的相关页面
@@ -48,6 +46,45 @@ links: /links
 
 ``` bash
 hexo new page about
+```
+
+# `Front-matter`相关
+
+## 除开以有的`title`,`date`,`tags`，目前有效的相关属性
+
+| key        | layout          | desc                                                   |
+|------------|-----------------|--------------------------------------------------------|
+| slug       | post,page,draft | 网址,作用类似与ID,一般跟文章的链接地址一样             |
+| subtitle   | post,page,draft | 小标题，文章或页面的小标题，文章缺省值为文章的发布时间 |
+| categories | post,draft      | 分类，文章的分类                                       |
+| cover      | post,page,draft | 封面，文章或页面的封面，banner图                       |
+| layout     | page            | 页面类型，取值详见**可自定义的相关页面**              |
+
+建议复制以下代码替换`scaffolds/`下默认的模版
+
+### post.md,draft.md
+``` markdown
+---
+slug: {{ slug }}
+title: {{ title }}
+subtitle:
+date: {{ date }}
+categories:
+tags:
+cover:
+---
+```
+
+### page.md
+``` markdown
+---
+slug: {{ slug }}
+title: {{ title }}
+subtitle:
+date: {{ date }}
+cover:
+layout:
+---
 ```
 
 
@@ -205,3 +242,18 @@ hitokoto:
 ```
 
 **注意: 需要开启`macy`插件才能正常使用本内置标签**
+
+
+# 其他
+
+## LOGO
+
+``` yml
+logo:
+```
+
+## banner
+
+``` yml
+banner:
+```

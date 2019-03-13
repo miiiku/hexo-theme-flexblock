@@ -1,5 +1,5 @@
 <!-- banner container -->
-<div class="banner-container" style="<%= is_post() && page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>">
+<div class="banner-container" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>">
   <div class="banner-inner">
 
     <%# index banner %>
@@ -44,7 +44,13 @@
     <%# post banner %>
     <% if (is_post()) { %>
       <h1 class="header-title"><a href="<%- url_for(page.path) %>"><%= page.title %></a></h1>
-      <h2 class="header-subtitle"><%- partial('../_widget/date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %></h2>
+      <h2 class="header-subtitle">
+        <% if (page.subtitle) { %>
+          <%= page.subtitle %>
+        <% } else { %>
+          <%- partial('../_widget/date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %>
+        <% } %>
+      </h2>
     <% } %>
 
     <%# page banner %>

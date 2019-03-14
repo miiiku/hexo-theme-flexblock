@@ -7,7 +7,7 @@ menu:
   友链: /links
   留言: /messages
   关于: /about
-logo: 
+logo: https://qiniu.miiiku.xyz/src/images/logo.png
 banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
 # banner: css/images/banner.jpg
 
@@ -34,8 +34,8 @@ valine:
   appKey: PPbJycuezKD3BJlhHUy8zOnG
   avatar: mm
   placeholder: 随便说点什么叭～
-  notify: false
-  visitor: false
+  notify: true
+  visitor: true
   pageSize: 10
 
 # dplayer 视频播放

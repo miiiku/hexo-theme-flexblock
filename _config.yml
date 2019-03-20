@@ -29,7 +29,7 @@ hitokoto:
 # docs: https://valine.js.org
 # You can get your appid and appkey from https://leancloud.cn
 valine:
-  enable: true
+  enable: false
   appId: oTmfgIaoB7PfPATvA9tsOwTu-gzGzoHsz
   appKey: PPbJycuezKD3BJlhHUy8zOnG
   avatar: mm
@@ -71,3 +71,5 @@ show_count: false
 google_analytics:
 gauges_analytics:
 favicon: /favicon.ico
+
+permalink: true

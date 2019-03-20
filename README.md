@@ -1,3 +1,4 @@
+
 # flex-block
 
 一个基于`Hexo`的主题
@@ -30,7 +31,7 @@
 hexo new page links
 ```
 
-找到新建的页面并修改```Front-matter```，添加如下内容
+找到新建的页面并修改`Front-matter`，添加如下内容
 
 ``` markdown
 type: links
@@ -245,25 +246,27 @@ hitokoto:
 
 ## LOGO
 
-高度不超过50，宽度不超过200为最佳
-
 ``` yml
 logo:
 ```
 
-## banner
+高度不超过50，宽度不超过200为最佳
 
-宽图为最佳
+## banner
 
 ``` yml
 banner:
 ```
+
+宽图为最佳
 
 ## permalink
 
 ``` yml
 permalink: false
 ```
+
+关于永久链接的一个配置
 
 开启以后，在hexo的配置文件`.config.yml`下`permalink`里，其中 **`:title`** 和 **`:sulg`** 为文章的创建时间，格式为`YYYY-MM-DD-HH-mm-ss`
 
@@ -281,4 +284,4 @@ permalink: :title
 # 生成以后的文章地址为 2019-03-15-18-53-03/
 ```
 
-**这个为实验性功能，仅仅为了自己使用方便 = =**
+**这个是实验性功能，仅仅为了自己使用方便 = =**

@@ -27,12 +27,15 @@ hexo.extend.tag.register("waterfall", function(args, content) {
   return `<div class="waterfall-container">${text}</div>`;
 }, { ends: true });
 
+/**
+ * custom permalink
+ * 
+ * slug: YYYY-MM-DD-HH-mm-ss
+ */
 hexo.extend.filter.register('before_post_render', function(data) {
   if (!hexo.theme.config.permalink) return data
   if (data.layout === "post") {
-    // console.log(hexo.theme.config.permalink)
-    // console.log(data.slug)
-    data.slug = data.date.format("YYYY-MM-DD-HH-mm-ss")
+    data.slug = data.date.format("YYYY-MM-DD-HH-mm-ss");
     return data
   }
 });

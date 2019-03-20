@@ -9,7 +9,7 @@
   <% } %>
 
   <%# 输出自定义分类内容 %>
-  <% if (page.layout === "categories") { %>
+  <% if (page.type === "categories") { %>
     <div class="card-container card-categories">
       <div class="card-wrap">
         <% site.categories.each(function(categorie) { %>
@@ -33,7 +33,7 @@
   <% } %>
 
   <%# 输出自定义标签内容 %>
-  <% if (page.layout === "tags") { %>
+  <% if (page.type === "tags") { %>
     <div class="card-container card-tags">
       <div class="card-wrap">
         <% site.tags.each(function(tag) { %>
@@ -57,7 +57,7 @@
   <% } %>
 
   <%# 输出自定义友链内容 %>
-  <% if (page.layout === "links") { %>
+  <% if (page.type === "links") { %>
     <div class="card-container card-links">
       <div class="card-wrap">
         <% site.data.links.forEach(function(link) { %>
@@ -89,7 +89,7 @@
   <% } %>
 
   <%# 输出自定义留言板内容 %>
-  <% if (page.layout === "messages") { %>
+  <% if (page.type === "messages") { %>
     <div class="article-content">
       <%- partial('../_widget/comment', { post: page }) %>
     </div>

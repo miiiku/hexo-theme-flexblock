@@ -66,11 +66,11 @@
 
 // 文章卡片
 .card-container.card-articles
-  card(15px, 40px 38px 45px, 350px, 370px, 24px, 3)
+  card(content-margin, 40px 38px 45px, 350px, 370px, 24px, 3)
 
 // 分类卡片
 .card-container.card-categories
-  card(15px, 40px 38px 45px, 250px, 110px, 24px, 4)
+  card(content-margin, 40px 38px 45px, 250px, 110px, 24px, 4)
 
 // 标签卡片
 .card-container.card-tags
@@ -78,33 +78,27 @@
 
 // 链接卡片
 .card-container.card-links
-  card(15px, 20px 9px 20px, 200px, 120px, 12px, 5)
+  card(content-margin, 20px 9px 20px, 200px, 120px, 12px, 5)
 
 // 文章导航卡片
 .card-container.card-article-nav
-  card(15px, 40px 38px 45px, 30vw, 90px, 24px, 2)
+  card(content-margin, 40px 38px 45px, 30vw, 90px, 24px, 2)
 
 @media screen and (max-width: 760px)
   .card-container.card-articles
-    card(0, 30px 30px 40px, 70vw, 200px, 24px, 1)
-    .card-item
-      margin: 0 15px 15px
+    card(content-margin-min, 30px 30px 40px, 70vw, 200px, 24px, 1)
   
   .card-container.card-categories
-    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
-    .card-item
-      margin: 0 15px 15px
+    card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
   
   .card-container.card-tags
-    padding: 15px
-    card(7.5px, 10px 10px 15px, 30vw, 60px, 24px, 2)
+    card(content-margin-min, 10px 10px 15px, 30vw, 60px, 24px, 2)
   
   .card-container.card-links
-    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
-    .card-item
-      margin: 0 15px 15px
+    card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
 
   .card-container.card-article-nav
-    card(0, 30px 30px 40px, 70vw, 120px, 24px, 1)
-    .card-item
-      margin-bottom: 20px
+    card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    // 不取消边距
+    .card-wrap
+      margin: 0 (-(content-margin-min))

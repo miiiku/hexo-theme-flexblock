@@ -35,15 +35,22 @@ color-block-yellow()
 
 card(margin, padding, minWidth, minHeight, borderRadius, number)
   $basis = (100 / number)%
-  .card-wrap
-    margin: 0 (-(margin))
-    .card-item
-      flex: 1 1 $basis
-      &.large
-        flex: 1 1 $basis * 2
-      article
-        margin: margin
-        padding: padding
-        min-width: minWidth
-        min-height: minHeight
-        border-radius: borderRadius
+
+  @media screen and (max-width: 1200px)
+    .card-wrap
+      margin: 0
+
+  @media screen and (min-width: 1201px)
+    .card-wrap
+      margin: 0 (-(margin))
+
+  .card-item
+    flex: 1 1 $basis
+    &.large
+      flex: 1 1 $basis * 2
+    article
+      margin: margin
+      padding: padding
+      min-width: minWidth
+      min-height: minHeight
+      border-radius: borderRadius

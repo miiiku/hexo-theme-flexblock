@@ -1,11 +1,12 @@
 <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
-    <p>&copy; <%= date(new Date(), 'YYYY') %> <a href="/"><%= config.author %></a></p>
+    <p>&copy; <%= date(new Date(), 'YYYY') %> <a href="/" target="_blank"><%= config.author %></a></p>
     <% if (theme.hitokoto && theme.hitokoto.enable) { %>
       <p id="hitokoto"></p>
       <script src="https://v1.hitokoto.cn/?<%= theme.hitokoto.type ? 'c=' + theme.hitokoto.type + '&' : '' %>encode=js&select=%23hitokoto" defer></script>
     <% } %>
-    <p><a href="http://www.miitbeian.gov.cn">蜀ICP备15014309号</a></p>
+    <p><a href="http://www.miitbeian.gov.cn" target="_blank">蜀ICP备15014309号</a></p>
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p>
   </div>
 </footer>

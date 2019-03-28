@@ -15,7 +15,7 @@
 
 ## 目前可以扩展的页面菜单有:
 
-| type       | value       | type   |
+| type       | value       | name   |
 |------------|-------------|--------|
 | categories | /categories | 分类   |
 | tags       | /tags       | 标签   |

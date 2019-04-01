@@ -71,8 +71,10 @@ show_count: false
 beian: 蜀ICP备15014309号
 
 # Miscellaneous
-google_analytics:
-gauges_analytics:
+google_analytics: 
+gauges_analytics: 
+baidu_analytics: 410f4beade12e8df64ea4c5622313220
+tencent_analytics: 64852535
 favicon: /favicon.ico
 
 permalink: true

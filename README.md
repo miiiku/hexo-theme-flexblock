@@ -260,6 +260,17 @@ banner:
 
 宽图为最佳
 
+## 统计
+
+``` yml
+google_analytics: 
+gauges_analytics: 
+baidu_analytics: 
+tencent_analytics: 
+```
+
+接入常用网站统计第三方
+
 ## permalink
 
 ``` yml

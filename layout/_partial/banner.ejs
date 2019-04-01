@@ -48,7 +48,10 @@
         <% if (page.subtitle) { %>
           <%= page.subtitle %>
         <% } else { %>
+          <%- partial("../_widget/category", { class_name: "article-category", post: page }) %>
+          <!--
           <%- partial('../_widget/date', { class_name: 'article-date', post: page, date_format: "YYYY-MM-DD hh:mm:ss", link: false }) %>
+          -->
         <% } %>
       </h2>
     <% } %>

@@ -67,6 +67,9 @@ zoom:
 archive_type: 'monthly'
 show_count: false
 
+# beian
+beian: 蜀ICP备15014309号
+
 # Miscellaneous
 google_analytics:
 gauges_analytics:

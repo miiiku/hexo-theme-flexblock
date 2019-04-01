@@ -35,8 +35,6 @@
 
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
 
-  <%- partial('_partial/google-analytics') %>
-
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>

@@ -85,6 +85,18 @@ type:
 ---
 ```
 
+# 自定义数据
+
+## 友链数据
+
+在目录的`source/_data`下新建一个**links.yml**
+
+一行一条数据，格式如下:
+
+``` yml
+- { "name" : "", "describe" : "", "link" : "", "cover" : "" }
+```
+
 
 # SEO优化相关
 

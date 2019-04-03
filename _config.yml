@@ -2,11 +2,7 @@
 menu:
   首页: /
   归档: /archives
-  分类: /categories
   标签: /tags
-  友链: /links
-  留言: /messages
-  关于: /about
 logo: https://qiniu.miiiku.xyz/src/images/logo.png
 banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
 # banner: css/images/banner.jpg
@@ -22,16 +18,16 @@ large_legnth:
 # docs: https://hitokoto.cn/api
 # type: [a, b, c, d, e, f, g]
 hitokoto:
-  enable: true
+  enable: false
   type: a
 
 # valine 评论
 # docs: https://valine.js.org
 # You can get your appid and appkey from https://leancloud.cn
 valine:
-  enable: true
-  appId: oTmfgIaoB7PfPATvA9tsOwTu-gzGzoHsz
-  appKey: PPbJycuezKD3BJlhHUy8zOnG
+  enable: false
+  appId: 
+  appKey: 
   avatar: mm
   placeholder: 随便说点什么叭～
   notify: true
@@ -68,13 +64,13 @@ archive_type: 'monthly'
 show_count: false
 
 # beian
-beian: 蜀ICP备15014309号
+beian: 
 
 # Miscellaneous
 google_analytics: 
 gauges_analytics: 
-baidu_analytics: 410f4beade12e8df64ea4c5622313220
-tencent_analytics: 64852535
+baidu_analytics: 
+tencent_analytics: 
 favicon: /favicon.ico
 
-permalink: true
+permalink: false

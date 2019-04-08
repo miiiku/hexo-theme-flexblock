@@ -1,4 +1,23 @@
 
+// 必要的页面主体内容容器
+.needful-container
+  width: 100%
+  max-width: max-content-width
+  margin: 0 auto content-margin
+  min-height: banner-margin * 2
+  background-color: #ffffff
+  padding: 20px 40px
+  border-radius: 40px
+
+// 其次的页面内容容器
+.next-container
+  width: 100%
+  max-width: max-content-width
+  margin: 0 auto content-margin
+  background-color: #ffffff
+  padding: 20px 40px
+  border-radius: 40px
+
 // 文章列表样式
 .card-container.card-articles
   .article-link
@@ -36,8 +55,8 @@
           color: #000000
           background-color: #ffffff
 
-// 分类列表样式 标签列表样式 链接列表样式
-.card-container.card-categories, .card-container.card-tags, .card-container.card-links
+// 分类列表样式 链接列表样式
+.card-container.card-categories, .card-container.card-links
   article
     display: flex
     flex-direction: column
@@ -53,25 +72,12 @@
       font-size: 32px
       font-weight: bolder
 
-  &.card-container.card-tags
-    .text-info
-      font-size: 24px
-      font-weight: bolder
-
   &.card-container.card-links
     .text-info h3
       margin: 20px 0
 
 // 文章内容样式
 .article-content
-  width: 100%
-  max-width: max-content-width
-  margin: 0 auto
-  min-height: banner-margin * 2
-  background-color: #ffffff
-  padding: 20px 40px
-  border-radius: 40px
-
   & > div
     padding: 0 20px
     margin: 20px 0
@@ -97,6 +103,19 @@
       font-size: 28px
       margin-top: 20px
 
+// 云标签样式
+.tags-cloud
+  text-align: center
+  font-size: 18px
+  
+  a
+    display: inline-block
+    margin: 0 20px
+    line-height: 2
+
+    &:hover
+      text-decoration: underline
+
 // 移动端样式
 @media screen and (max-width: 760px)
   .card-container.card-articles
@@ -107,17 +126,19 @@
 
   .card-container.card-categories .text-info
     font-size: 24px
-
-  .card-container.card-tags .text-info
-    font-size: 14px
   
   .card-container.card-links .text-info h3
     margin: 10px 0
 
-  .article-content
+  .needful-container, .next-container
     width: auto
     min-width: 70vw
-    margin: 0 content-margin-min
-    padding: 30px 0
+    margin: 0 content-margin-min content-margin-min
+    padding: 20px 0
 
+  .tags-cloud
+    font-size: 14px
+    a
+      margin: 0 8px
+      line-height: 1.5
   

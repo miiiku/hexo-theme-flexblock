@@ -3,7 +3,7 @@
 <div class="main-container">
   <%# 输出文章内容 %>
   <% if (page.content) { %>
-  <article class="article-content">
+  <article class="needful-container article-content">
     <div class="article-entry"><%- page.content %></div>
   </article>
   <% } %>
@@ -34,26 +34,19 @@
 
   <%# 输出自定义标签内容 %>
   <% if (page.type === "tags") { %>
-    <div class="card-container card-tags">
-      <div class="card-wrap">
-        <% site.tags.each(function(tag) { %>
-          <%
-            let isLarge = false;
-            if (theme.large_legnth && theme.large_legnth.short) {
-              if (tag.name.length > theme.large_legnth.short) {
-                isLarge = true
-              }
-            }
-          %>
-          <div class="card-item<%= isLarge ? ' large' : '' %>">
-            <article>
-              <a class="card-link" href="<%= url_for('/tags/'+tag.name) %>"></a>
-              <div class="text-info"><%= tag.name %> (<%= tag.length %>)</div>
-            </article>
-          </div>
-        <% }) %>
+    <article class="next-container">
+      <div class="tags-cloud">
+        <%- tagcloud({
+          unit: "em",
+          min_font: 1,
+          max_font: 3,
+          color: "#6bd0ff",
+          start_color: "#f7c068",
+          end_color: "#ff5858",
+          amount: 100
+        }) %>
       </div>
-    </div>
+    </article>
   <% } %>
 
   <%# 输出自定义友链内容 %>
@@ -90,8 +83,8 @@
 
   <%# 输出自定义留言板内容 %>
   <% if (page.type === "messages") { %>
-    <div class="article-content">
+    <article class="next-container">
       <%- partial('../_widget/comment', { post: page }) %>
-    </div>
+    </article>
   <% } %>
 </div>

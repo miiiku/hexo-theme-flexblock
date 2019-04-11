@@ -1,40 +1,42 @@
 <!-- 自定义页面 -->
 
-<div class="main-container">
+<div class="body-container">
   <%# 输出文章内容 %>
   <% if (page.content) { %>
-  <article class="needful-container article-content">
+  <article class="main-container article-content">
     <div class="article-entry"><%- page.content %></div>
   </article>
   <% } %>
 
   <%# 输出自定义分类内容 %>
   <% if (page.type === "categories") { %>
-    <div class="card-container card-categories">
-      <div class="card-wrap">
-        <% site.categories.each(function(categorie) { %>
-          <%
-            let isLarge = false;
-            if (theme.large_legnth && theme.large_legnth.short) {
-              if (categorie.name.length > theme.large_legnth.short) {
-                isLarge = true
+    <article class="main-container next">
+      <div class="card-container card-categories">
+        <div class="card-wrap">
+          <% site.categories.each(function(categorie) { %>
+            <%
+              let isLarge = false;
+              if (theme.large_legnth && theme.large_legnth.short) {
+                if (categorie.name.length > theme.large_legnth.short) {
+                  isLarge = true
+                }
               }
-            }
-          %>
-          <div class="card-item<%= isLarge ? ' large' : '' %>">
-            <article>
-              <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
-              <div class="text-info"><%= categorie.name %> (<%= categorie.length %>)</div>
-            </article>
-          </div>
-        <% }) %>
+            %>
+            <div class="card-item<%= isLarge ? ' large' : '' %>">
+              <article>
+                <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
+                <div class="text-info"><%= categorie.name %> (<%= categorie.length %>)</div>
+              </article>
+            </div>
+          <% }) %>
+        </div>
       </div>
-    </div>
+    </article>
   <% } %>
 
   <%# 输出自定义标签内容 %>
   <% if (page.type === "tags") { %>
-    <article class="next-container">
+    <article class="main-container next">
       <div class="tags-cloud">
         <%- tagcloud({
           unit: "em",
@@ -51,39 +53,41 @@
 
   <%# 输出自定义友链内容 %>
   <% if (page.type === "links") { %>
-    <div class="card-container card-links">
-      <div class="card-wrap">
-        <% site.data.links.forEach(function(link) { %>
-          <%
-            let isLarge = false;
-            if (theme.large_legnth && theme.large_legnth.long) {
-              if (link.name.length > theme.large_legnth.long || link.describe.length > theme.large_legnth.long) {
-                isLarge = true
+    <article class="main-container next">
+      <div class="card-container card-links">
+        <div class="card-wrap">
+          <% site.data.links.forEach(function(link) { %>
+            <%
+              let isLarge = false;
+              if (theme.large_legnth && theme.large_legnth.long) {
+                if (link.name.length > theme.large_legnth.long || link.describe.length > theme.large_legnth.long) {
+                  isLarge = true
+                }
               }
-            }
-          %>
-          <div class="card-item<%= isLarge ? ' large' : '' %><%= link.cover ? ' img' : '' %>">
-            <article>
-              <% if (link.cover) { %>
-              <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>
-              <% } %>
-              <a class="card-link" href="<%= link.link %>" target="_blank"></a>
-              <div class="text-info">
-                <h3><%= link.name %></h3>
-                <% if (link.describe) { %>
-                <p><%= link.describe %></p>
+            %>
+            <div class="card-item<%= isLarge ? ' large' : '' %><%= link.cover ? ' img' : '' %>">
+              <article>
+                <% if (link.cover) { %>
+                <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>
                 <% } %>
-              </div>
-            </article>
-          </div>
-        <% }) %>
+                <a class="card-link" href="<%= link.link %>" target="_blank"></a>
+                <div class="text-info">
+                  <h3><%= link.name %></h3>
+                  <% if (link.describe) { %>
+                  <p><%= link.describe %></p>
+                  <% } %>
+                </div>
+              </article>
+            </div>
+          <% }) %>
+        </div>
       </div>
-    </div>
+    </article>
   <% } %>
 
   <%# 输出自定义留言板内容 %>
   <% if (page.type === "messages") { %>
-    <article class="next-container">
+    <article class="main-container next">
       <%- partial('../_widget/comment', { post: page }) %>
     </article>
   <% } %>

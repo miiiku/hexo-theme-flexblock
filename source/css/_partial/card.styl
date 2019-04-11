@@ -1,6 +1,5 @@
 
 .card-container
-  max-width: max-content-width
   margin: 0 auto
   overflow: hidden
 
@@ -86,9 +85,15 @@
   
   .card-container.card-categories
     card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    // 不取消边距
+    .card-wrap
+      margin: 0 (-(content-margin-min))
   
   .card-container.card-links
     card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
+    // 不取消边距
+    .card-wrap
+      margin: 0 (-(content-margin-min))
 
   .card-container.card-article-nav
     card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)

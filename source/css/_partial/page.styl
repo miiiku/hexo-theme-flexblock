@@ -1,24 +1,13 @@
 
-// 必要的页面主体内容容器
-.needful-container
-  width: 100%
-  max-width: max-content-width
-  margin: 0 auto content-margin
-  min-height: banner-margin * 2
-  background-color: #ffffff
-  padding: 20px 40px
-  border-radius: 40px
-
 // 其次的页面内容容器
-.next-container
-  width: 100%
-  max-width: max-content-width
-  margin: 0 auto content-margin
-  background-color: #ffffff
-  padding: 20px 40px
-  border-radius: 40px
+.main-container.next
+  min-height: auto
 
 // 文章列表样式
+.main-container.article-list
+  background-color: transparent
+  padding: 0
+
 .card-container.card-articles
   .article-link
     position: absolute
@@ -31,13 +20,11 @@
     z-index: 1
   
   .article-title
-    font-size: 33px
     font-weight: 700
     line-height: 1.3
     margin-bottom: 20px
 
   .article-meta
-    margin-bottom: 60px
     line-height: 1.3
   
   .article-category
@@ -62,24 +49,15 @@
     flex-direction: column
     justify-content: center
     align-items: center
+
     .text-info
       position: relative
       text-align: center
       word-break: break-all
 
-  &.card-container.card-categories
-    .text-info
-      font-size: 32px
-      font-weight: bolder
-
-  &.card-container.card-links
-    .text-info h3
-      margin: 20px 0
-
 // 文章内容样式
 .article-content
   & > div
-    padding: 0 20px
     margin: 20px 0
 
   .article-tag-list
@@ -96,49 +74,124 @@
   .card-article-nav
     text-align: center;
   
-    .article-nav-caption
-      font-weight: 600
+  .article-nav-caption
+    font-weight: 600
 
-    .article-nav-title
-      font-size: 28px
-      margin-top: 20px
+  .article-nav-title
+    margin-top: 20px
 
 // 云标签样式
 .tags-cloud
   text-align: center
-  font-size: 18px
   
   a
     display: inline-block
-    margin: 0 20px
-    line-height: 2
 
     &:hover
       text-decoration: underline
 
-// 移动端样式
-@media screen and (max-width: 760px)
+
+// desktop >=1600
+@media screen and (min-width: 1600px)
+  main-container-desktop()
+
   .card-container.card-articles
     .article-title
-      font-size: 24px
+      font-size: font-desktop-focus
     .article-meta
-      margin-bottom: 45px
-
-  .card-container.card-categories .text-info
-    font-size: 24px
+      margin-bottom: 60px
   
-  .card-container.card-links .text-info h3
-    margin: 10px 0
+  .card-container.card-categories
+    .text-info
+      font-weight: bolder
+      font-size: font-desktop-focus
 
-  .needful-container, .next-container
-    width: auto
-    min-width: 70vw
-    margin: 0 content-margin-min content-margin-min
-    padding: 20px 0
-
+  .card-container.card-links
+    .text-info
+      h3
+        font-weight: bolder
+        font-size: font-desktop-commonly
+        margin: 20px 0
+      p
+        font-size: font-desktop-small
+  
+  .article-content
+    .article-nav-title
+      font-size: font-desktop-commonly
+  
   .tags-cloud
-    font-size: 14px
+    font-size: font-desktop-commonly
+    a
+      margin: 0 20px
+      line-height: 2
+
+
+// laptop >=768 1600>
+@media screen and (min-width: 768px) and (max-width: 1599px)
+  main-container-laptop()
+
+  .card-container.card-articles
+    .article-title
+      font-size: font-laptop-focus
+    .article-meta
+      margin-bottom: 50px
+  
+  .card-container.card-categories
+    .text-info
+      font-weight: bolder
+      font-size: font-laptop-focus
+
+  .card-container.card-links
+    .text-info
+      h3
+        font-weight: bolder
+        font-size: font-laptop-commonly
+        margin: 20px 0
+      p
+        font-size: font-laptop-small
+  
+  .article-content
+    .article-nav-title
+      font-size: font-laptop-commonly
+  
+  .tags-cloud
+    font-size: font-laptop-commonly
+    a
+      margin: 0 10px
+      line-height: 1.5
+
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  main-container-mobile()
+
+  .card-container.card-articles
+    .article-title
+      font-size: font-mobile-focus
+    .article-meta
+      margin-bottom: 40px
+  
+  .card-container.card-categories
+    .text-info
+      font-weight: bolder
+      font-size: font-mobile-focus
+
+  .card-container.card-links
+    .text-info
+      h3
+        font-weight: bolder
+        font-size: font-mobile-commonly
+        margin: 10px 0
+      p
+        font-size: font-mobile-small
+  
+  .article-content
+    .article-nav-title
+      font-size: font-mobile-commonly
+  
+  .tags-cloud
+    font-size: font-mobile-commonly
     a
       margin: 0 8px
-      line-height: 1.5
+      line-height: 1.3
   

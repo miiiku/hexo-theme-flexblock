@@ -1,158 +1,172 @@
-#header
+.header
   position: relative
   height: header-height
   
-  .header-container
-    position absolute
+.header-container
+  position absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  padding: 0 header-padding
+  background: hsla(0,0%,100%,.97)
+  border-bottom: 1px solid #e5eff5
+    
+.header-navbar
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+  height: 100%
+  max-width: max-content-width
+  margin: auto
+
+.header-navbar-left
+  padding-right: 20px
+  flex: 0 1 350px
+
+.header-navbar-logo
+  margin: 0
+  font-weight: bolder
+
+  a
+    display: block
+    text-decoration: none
+    color: #161b3d
+    outline: 0
+
+    img
+      display: block
+      max-width: 100%
+      max-height: 50px
+
+.header-navbar-right
+  flex: 0 0 calc(100% - 350px)
+  text-align: right
+
+.header-navbar-btn
+  display: none
+  position: relative
+  width: 46px
+  height 46px
+  cursor: pointer
+
+  div
+    position: absolute;
     top: 0
     left: 0
     width: 100%
     height: 100%
-    padding: 0 header-padding
-    background: hsla(0,0%,100%,.97)
-    border-bottom: 1px solid #e5eff5
+    transform-origin: center
+    transition: transform 0.3s ease;
     
-    .header-navbar
-      display: flex
-      align-items: center
-      justify-content: space-between
-      width: 100%
-      height: 100%
-      max-width: max-content-width
+    &:before
+      position: absolute
+      content: ""
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
       margin: auto
+      width: 80%
+      height: 2px
+      border-radius: 2px
+      background-color: #cccccc
+      transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
 
-      .header-navbar-left
-        padding-right: 20px
-        flex: 0 1 350px
+    &:nth-child(1):before
+      transform: translateY(-12px)
 
-        .header-navbar-logo
-          margin: 0
-          font-size: 32px
-          font-weight: bolder
+    &:nth-child(3):before
+      transform: translateY(12px)
 
-          a
-            display: block
-            text-decoration: none
-            color: #161b3d
-            outline: 0
+  &.active
+    div
+      transition: transform 0.3s ease 0.3s;
 
-            img
-              display: block
-              max-width: 100%
-              max-height: 50px
+      &::before
+        transition: transform 0.3s ease, opacity 0.3s ease 0.3s;
 
-      .header-navbar-right
-        flex: 0 0 calc(100% - 350px)
-        text-align: right
-
-        .header-navbar-btn
-          display: none
-          position: relative
-          width: 46px
-          height 46px
-          cursor: pointer
-
-          div
-            position: absolute;
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            transform-origin: center
-            transition: transform 0.3s ease;
-            
-            &:before
-              position: absolute
-              content: ""
-              left: 0
-              right: 0
-              top: 0
-              bottom: 0
-              margin: auto
-              width: 80%
-              height: 2px
-              border-radius: 2px
-              background-color: #cccccc
-              transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
-
-            &:nth-child(1):before
-              transform: translateY(-12px)
-
-            &:nth-child(3):before
-              transform: translateY(12px)
-
-          &.active
-            div
-              transition: transform 0.3s ease 0.3s;
-
-              &::before
-                transition: transform 0.3s ease, opacity 0.3s ease 0.3s;
-
-              &:nth-child(1)
-                  transform: rotate(45deg);
-                  
-                  &::before
-                    transform: translateY(0);
-              
-              &:nth-child(2)::before
-                opacity: 0; 
-
-              &:nth-child(3)
-                  transform: rotate(-45deg);
-
-                  &::before
-                    transform: translateY(0); 
-              
-
-        .header-navbar-list
-          display: flex
-          justify-content: flex-end
-
-          .header-navbar-item
-            display: block
-            flex: 0 1 60px
-            text-decoration: none
-            user-select: none
-            
-
-            a
-              display: block
-              padding: 10px 0
-              font-weight: 400
-              color: #738a94
-              font-weight: bolder
-              transition: color 0.2s
-
-              &:hover
-                color: #343f44
-
-
-@media screen and (max-width: 760px)
-  #header
-    .header-container
-      .header-navbar
-        .header-navbar-right
-          position: relative
-
-          .header-navbar-btn
-            display: inline-block
+      &:nth-child(1)
+          transform: rotate(45deg);
           
-          .header-navbar-btn.active + .header-navbar-list
-            display: block
-          
-          .header-navbar-list
-            display: none
-            position: absolute
-            right: 0
-            padding: 20px 30px
-            margin-top: -5px
-            margin-right: -2vw
-            border-radius: 26px
-            background-color: #f7f7f7
-            z-index: 999
+          &::before
+            transform: translateY(0);
+      
+      &:nth-child(2)::before
+        opacity: 0; 
 
-            .header-navbar-item
-              display: block
-              a
-                color: #161b3d
-                font-weight: bolder
+      &:nth-child(3)
+          transform: rotate(-45deg);
+
+          &::before
+            transform: translateY(0); 
+          
+
+.header-navbar-list
+  display: flex
+  justify-content: flex-end
+
+.header-navbar-item
+  display: block
+  flex: 0 1 60px
+  text-decoration: none
+  user-select: none
+
+  a
+    display: block
+    padding: 10px 0
+    font-weight: 400
+    color: #738a94
+    font-weight: bolder
+    transition: color 0.2s
+
+    &:hover
+      color: #343f44
+
+
+
+// desktop >=1600
+@media screen and (min-width: 1600px)
+  .header-navbar-logo
+    font-size: font-desktop-focus
+
+
+// laptop >=768 1600>
+@media screen and (min-width: 768px) and (max-width: 1599px)
+  .header-navbar-logo
+    font-size: font-laptop-focus
+
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  .header-navbar-logo
+    font-size: font-mobile-focus
+
+  .header-navbar-right
+    position: relative
+
+  .header-navbar-btn
+    display: inline-block
+    
+  .header-navbar-btn.active + .header-navbar-list
+    display: block
+            
+  .header-navbar-list
+    display: none
+    position: absolute
+    right: 0
+    padding: 20px 30px
+    margin-top: -5px
+    margin-right: -2vw
+    border-radius: 26px
+    background-color: #f7f7f7
+    min-width: 100px
+    z-index: 999
+
+  .header-navbar-item
+    display: block
+    
+    a
+      color: #161b3d
+      font-weight: bolder

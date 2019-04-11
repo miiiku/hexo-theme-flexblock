@@ -30,7 +30,6 @@
 
     .header-title
       font-weight: 700
-      font-size: 3rem
       line-height: 1.2
 
       a
@@ -38,14 +37,30 @@
         text-align: center
     
     .header-subtitle
-      font-size: 1.2rem
       margin: 20px 0
 
-@media screen and (max-width: 760px)
+
+// desktop >=1600
+@media screen and (min-width: 1600px)
+  .header-title
+    font-size: font-desktop-large
+  .header-subtitle
+    font-size: font-desktop-commonly
+
+
+// laptop >=768 1600>
+@media screen and (min-width: 768px) and (max-width: 1599px)
+  .header-title
+    font-size: font-laptop-large
+  .header-subtitle
+    font-size: font-laptop-commonly
+
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  .header-title
+    font-size: font-mobile-large
+  .header-subtitle
+    font-size: font-mobile-commonly
   .banner-container
     min-height: banner-height-mobile
-    .banner-inner
-      .header-title
-        font-size: 2rem
-      .header-subtitle
-        font-size: 0.9rem

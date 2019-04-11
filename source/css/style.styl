@@ -74,10 +74,23 @@ small
   font-size: 80%
 
 
-.main-container
-  margin-top: -(banner-margin)
+.body-container
   position: relative
 
+// desktop >=1600
+@media screen and (min-width: 1600px)
+  .body-container
+    margin-top: -(desktop-banner-margin)
+
+// laptop >=768 1600>
+@media screen and (min-width: 768px) and (max-width: 1599px)
+  .body-container
+    margin-top: -(laptop-banner-margin)
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  .body-container
+    margin-top: -(mobile-banner-margin)
 
 @import "_partial/header"
 @import "_partial/banner"

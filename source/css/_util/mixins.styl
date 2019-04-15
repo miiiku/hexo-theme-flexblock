@@ -34,13 +34,8 @@ color-block-yellow()
 card(margin, padding, minWidth, minHeight, borderRadius, number)
   $basis = (100 / number)%
 
-  @media screen and (max-width: 1200px)
-    .card-wrap
-      margin: 0
-
-  @media screen and (min-width: 1201px)
-    .card-wrap
-      margin: 0 (-(margin))
+  .card-wrap
+    margin: 0 (-(margin))
 
   .card-item
     flex: 1 1 $basis
@@ -58,22 +53,11 @@ main-container-desktop()
   .main-container
     max-width: desktop-max-content-width
     background-color: #ffffff
-    width: 100%
-    min-height: laptop-banner-margin * 2
+    width: 92vw
+    min-height: desktop-banner-margin * 2
     margin: 0 auto
     padding: 20px 40px
     border-radius: 40px
-
-main-container-laptop()
-  .main-container
-    max-width: laptop-max-content-width
-    background-color: #ffffff
-    width: auto
-    min-width: 90vw
-    min-height: laptop-banner-margin * 2
-    margin: 0 auto content-margin
-    padding: 30px
-    border-radius: 30px
 
 main-container-mobile()
   .main-container

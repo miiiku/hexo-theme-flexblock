@@ -77,15 +77,10 @@ small
 .body-container
   position: relative
 
-// desktop >=1600
-@media screen and (min-width: 1600px)
+// desktop >=768
+@media screen and (min-width: 768px)
   .body-container
     margin-top: -(desktop-banner-margin)
-
-// laptop >=768 1600>
-@media screen and (min-width: 768px) and (max-width: 1599px)
-  .body-container
-    margin-top: -(laptop-banner-margin)
 
 // mobile 768<
 @media screen and (max-width: 767px)

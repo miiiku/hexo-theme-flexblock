@@ -311,6 +311,14 @@ tencent_analytics:
 
 接入常用网站统计第三方
 
+## 备案
+
+``` yml
+beian: 
+```
+
+国内备案号
+
 ## permalink
 
 ``` yml

@@ -7,7 +7,9 @@
 
 
 # 待考虑任务计划
+
 * 资源文件CDN配置，如插件
+
 * 归档页是否需要从新设计样式
 
 
@@ -107,16 +109,39 @@ type:
 
 # <meta name="description" content=[config.description]>
 description: 
+
 # <meta name="keywords" content=[config.keywords]>
 keywords: 
+
 # <meta name="author" content=[config.author]>
 author: 
+
 # <meta name="copyright" content=[config.copyright]>
 copyright:
 ```
 
 
 # 配置项:
+
+## 代码高亮
+
+hexo默认提供了highlightjs代码高亮，如何开启？
+
+**查找并修改`Hexo`下的`_config.yml`**
+
+``` yml
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+  hljs: true
+  theme: monokai
+```
+
+其中`enable`为开启代码高亮，`hljs`设置为hljs为class，`theme`为highlight代码高亮主题，不设置默认为default
+
+具体的主题可以在[https://highlightjs.org/](https://highlightjs.org/)查看
 
 ## 长标题
 
@@ -276,8 +301,11 @@ banner:
 
 ``` yml
 google_analytics: 
+
 gauges_analytics: 
+
 baidu_analytics: 
+
 tencent_analytics: 
 ```
 

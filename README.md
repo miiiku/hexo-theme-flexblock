@@ -223,6 +223,7 @@ zoom:
 # valine 评论
 # docs: https://valine.js.org
 # You can get your appid and appkey from https://leancloud.cn
+# 这里appId和appKey一定一定要改成自己的，没有的话去https://leancloud.cn这个网站注册创建一个
 valine:
   enable: true
   appId: # your appid

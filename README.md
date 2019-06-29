@@ -282,7 +282,11 @@ hitokoto:
 
 # 其他
 
-## LOGO
+## favicon
+
+替换掉主题文件下的`source/favicon.ico`
+
+## logo
 
 ``` yml
 logo:
@@ -311,14 +315,6 @@ tencent_analytics:
 ```
 
 接入常用网站统计第三方
-
-## 备案
-
-``` yml
-beian: 
-```
-
-国内备案号
 
 ## permalink
 

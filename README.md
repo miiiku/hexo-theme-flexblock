@@ -6,13 +6,6 @@
 模仿加瞎改`Ghost`里的一个主题`nurui`
 
 
-# 待考虑任务计划
-
-* 资源文件CDN配置，如插件
-
-* 归档页是否需要从新设计样式
-
-
 # 可自定义的相关页面
 
 ## 目前可以扩展的页面菜单有:
@@ -181,21 +174,21 @@ dplayer:
 
 详情查看[http://dplayer.js.org/](http://dplayer.js.org/)
 
-## macy 瀑布流
+## waterfall 瀑布流
 
-进入`flex-block`配置文件`_config.yml`找到`macy`
+进入`flex-block`配置文件`_config.yml`找到`waterfall`
 
 ``` yml
-# macy 瀑布流
-# docs: https://github.com/bigbite/macy.js
-# Specific configuration information go to `layout/plug-in/macy.ejs`
-macy: true
+# waterfall 瀑布流
+# docs: https://github.com/miiiku/waterfall
+# Specific configuration information go to `layout/plug-in/waterfall.ejs`
+waterfall: true
 ```
 
-如果要进行详细的配置，请找到并编辑`layout/plug-in/macy.ejs`
+如果要进行详细的配置，请找到并编辑`layout/plug-in/waterfall.ejs`
 
 
-详情查看[https://github.com/bigbite/macy.js](https://github.com/bigbite/macy.js)
+详情查看[https://github.com/bigbite/waterfall.js](https://github.com/bigbite/waterfall.js)
 
 ## zoom 图片预览
 
@@ -270,14 +263,25 @@ hitokoto:
 ## 插入瀑布流 waterfall
 
 ``` markdown
-{% waterfall %}
+{% waterfall [options] %}
 ![imgname](imgsrc)
 ![imgname](imgsrc)
 ![imgname](imgsrc)
 {% endwaterfall %}
 ```
 
-**注意: 需要开启`macy`插件才能正常使用本内置标签**
+具体可选参数查看[https://github.com/miiiku/waterfall](https://github.com/miiiku/waterfall)
+
+🌰: 如设置布局为`水平布局`，每个元素的类名为`item-image`，原参数的`驼峰命名`改为`横线连接`
+
+``` markdown
+{% waterfall direction=h item-class=item-image %}
+![imgname](imgsrc)
+...
+{% endwaterfall %}
+```
+
+**注意: 需要开启`waterfall`插件才能正常使用本内置标签**
 
 
 # 其他

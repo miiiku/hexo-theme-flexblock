@@ -23,8 +23,15 @@ hexo.extend.tag.register("dplayer", function(args) {
  *  {% endwaterfall %}
  */
 hexo.extend.tag.register("waterfall", function(args, content) {
+  var datas = "";
+  if (args.length > 0) {
+    args.forEach(item => {
+      let kv = item.split("=");
+      datas += `data-${kv[0]}='${kv[1]}' `;
+    });
+  }
   const text = hexo.render.renderSync({ text: content, engine: 'markdown' });
-  return `<div class="waterfall-container">${text}</div>`;
+  return `<div class="waterfall-container" ${datas}>${text}</div>`;
 }, { ends: true });
 
 /**

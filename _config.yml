@@ -41,10 +41,10 @@ dplayer:
   loop: false
   mutex: true
 
-# macy 瀑布流
-# docs: https://github.com/bigbite/macy.js
-# Specific configuration information go to `layout/plug-in/macy.ejs`
-macy: true
+# waterfall 瀑布流
+# docs: https://github.com/miiiku/waterfall
+# Specific configuration information go to `layout/plug-in/waterfall.ejs`
+waterfall: true
 
 # zoom 图片预览
 # docs: https://github.com/miiiku/zoom

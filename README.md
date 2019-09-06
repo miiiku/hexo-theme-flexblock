@@ -5,6 +5,16 @@
 
 模仿加瞎改`Ghost`里的一个主题`nurui`
 
+# 预览
+
+### 首页
+![home.png](./img/home.png)
+
+### 内容页
+![content.png](./img/content.png)
+
+### 标签页
+![tags.png](./img/tags.png)
 
 # 可自定义的相关页面
 

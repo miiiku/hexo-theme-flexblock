@@ -1,57 +1,152 @@
 .banner-container
   position: relative
-  display: flex
-  align-items: center
-  justify-content: center
   width: 100%
   min-height banner-height
-  background-repeat: no-repeat
-  background-position: center
-  background-size: cover
   padding-bottom: banner-margin
 
-  &:before
+  // post text
+  .post-text
+    width: 100%
+    max-width 100%
+    max-height: 100%
+    overflow: hidden
+    margin-top: -70px
+
+  // tag
+  .type-wrap > a
+    display: inline-block
+    padding: 5px 12px
+    margin: 0 2px 1px 0
+    color: #161b3d;
+    background-color: #f4f4f4
+    border-radius: 20px
+    font-size: 10px
+    font-weight: 700
+    letter-spacing: 1.5px
+    transition: 0.3s all
+
+    &:hover
+      background-color: #2821fc
+      color: #ffffff
+
+  // title
+  .title-wrap
+    font-size: 54px
+    font-weight: 700
+    margin: 25px 0
+    line-height: 1.2
+    overflow: hidden
+    text-overflow: ellipsis
+    word-break: break-word
+
+  // sub title
+  .title-sub-wrap
+    padding-bottom: 20px
+    font-size: 18px
+
+  // banner content
+  .banner-content
     position: absolute
     top: 0
     left: 0
-    display: block
-    content: ''
+    right: 0
     width: 100%
     height: 100%
-    opacity: 0.4
-    background-color: #394245
-    background-image: linear-gradient(234deg, #394245 0%, #000 100%)
+    margin: auto
 
-  .banner-inner
-    position: relative
-    padding: 0 25px
-    color: #ffffff
-    text-align: center
+  // post banner & full banner
+  .banner-content.full-content, .banner-content.post-content
+    display: flex
+    align-items: center
+    justify-content: center
 
-    .header-title
-      font-weight: 700
-      line-height: 1.2
-
-      a
-        display: block
-        text-align: center
+  // banner image
+  .banner-content.full-content
+    .post-image
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: -1
+      image-mask()
     
-    .header-subtitle
-      margin: 20px 0
+    .post-text
+      padding: 0 20px
+      text-align: center
+      color: #ffffff
 
+  // post banner
+  .banner-content.post-content
+    max-width: 1366px
 
-// desktop >=768
-@media screen and (min-width: 768px)
-  .header-title
-    font-size: font-desktop-large
-  .header-subtitle
-    font-size: font-desktop-commonly
+    .post-text
+      color: #161b3d
+      padding: 40px 10px 45px 40px
+
+  // post banner image
+  .banner-content.post-content.is-post-image
+    padding: 40px 30px
+
+    & > div
+      flex: 1 1 0
+      min-width: 50%
+
+    .post-image
+      height: 100%
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      border-radius: 4px
+
+  // post banner text
+  .banner-content.post-content.no-post-image
+    right: 0
+    margin: auto
+    justify-content: flex-start
+    padding-left: 63px
+
 
 // mobile 768<
 @media screen and (max-width: 767px)
-  .header-title
-    font-size: font-mobile-large
-  .header-subtitle
-    font-size: font-mobile-commonly
   .banner-container
     min-height: banner-height-mobile
+
+    .title-wrap
+      font-size: 30px
+    
+    .banner-content.full-content
+      .post-text
+        margin-top: -30px
+        padding: 0 10px
+
+    .banner-content.post-content
+      width: 100%
+
+      .post-text
+        padding: 10px
+        margin: 0 7px
+
+    .banner-content.post-content.no-post-image
+      padding-left: 0
+
+    .banner-content.post-content.is-post-image
+      position: absolute
+      top: 0
+      left: 0
+      padding: 0
+      width: 100%
+      height: 100%
+      
+      .post-text
+        color: #ffffff
+
+      .post-image
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 0
+        z-index: -1
+        image-mask()

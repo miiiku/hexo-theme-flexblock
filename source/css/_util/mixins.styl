@@ -1,3 +1,22 @@
+
+// Image Mask
+image-mask()
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    content: ''
+    width: 100%
+    height: 100%
+    opacity: 0.4
+    background-color: #394245
+    background-image: linear-gradient(234deg, #394245 0%, #000 100%)
+
 // Color
 color-block-default()
   color: #000000
@@ -56,8 +75,8 @@ main-container-desktop()
     width: 92vw
     min-height: desktop-banner-margin * 2
     margin: 0 auto
-    padding: 20px 40px
-    border-radius: 40px
+    padding: 15px 20px
+    border-radius: 20px
 
 main-container-mobile()
   .main-container
@@ -66,5 +85,5 @@ main-container-mobile()
     min-width: 70vw
     min-height: mobile-banner-margin * 2
     margin: 0 content-margin-min content-margin-min
-    padding: 10px
-    border-radius: 20px
+    padding: 8px
+    border-radius: 8px

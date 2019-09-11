@@ -254,7 +254,7 @@ valine:
 disqus:
   enable: true
   website: # your website
-  error: # error tips
+  error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
 ```
 
 ## 一言

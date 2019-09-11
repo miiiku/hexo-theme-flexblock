@@ -220,7 +220,7 @@ zoom:
 
 ## Valine评论
 
-进入`flex-block`配置文件`_config.yml`找到`comment`
+进入`flex-block`配置文件`_config.yml`找到`valine`
 
 ``` yml
 # valine 评论
@@ -242,6 +242,20 @@ valine:
 
 详情查看[https://valine.js.org/configuration.html](https://valine.js.org/configuration.html)
 
+## disqus评论
+
+进入`flex-block`配置文件`_config.yml`找到`disqus`
+
+``` yml
+# disqus 评论
+# docs: https://disqus.com/
+# website 网站到昵称
+# error 加载失败的提示语
+disqus:
+  enable: true
+  website: # your website
+  error: # error tips
+```
 
 ## 一言
 

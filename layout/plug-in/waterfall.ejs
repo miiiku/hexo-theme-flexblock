@@ -1,5 +1,5 @@
-<% if (theme.waterfall) { %>
-<!-- 瀑布流 -->
+<% if (theme.waterfall.enable) { %>
+<!-- waterfall 瀑布流 start -->
 <%- js('lib/waterfall.min') %>
 <script type="text/javascript">
 
@@ -26,4 +26,5 @@ function initCss() {
   document.head.appendChild(cssStyle);
 }
 </script>
+<!-- waterfall 瀑布流 end -->
 <% } %>

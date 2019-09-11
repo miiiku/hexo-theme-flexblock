@@ -1,5 +1,5 @@
-<% if (theme.dplayer) { %>
-<!-- dplayer 视频 -->
+<% if (theme.dplayer.enable) { %>
+<!-- dplayer 视频 start -->
 <%- css('lib/DPlayer.min') %>
 <%- js('lib/DPlayer.min') %>
 <script type="text/javascript">
@@ -21,4 +21,5 @@
     });
   }
 </script>
+<!-- dplayer 视频 end -->
 <% } %>

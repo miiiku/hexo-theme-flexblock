@@ -1,5 +1,5 @@
 <% if (theme.zoom.enable) { %>
-<!-- 图片预览 -->
+<!-- zoom 图片预览 start -->
 <%- js('lib/zoom.min') %>
 <script>
   document.querySelector(".zoom") && zoom(".zoom", {
@@ -10,4 +10,5 @@
     filter: "<%= theme.zoom.filter %>",
   });
 </script>
+<!-- zoom 图片预览 end -->
 <% } %>

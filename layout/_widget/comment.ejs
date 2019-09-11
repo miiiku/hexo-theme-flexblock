@@ -1,3 +1,16 @@
 <% if (post.comments) { %>
-  <div id="comment-container" class="comment-container"></div>
+
+  <%# valine 评论 %>
+  <div class="valine-container">
+    <div id="valine_thread" class="valine-thread"></div>
+  </div>
+
+  <%# disqus 评论 %>
+  <% if (theme.disqus.enable && theme.disqus.website) { %>
+  <div class="disqus-container">
+    <p id="disqus_error" class="disqus-error" style="display: none;"><%= theme.disqus.error %></p>
+    <div id="disqus_thread" class="disqus-thread"></div>
+  </div>
+  <% } %>
+
 <% } %>

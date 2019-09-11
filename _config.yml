@@ -32,6 +32,11 @@ valine:
   visitor: true
   pageSize: 10
 
+disqus:
+  enable: true
+  website: sukoshi95
+  error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
+
 # dplayer 视频播放
 # docs: http://dplayer.js.org/#/zh-Hans/
 dplayer:
@@ -44,7 +49,8 @@ dplayer:
 # waterfall 瀑布流
 # docs: https://github.com/miiiku/waterfall
 # Specific configuration information go to `layout/plug-in/waterfall.ejs`
-waterfall: true
+waterfall:
+  enable: true
 
 # zoom 图片预览
 # docs: https://github.com/miiiku/zoom

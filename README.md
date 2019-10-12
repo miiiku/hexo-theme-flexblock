@@ -200,24 +200,6 @@ waterfall: true
 
 详情查看[https://github.com/bigbite/waterfall.js](https://github.com/bigbite/waterfall.js)
 
-## zoom 图片预览
-
-进入`flex-block`配置文件`_config.yml`找到`zoom`
-
-``` yml
-# zoom 图片预览
-# docs: https://github.com/miiiku/zoom
-zoom:
-  enable: true
-  margin: 15
-  padding: 15
-  radius: 5
-  specify:
-  filter: "gallery" # filter Front-matter photos
-```
-
-详情查看[https://github.com/miiiku/zoom](https://github.com/miiiku/zoom)
-
 ## Valine评论
 
 进入`flex-block`配置文件`_config.yml`找到`valine`

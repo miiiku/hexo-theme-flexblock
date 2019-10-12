@@ -52,16 +52,6 @@ dplayer:
 waterfall:
   enable: true
 
-# zoom 图片预览
-# docs: https://github.com/miiiku/zoom
-zoom:
-  enable: true
-  margin: 15
-  padding: 15
-  radius: 5
-  specify:
-  filter: "gallery" # filter Front-matter photos
-
 
 # widget behavior
 archive_type: 'monthly'

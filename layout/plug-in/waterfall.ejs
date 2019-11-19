@@ -3,11 +3,14 @@
 <%- js('lib/waterfall.min') %>
 <script type="text/javascript">
 
-const waterfallDOM = document.querySelector(".waterfall-container");
+const waterfalls = document.querySelectorAll(".waterfall-container");
 
-if (waterfallDOM) {
-  initCss();
-  initWaterfall(".waterfall-container", waterfallDOM);
+if (waterfalls && waterfalls.length > 0) {
+  waterfalls.forEach((waterfall, index) => {
+    let cls = "waterfall-container-" + index;
+    waterfall.classList.add(cls);
+    initWaterfall(cls, waterfall);
+  });
 }
 
 function initWaterfall(selector, el) {
@@ -17,13 +20,7 @@ function initWaterfall(selector, el) {
       options[k] = el.dataset[k];
     }
   }
-  waterfall(selector, options);
-}
-
-function initCss() {
-  let cssStyle = document.createElement("style")
-  cssStyle.innerText = `.waterfall-container p { display: block; border-radius: 4px; overflow: hidden; margin: 0; }`
-  document.head.appendChild(cssStyle);
+  waterfall(`.${selector}`, options);
 }
 </script>
 <!-- waterfall 瀑布流 end -->

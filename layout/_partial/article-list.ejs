@@ -18,9 +18,9 @@
                 <div class="card-cover" style="background-image: url(<%= post.cover %>)"></div>
               <% } %>
               <% if (post.link) { %>
-                <a class="article-link" href="<%- url_for(post.link) %>" itemprop="url" target="_blank"></a>
+                <a class="article-link card-link" href="<%- url_for(post.link) %>" itemprop="url" target="_blank"></a>
               <% } else { %>
-                <a class="article-link" href="<%- url_for(post.path) %>" itemprop="url"></a>
+                <a class="article-link card-link" href="<%- url_for(post.path) %>" itemprop="url"></a>
               <% } %>
               <h2 class="article-title"><%= post.title %></h2>
               <div class="article-meta">

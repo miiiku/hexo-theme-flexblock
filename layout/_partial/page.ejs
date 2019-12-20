@@ -1,14 +1,16 @@
 <!-- 自定义页面 -->
 
 <div class="body-container">
-  <%# 输出文章内容 %>
+  <%# 输出自定义页面文章内容 %>
   <% if (page.content) { %>
-  <article class="main-container article-content">
-    <div class="article-entry"><%- page.content %></div>
+  <article id="content-container" class="main-container article-container">
+    <div class="article-content">
+      <div class="article-entry"><%- page.content %></div>
+    </div>
   </article>
   <% } %>
 
-  <%# 输出自定义分类内容 %>
+  <%# 输出自定义页面特有内容 %>
   <% if (page.type === "categories") { %>
     <article class="main-container next">
       <div class="card-container card-categories">
@@ -25,7 +27,7 @@
             <div class="card-item<%= isLarge ? ' large' : '' %>">
               <article>
                 <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
-                <div class="text-info"><%= categorie.name %> (<%= categorie.length %>)</div>
+                <p><%= categorie.name %> (<%= categorie.length %>)</p>
               </article>
             </div>
           <% }) %>
@@ -71,12 +73,10 @@
                 <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>
                 <% } %>
                 <a class="card-link" href="<%= link.link %>" target="_blank"></a>
-                <div class="text-info">
-                  <h3><%= link.name %></h3>
-                  <% if (link.describe) { %>
-                  <p><%= link.describe %></p>
-                  <% } %>
-                </div>
+                <strong><%= link.name %></strong>
+                <% if (link.describe) { %>
+                <p><%= link.describe %></p>
+                <% } %>
               </article>
             </div>
           <% }) %>

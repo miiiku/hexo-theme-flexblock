@@ -1,4 +1,4 @@
-(function ($) {
+window.addEventListener("load", function() {
   const navBtn = document.querySelector(".header-navbar-btn");
 
   // mobile nav click
@@ -7,24 +7,19 @@
   });
   
   // Fancybox Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
+  // $('.article-entry').each(function(i){
+  //   $(this).find('img').each(function(){
+  //     if ($(this).parent().hasClass('fancybox')) return;
 
-      var alt = this.alt;
+  //     var alt = this.alt;
 
-      if (alt && $(this).parents(".waterfall-container").length < 1) $(this).after('<span class="caption">' + alt + '</span>');
+  //     if (alt && $(this).parents(".waterfall-container").length < 1) $(this).after('<span class="caption">' + alt + '</span>');
 
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
+  //     $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+  //   });
 
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-
-  if ($.fancybox){
-    $('.fancybox').fancybox();
-  }
-
-})(jQuery);
+  //   $(this).find('.fancybox').each(function(){
+  //     $(this).attr('rel', 'article' + i);
+  //   });
+  // });
+})

@@ -54,18 +54,78 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
   $basis = (100 / number)%
 
   .card-wrap
+    display: flex
+    flex-wrap: wrap
     margin: 0 (-(margin))
 
   .card-item
+    display: flex
     flex: 1 1 $basis
+
     &.large
       flex: 1 1 $basis * 2
+
+    &:nth-child(1n) article
+      color-block-orange()
+
+    &:nth-child(2n) article
+      color-block-red()
+
+    &:nth-child(3n) article
+      color-block-violet()
+
+    &:nth-child(4n) article
+      color-block-blue()
+
+    &:nth-child(5n) article
+      color-block-yellow()
+
+    &.img
+      .card-cover
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: -1
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+
+        &:before
+          display: block
+          content: ''
+          width: 100%
+          height: 100%
+          opacity: 0.4
+          background-color: #394245
+          background-image: linear-gradient(234deg, #394245 0%, #000 100%)
+    
     article
+      position: relative
+      z-index: 0
+      flex: 1 1 100%
       margin: margin
       padding: padding
       min-width: minWidth
       min-height: minHeight
       border-radius: borderRadius
+      overflow: hidden
+      word-break: break-all
+      transition: transform 0.2s ease
+
+      &:hover
+        transform: translateY(-5px)
+
+      .card-link
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        z-index: 1
 
 // MainContainer 
 main-container-desktop()
@@ -75,7 +135,6 @@ main-container-desktop()
     width: 92vw
     min-height: desktop-banner-margin * 2
     margin: 0 auto
-    padding: 15px 20px
     border-radius: 20px
 
 main-container-mobile()
@@ -84,6 +143,5 @@ main-container-mobile()
     width: auto
     min-width: 70vw
     min-height: mobile-banner-margin * 2
-    margin: 0 content-margin-min content-margin-min
-    padding: 8px
-    border-radius: 8px
+    margin: 0 content-margin-min
+    border-radius: 10px

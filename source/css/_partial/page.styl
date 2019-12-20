@@ -5,61 +5,12 @@
 // 文章列表样式
 .main-container.article-list
   background-color: transparent
-  padding: 0
 
-.card-container.card-articles
-  .article-link
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    width: 100%
-    height: 100%
-    z-index: 1
-  
-  .article-title
-    font-weight: 700
-    line-height: 1.3
-    margin-bottom: 20px
-
-  .article-meta
-    line-height: 1.3
-  
-  .article-category
-      position: absolute
-      bottom: 45px
-      left: 30px
-      z-index: 2
-
-      .article-category-link
-        border-radius: 20px
-        padding: 4px 8px
-        transition: all 0.2s ease
-
-        &:hover
-          color: #000000
-          background-color: #ffffff
-
-// 分类列表样式 链接列表样式
-.card-container.card-categories, .card-container.card-links
-  article
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-
-    .text-info
-      position: relative
-      text-align: center
-      word-break: break-all
 
 // 文章内容样式
-.article-content
-  & > div:not(:first-child)
-    margin: 20px 0
-
-  .article-tag-list
+.article-container
+  // 文章标签列表
+  .article-footer .article-tag-list
     display: flex
 
     a
@@ -69,15 +20,6 @@
 
       &:hover
         color: #555555
-
-  .card-article-nav
-    text-align: center;
-  
-  .article-nav-caption
-    font-weight: 600
-
-  .article-nav-title
-    margin-top: 20px
 
 // 云标签样式
 .tags-cloud
@@ -93,31 +35,15 @@
 // desktop >=768
 @media screen and (min-width: 768px)
   main-container-desktop()
+  
+  .article-container
+    .article-content
+      width: desktop-article-width
+      padding: desktop-banner-margin;
+      margin: auto
+      & > div:not(:first-child)
+        margin-top: 20px
 
-  .card-container.card-articles
-    .article-title
-      font-size: font-desktop-focus
-    .article-meta
-      margin-bottom: 60px
-  
-  .card-container.card-categories
-    .text-info
-      font-weight: bolder
-      font-size: font-desktop-focus
-
-  .card-container.card-links
-    .text-info
-      h3
-        font-weight: bolder
-        font-size: font-desktop-commonly
-        margin: 20px 0
-      p
-        font-size: font-desktop-small
-  
-  .article-content
-    .article-nav-title
-      font-size: font-desktop-commonly
-  
   .tags-cloud
     font-size: font-desktop-commonly
     a
@@ -127,30 +53,17 @@
 // mobile 768<
 @media screen and (max-width: 767px)
   main-container-mobile()
-
-  .card-container.card-articles
-    .article-title
-      font-size: font-mobile-focus
-    .article-meta
-      margin-bottom: 40px
   
-  .card-container.card-categories
-    .text-info
-      font-weight: bolder
-      font-size: font-mobile-focus
+  .article-container
+    .article-content
+      width: 100%
+      padding: mobile-banner-margin;
+      margin: auto
+      & > div:not(:first-child)
+        margin-top: 10px
 
-  .card-container.card-links
-    .text-info
-      h3
-        font-weight: bolder
+      .article-navs .article-nav-title
         font-size: font-mobile-commonly
-        margin: 10px 0
-      p
-        font-size: font-mobile-small
-  
-  .article-content
-    .article-nav-title
-      font-size: font-mobile-commonly
   
   .tags-cloud
     font-size: font-mobile-commonly

@@ -1,0 +1,24 @@
+<% if (theme.aplayer.enable) { %>
+  <!-- aplayer 音频 start -->
+  <%- css('lib/APlayer.min') %>
+  <%- js('lib/APlayer.min') %>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        new APlayer({
+          container: el,
+          audio: { ...el.dataset },
+          theme: "<%= theme.aplayer.theme %>",
+          lrcType: <%= theme.aplayer.lrcType %>,
+          autoplay: <%= theme.aplayer.autoplay %>,
+          loop: <%= theme.aplayer.loop %>,
+          mutex: <%= theme.aplayer.mutex %>,
+        });
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  <% } %>

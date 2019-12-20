@@ -16,6 +16,28 @@
 ### 标签页
 ![tags.png](./img/tags.png)
 
+# 更新
+
+* 优化了若干代码，结构更清晰，修复了几处CSS显示问题
+
+* 修改文章内容显示宽度，和一些标签样式
+
+* 更新了 **`waterfall`** (画廊)标签 可设置大小
+
+* 新增 **`image`** (图片), **`bookmark`** (书签), **`aplayer`** 音频播放 标签
+
+# 变动
+
+关于 **`waterfall`** 标签，在更新主题后，会导致以前的视频不能正常播放，需要进行如下修改:
+
+```markdown
+<!-- 旧版写法 -->
+{% dplayer https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4 https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10 %} 
+
+<!-- 新版写法 需要指定属性名 -->
+{% dplayer url="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4" cover="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10" %} 
+```
+
 # 可自定义的相关页面
 
 ## 目前可以扩展的页面菜单有:
@@ -167,6 +189,26 @@ large_legnth:
 
 *如果启用了友链，则会判断`友链名称`和`友链描述`两个字段长度*
 
+## aplayer
+
+进入`flex-block`配置文件`_config.yml`找到`aplayer`
+
+**`aplayer`歌词模式默认使用第三种（文件格式）**
+
+``` yml
+# aplayer 视频播放
+# docs: https://aplayer.js.org/#/
+aplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
+  lrcType: 3
+```
+
+详情查看[https://aplayer.js.org/](https://aplayer.js.org/)
+
 ## dplayer
 
 进入`flex-block`配置文件`_config.yml`找到`dplayer`
@@ -184,6 +226,19 @@ dplayer:
 
 详情查看[http://dplayer.js.org/](http://dplayer.js.org/)
 
+## zoom 图片预览
+
+进入`flex-block`配置文件`_config.yml`找到`zoom`
+
+``` yml
+# zoom 图片预览
+# docs: https://github.com/miiiku/zoom
+# Specific configuration information go to `layout/plug-in/zoom.ejs`
+zoom: true
+```
+
+详情查看[https://github.com/miiiku/zoom](https://github.com/miiiku/zoom)
+
 ## waterfall 瀑布流
 
 进入`flex-block`配置文件`_config.yml`找到`waterfall`
@@ -198,7 +253,7 @@ waterfall: true
 如果要进行详细的配置，请找到并编辑`layout/plug-in/waterfall.ejs`
 
 
-详情查看[https://github.com/bigbite/waterfall.js](https://github.com/bigbite/waterfall.js)
+详情查看[https://github.com/miiiku/waterfall](https://github.com/miiiku/waterfall)
 
 ## Valine评论
 
@@ -257,28 +312,42 @@ hitokoto:
 
 # 内建标签
 
+## 插入视频 aplayer
+
+**更多参数可参考[https://aplayer.js.org/#/home?id=options](https://aplayer.js.org/#/home?id=options)中`audio`的属性**
+
+``` markdown
+<!-- url 必填  -->
+{% aplayer name="アイロニ" artist="鹿乃" url="https://qiniu.miiiku.xyz/public/music/鹿乃 - アイロニ.mp3" lrc="https://qiniu.miiiku.xyz/public/music/鹿乃 - アイロニ.lrc" cover="https://qiniu.miiiku.xyz/public/music/鹿乃 - アイロニ.jpg" %}
+```
+
+**注意: 需要开启`aplayer`插件才能正常使用本内置标签**
+
 ## 插入视频 dplayer
 
 ``` markdown
 <!-- url 必填 cover 可选 -->
-{% dplayer url [cover] %}
+{% dplayer url="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4" cover="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10" %} 
 ```
 
 **注意: 需要开启`dplayer`插件才能正常使用本内置标签**
 
 ## 插入瀑布流 waterfall
 
+waterfall大小默认为`large`，可选大小有[`large`, `max`]
+
+如需要修改大小 添加参数`size="max"`
+
 ``` markdown
-{% waterfall [options] %}
+{% waterfall size="max" %}
 ![imgname](imgsrc)
-![imgname](imgsrc)
-![imgname](imgsrc)
+...
 {% endwaterfall %}
 ```
 
-具体可选参数查看[https://github.com/miiiku/waterfall](https://github.com/miiiku/waterfall)
+**更多参数可参考[https://github.com/miiiku/waterfall#options](https://github.com/miiiku/waterfall#options) 原参数的`驼峰命名`改为`横线连接`**
 
-🌰: 如设置布局为`水平布局`，每个元素的类名为`item-image`，原参数的`驼峰命名`改为`横线连接`
+🌰: 如设置布局为`水平布局`，每个元素的类名为`item-image`
 
 ``` markdown
 {% waterfall direction=h item-class=item-image %}
@@ -288,6 +357,25 @@ hitokoto:
 ```
 
 **注意: 需要开启`waterfall`插件才能正常使用本内置标签**
+
+## 插入书签 bookmark
+
+``` markdown
+<!-- link 地址(必填) title? 标题 cover? 封面，如果没有 默认获取favicon.ico -->
+{% bookmark title="我在这里" link="https://miiiku.xyz" cover="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" %}
+```
+
+## 插入图片 image
+
+image可选大小有[`large`, `max`]
+
+如需要修改大小 添加参数`size="max"`
+
+``` markdown
+<!-- src 地址(必填) title? 描述 size? 大小 -->
+{% image src="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" title="hello world" size="large" %}
+```
+
 
 
 # 其他

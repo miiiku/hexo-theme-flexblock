@@ -70,11 +70,11 @@
             <%- partial("../_widget/category", { class_name: "article-category", post: page }) %>
           </div>
           <h1 class="title-wrap"><%= page.title %></h1>
-          <div class="meta-wrap">
+          <h2 class="title-sub-wrap">
             <strong><%= page.author || config.author %></strong>
             <span>发布于</span>
             <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null, link: false }) %>
-          </div>
+          </h2>
         </div>
       </div>
     <% } else { %>
@@ -84,11 +84,11 @@
             <%- partial("../_widget/category", { class_name: "article-category", post: page }) %>
           </div>
           <h1 class="title-wrap"><%= page.title %></h1>
-          <div class="meta-wrap">
+          <h2 class="title-sub-wrap">
             <strong><%= page.author || config.author %></strong>
             <span>发布于</span>
             <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null, link: false }) %>
-          </div>
+          </h2>
         </div>
       </div>
     <% } %>

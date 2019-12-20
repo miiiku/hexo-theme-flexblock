@@ -17,8 +17,6 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video
 html
   box-sizing: border-box
   font-family: sans-serif
-  // font-family: font-name
-
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
 
@@ -60,24 +58,66 @@ b, strong
 i, em, dfn
   font-style: italic
 
-h1
-  margin: 0.67em 0
-  font-size: 2em
-
-small
-  font-size: 80%
-
-
 .body-container
   position: relative
 
 // desktop >=768
 @media screen and (min-width: 768px)
+  body
+    font-size: 16px
+
+    h1, h2, h3, h4, h5, h6
+      line-height: 1.4;
+      margin: 5px 0 25px;
+
+    h1
+      font-size: 50px;
+      
+    h2
+      font-size: 40px;
+      
+    h3
+      font-size: 30px;
+      
+    h4
+      font-size: 25px;
+      
+    h5
+      font-size: 20px;
+      
+    h6
+      font-size: 16px;
+
+  
   .body-container
     margin-top: -(desktop-banner-margin)
 
 // mobile 768<
 @media screen and (max-width: 767px)
+  body
+    font-size: 12px;
+
+    h1, h2, h3, h4, h5, h6
+      margin: 3px 0 20px;
+
+    h1
+      font-size: 37px;
+      
+    h2
+      font-size: 31px;
+      
+    h3
+      font-size: 25px;
+      
+    h4
+      font-size: 20px;
+      
+    h5
+      font-size: 15px;
+      
+    h6
+      font-size: 12px;
+
   .body-container
     margin-top: -(mobile-banner-margin)
 

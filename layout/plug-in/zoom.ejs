@@ -1,0 +1,8 @@
+<% if (theme.zoom.enable) { %>
+  <!-- zoom start -->
+  <%- js('lib/zoom.min') %>
+  <script type="text/javascript">
+    document.querySelector(".article-content") && zoom(".article-content");
+  </script>
+  <!-- zoom end -->
+  <% } %>

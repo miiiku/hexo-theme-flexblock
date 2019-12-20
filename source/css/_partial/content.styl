@@ -1,5 +1,4 @@
 // 文章内容样式
-
 .article-entry
   color: #555
 
@@ -27,6 +26,9 @@
   td
     border-bottom: 1px solid #ddd
     padding: 10px 0
+
+  del
+    color: #999999
     
   h1, h2, h3, h4, h5, h6
     font-weight: bold
@@ -34,12 +36,14 @@
     margin: 1.1em 0
   
   a
-    color: #258fb8
+    color: #f857a6
     text-decoration: none
     word-break: break-all
+    border-bottom: 2px solid #dde0e0
+    transition: border 0.3s ease;
     
     &:hover
-      text-decoration: underline
+      border-color: #ff5858
   
   ul, ol, dl
     margin-top: 1.6em
@@ -68,8 +72,9 @@
   blockquote
     font-family: Georgia, "Times New Roman", serif
     font-size: 1.4em
-    margin: 1.6em 20px
-    text-align: center
+    padding-left: 1rem
+    border-left: 3px solid #d3d3d3
+    color: #646464
 
   blockquote footer
     font-size: 14px
@@ -114,13 +119,6 @@
     width: 100%
     height: 100%
     margin-top: 0
-
-  .waterfall-container
-    p 
-      display: block
-      border-radius: 4px
-      overflow: hidden
-      margin: 0
 
   pre, .highlight
     background: #2d2d2d
@@ -233,3 +231,106 @@
 
   .gist .gist-file .gist-meta a:hover
     text-decoration: underline
+
+  // aplayer 样式
+  .aplayer
+    margin: 20px 0
+
+  // 自定义插入图片
+  .figure-image
+    margin: 20px 0
+
+    img
+      display: block
+      max-width: 100%
+
+    figcaption
+      padding: 0 1rem
+      margin-top: 0.8rem
+      line-height: 1.5
+      text-align: center
+      color: #999999
+
+  // 自定义插入书签
+  .bookmark-card
+    transition: all 0.3s ease
+    border-radius: 10px
+    overflow: hidden
+    margin: 20px 0
+    &:hover
+      transform: translateY(-3%)
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2)
+
+    .bookmark-container
+      display: flex
+      border: none
+      color: #161b3d
+      background-color: #f7f7f7
+
+      .bookmark-content
+        flex: 1
+        padding: 20px
+
+        .bookmark-name
+          font-size: 20px
+          font-weight: bolder
+          margin-bottom: 15px
+        
+        .bookmark-link
+          font-size: 14px
+      
+      .bookmark-cover
+        position: relative
+        min-width: 25%
+        max-height: 100%
+
+        img
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          object-fit: cover
+  // 自定义插入画廊
+  .waterfall-container
+    margin-left: -(desktop-article-padding)
+    margin-right: -(desktop-article-padding)
+
+    p 
+      display: block
+      border-radius: 4px
+      overflow: hidden
+      margin: 0
+
+// desktop 桌面(>=1200)
+@media screen and (min-width: desktop-max-content-width)
+  .figure-image.large
+    margin-left: -(desktop-article-padding)
+    margin-right: -(desktop-article-padding)
+
+  .figure-image.max
+    margin-left: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
+    margin-right: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
+
+  // 自定义插入画廊
+  .waterfall-container.max
+    margin-left: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
+    margin-right: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
+
+// desktop 桌面(>=768)
+@media screen and (min-width: 768px) and (max-width: 1199px)
+  .figure-image.large
+    margin-left: -(desktop-article-padding)
+    margin-right: -(desktop-article-padding)
+
+  .figure-image.max
+    margin-left: calc((92vw - desktop-article-width + desktop-article-padding * 2) / 2 * -1)
+    margin-right: calc((92vw - desktop-article-width + desktop-article-padding * 2) / 2 * -1)
+
+  // 自定义插入画廊
+  .waterfall-container.max
+    margin-left: calc((92vw - desktop-article-width + desktop-article-padding * 2) / 2 * -1)
+    margin-right: calc((92vw - desktop-article-width + desktop-article-padding * 2) / 2 * -1)
+
+

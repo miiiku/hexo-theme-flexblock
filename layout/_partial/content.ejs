@@ -1,26 +1,28 @@
 <!-- 文章内容 -->
 
 <div class="body-container">
-  <article id="article-content" class="main-container article-content">
-    <%# 如果文章设置了photos内容 %>
-    <% if (page.photos && page.photos.length) { %>
-    <div class="article-gallery">
-      <%- partial("../_widget/gallery", { class_name: "article-gallery-photos", post: page }) %>
-    </div>
-    <% } %>
+  <article id="article-container" class="main-container article-container">
+    <div class="article-content">
+      <%# 如果文章设置了photos内容 %>
+      <% if (page.photos && page.photos.length) { %>
+      <div class="article-gallery">
+        <%- partial("../_widget/gallery", { class_name: "article-gallery-photos", post: page }) %>
+      </div>
+      <% } %>
 
-    <div class="article-entry">
-      <%- page.content %>
-    </div>
+      <div class="article-entry">
+        <%- page.content %>
+      </div>
 
-    <div class="article-footer">
-      <%- partial("../_widget/tags", { class_name: "article-tag", post: page }) %>
-    </div>
+      <div class="article-footer">
+        <%- partial("../_widget/tags", { class_name: "article-tag", post: page }) %>
+      </div>
 
-    <div class="article-navs">
-      <%- partial('./article-nav', { post: page }) %>
+      <div class="article-navs">
+        <%- partial('./article-nav', { post: page }) %>
+      </div>
+      
+      <%- partial('../_widget/comment', { post: page }) %>
     </div>
-    
-    <%- partial('../_widget/comment', { post: page }) %>
   </article>
 </div>

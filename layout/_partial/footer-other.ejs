@@ -64,7 +64,17 @@
 <%# Tencent Analytics %>
 <% if (theme.tencent_analytics) { %>
 <!-- Tencent Analytics START -->
-<script type="text/javascript" src="https://tajs.qq.com/stats?sId=<%= theme.tencent_analytics %>"
-  charset="UTF-8"></script>
+<script>
+  (function() {
+    if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+      return console.log("本地调试");
+    }
+    let s = document.querySelector("script");
+    let hm = document.createElement("script");
+    hm.charset = "UTF-8";
+    hm.src = "https://tajs.qq.com/stats?sId=<%= theme.tencent_analytics %>";
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 <!-- Tencent Analytics End -->
 <% } %>

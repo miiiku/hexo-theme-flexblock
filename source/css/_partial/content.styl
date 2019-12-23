@@ -303,8 +303,8 @@
       overflow: hidden
       margin: 0
 
-// desktop 桌面(>=1200)
-@media screen and (min-width: desktop-max-content-width)
+// desktop 桌面(>= 1200 + 85)
+@media screen and (min-width: desktop-max-content-width + desktop-article-padding)
   .figure-image.large
     margin-left: -(desktop-article-padding)
     margin-right: -(desktop-article-padding)
@@ -318,19 +318,18 @@
     margin-left: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
     margin-right: -((1200px - desktop-article-width + desktop-article-padding * 2) / 2)
 
-// desktop 桌面(>=768)
-@media screen and (min-width: 768px) and (max-width: 1199px)
+// desktop 桌面(>=768 && < 1200 + 85 - 1)
+@media screen and (min-width: 768px) and (max-width: desktop-max-content-width + desktop-article-padding - 1)
   .figure-image.large
     margin-left: -(desktop-article-padding)
     margin-right: -(desktop-article-padding)
 
   .figure-image.max
-    margin-left: 'calc((92vw - %s + %s * 2) / 2 * -1)' % (desktop-article-width desktop-article-padding)
-    margin-right: 'calc((92vw - %s + %s * 2) / 2 * -1)' % (desktop-article-width desktop-article-padding)
+    margin-left: 'calc((92vw - 100%) / 2 * -1)' % (desktop-article-padding)
+    margin-right: 'calc((92vw - 100%) / 2 * -1)' % (desktop-article-padding)
 
   // 自定义插入画廊
   .waterfall-container.max
-    margin-left: 'calc((92vw - %s + %s * 2) / 2 * -1)' % (desktop-article-width desktop-article-padding)
-    margin-right: 'calc((92vw - %s + %s * 2) / 2 * -1)' % (desktop-article-width desktop-article-padding)
-
+    margin-left: 'calc((92vw - 100%) / 2 * -1)' % (desktop-article-padding)
+    margin-right: 'calc((92vw - 100%) / 2 * -1)' % (desktop-article-padding)
 

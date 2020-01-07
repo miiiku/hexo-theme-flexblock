@@ -86,5 +86,3 @@ gauges_analytics:
 baidu_analytics: 
 tencent_analytics: 
 favicon: /favicon.ico
-
-permalink: false

@@ -413,29 +413,3 @@ tencent_analytics:
 ```
 
 接入常用网站统计第三方
-
-## permalink
-
-``` yml
-permalink: false
-```
-
-关于永久链接的一个配置
-
-开启以后，在hexo的配置文件`.config.yml`下`permalink`里，其中 **`:title`** 和 **`:sulg`** 为文章的创建时间，格式为`YYYY-MM-DD-HH-mm-ss`
-
-emmmmmmmm。。。。
-
-可能读起来有点绕口又有点乱，哪到底是什么意思呢？
-
-举个🌰:
-
-``` yml
-permalink: :year/:month/:slug/
-# 生成以后的文章地址为 2019/03/2019-03-15-18-53-03/
-
-permalink: :title
-# 生成以后的文章地址为 2019-03-15-18-53-03/
-```
-
-**这个是实验性功能，仅仅为了自己使用方便 = =**

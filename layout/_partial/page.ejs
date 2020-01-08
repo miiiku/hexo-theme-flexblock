@@ -3,7 +3,7 @@
 <div class="body-container">
   <%# 输出自定义页面文章内容 %>
   <% if (page.content) { %>
-  <article id="content-container" class="main-container article-container">
+  <article class="content-container article-container">
     <div class="article-content">
       <div class="article-entry"><%- page.content %></div>
     </div>
@@ -12,7 +12,7 @@
 
   <%# 输出自定义页面特有内容 %>
   <% if (page.type === "categories") { %>
-    <article class="main-container next">
+    <article class="content-container next">
       <div class="card-container card-categories">
         <div class="card-wrap">
           <% site.categories.each(function(categorie) { %>
@@ -38,7 +38,7 @@
 
   <%# 输出自定义标签内容 %>
   <% if (page.type === "tags") { %>
-    <article class="main-container next">
+    <article class="content-container next">
       <div class="tags-cloud">
         <%- tagcloud({
           unit: "em",
@@ -55,7 +55,7 @@
 
   <%# 输出自定义友链内容 %>
   <% if (page.type === "links") { %>
-    <article class="main-container next">
+    <article class="content-container next">
       <div class="card-container card-links">
         <div class="card-wrap">
           <% site.data.links.forEach(function(link) { %>
@@ -87,7 +87,7 @@
 
   <%# 输出自定义留言板内容 %>
   <% if (page.type === "messages") { %>
-    <article class="main-container next">
+    <article class="content-container next">
       <%- partial('../_widget/comment', { post: page }) %>
     </article>
   <% } %>

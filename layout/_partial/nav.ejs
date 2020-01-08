@@ -1,0 +1,28 @@
+<!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="<%= url_for() %>">
+        <% if (theme.logo) { %>
+          <img src="<%= theme.logo %>" alt="<%= config.title %>" />
+        <% } else { %>
+          <%= config.title %>
+        <% } %>
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        <% for (var i in theme.menu) { %>
+          <li class="navbar-list-item"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

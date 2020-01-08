@@ -51,10 +51,12 @@
   <%- css('css/style') %>
 </head>
 <body>
-  <div id="container">
-    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+  <div class="root-container">
+    <%- partial('_partial/nav', null, {cache: !config.relative_link}) %>
 
-    <section id="main"><%- body %></section>
+    <%- partial('_partial/header') %>
+
+    <%- body %>
 
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   </div>

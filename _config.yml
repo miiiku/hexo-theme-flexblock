@@ -1,11 +1,11 @@
 # Header
 menu:
-  Home: /
-  About: /about
-  Link: /links
-  Tags: /tags
-  Categories: /categories
-logo: https://qiniu.miiiku.xyz/src/images/logo.png
+  HOME: /
+  ABOUT: /about
+  LINK: /links
+  TAGS: /tags
+  CATEGORIES: /categories
+# logo: https://qiniu.miiiku.xyz/src/images/logo.png
 banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
 # banner: css/images/banner.jpg
 

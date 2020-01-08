@@ -127,21 +127,17 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
         height: 100%
         z-index: 1
 
-// MainContainer 
-main-container-desktop()
-  .main-container
+// ContentContainer 
+content-container-desktop()
+  .content-container
     max-width: desktop-max-content-width
-    background-color: #ffffff
     width: 92vw
     min-height: desktop-banner-margin * 2
     margin: 0 auto
-    border-radius: 20px
 
-main-container-mobile()
-  .main-container
-    background-color: #ffffff
+content-container-mobile()
+  .content-container
     width: auto
     min-width: 70vw
     min-height: mobile-banner-margin * 2
     margin: 0 content-margin-min
-    border-radius: 10px

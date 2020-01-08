@@ -1,25 +1,20 @@
 // 其次的页面内容容器
-.main-container.next
+.content-container.next
   min-height: auto
 
-// 文章列表样式
-.main-container.article-list
-  background-color: transparent
+// 文章标签列表
+.article-footer .article-tag-list
+  display: flex
+  flex-wrap: wrap
 
+  a
+    display: block
+    color: #999999
+    margin-right: 10px
+    margin-bottom: 10px
 
-// 文章内容样式
-.article-container
-  // 文章标签列表
-  .article-footer .article-tag-list
-    display: flex
-
-    a
-      display: block
-      color: #999999
-      margin-right: 10px
-
-      &:hover
-        color: #555555
+    &:hover
+      color: #555555
 
 // 云标签样式
 .tags-cloud
@@ -34,16 +29,15 @@
 
 // desktop >=768
 @media screen and (min-width: 768px)
-  main-container-desktop()
+  content-container-desktop()
   
-  .article-container
-    .article-content
-      width: desktop-article-width
-      max-width: 100%
-      padding: desktop-banner-margin;
-      margin: auto
-      & > div:not(:first-child)
-        margin-top: 20px
+  .article-content
+    width: inner-width
+    max-width: 100%
+    padding: inner-padding;
+    margin: auto
+    & > div:not(:first-child)
+      margin-top: 20px
 
   .tags-cloud
     font-size: font-desktop-commonly
@@ -53,18 +47,17 @@
 
 // mobile 768<
 @media screen and (max-width: 767px)
-  main-container-mobile()
+  content-container-mobile()
   
-  .article-container
-    .article-content
-      width: 100%
-      padding: mobile-banner-margin;
-      margin: auto
-      & > div:not(:first-child)
-        margin-top: 10px
+  .article-content
+    width: 100%
+    padding: inner-padding;
+    margin: auto
+    & > div:not(:first-child)
+      margin-top: 10px
 
-      .article-navs .article-nav-title
-        font-size: font-mobile-commonly
+    .article-navs .article-nav-title
+      font-size: font-mobile-commonly
   
   .tags-cloud
     font-size: font-mobile-commonly

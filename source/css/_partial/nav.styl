@@ -1,0 +1,175 @@
+.navbar
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: navbar-height
+  background-color: transparent
+  border-bottom: 1px solid transparent
+  z-index: 90
+  transition: background-color 0.3s ease
+
+.navbar.fixed
+  position: fixed
+  top: -(navbar-height)
+  background-color: rgba(255, 255, 255, 0.8)
+  background-image: linear-gradient(to right, rgba(18, 120, 246 , 0.5), rgba(0, 180, 170, 0.5))
+  transition: transform 0.5s ease, background-color 0.3s ease
+
+.navbar.visible
+  transform: translate3d(0, 100%, 0)
+    
+.navbar-content
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 100%
+  height: 100%
+  margin: auto
+  color: #ffffff
+
+.navbar-logo
+  padding-right: 20px
+  flex: 0 1 300px
+  margin: 0
+  font-weight: bolder
+
+  a
+    display: block
+    text-decoration: none
+    outline: 0
+
+  img
+    display: block
+    max-width: 100%
+    max-height: 50px
+
+.navbar-link
+  text-align: right
+  font-size: 15px
+
+.navbar-btn
+  display: none
+  position: relative
+  width: 46px
+  height 46px
+  cursor: pointer
+
+  div
+    position: absolute;
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transform-origin: center
+    transition: transform 0.3s ease;
+    
+    &:before
+      position: absolute
+      content: ""
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      width: 80%
+      height: 2px
+      border-radius: 2px
+      background-color: #cccccc
+      transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+
+    &:nth-child(1):before
+      transform: translateY(-12px)
+
+    &:nth-child(3):before
+      transform: translateY(12px)
+
+  &.active
+    div
+      transition: transform 0.3s ease 0.3s;
+
+      &::before
+        transition: transform 0.3s ease, opacity 0.3s ease 0.3s;
+
+      &:nth-child(1)
+          transform: rotate(45deg);
+          
+          &::before
+            transform: translateY(0);
+      
+      &:nth-child(2)::before
+        opacity: 0; 
+
+      &:nth-child(3)
+          transform: rotate(-45deg);
+
+          &::before
+            transform: translateY(0); 
+          
+
+.navbar-list
+  display: flex
+  justify-content: flex-end
+
+.navbar-list-item
+  display: block
+  text-decoration: none
+  user-select: none
+  margin-left: 10px
+
+  a
+    display: block
+    padding: 10px
+    font-weight: 400
+    font-weight: bolder
+    transition: color 0.2s
+
+    &:hover
+      opacity 0.8
+
+
+
+// desktop >=768
+@media screen and (min-width: 768px)
+  .navbar-content
+    max-width: desktop-max-content-width
+
+  .navbar-logo
+    font-size: font-desktop-focus
+
+// mobile 768<
+@media screen and (max-width: 767px)
+  .navbar-content
+    max-width: 100%
+    padding: 0 10px
+
+  .navbar-logo
+    font-size: font-mobile-focus
+
+  .navbar-link
+    position: relative
+
+  .navbar-btn
+    display: inline-block
+    
+  .navbar-btn.active + .navbar-list
+    display: block
+            
+  .navbar-list
+    display: none
+    position: absolute
+    right: 0
+    margin-top: -5px
+    border-radius: 16px
+    padding: 20px 0;
+    background-color: #f7f7f7
+    min-width: 100px
+    z-index: 999
+
+  .navbar-list-item
+    display: block
+    margin: 0;
+    
+    a
+      color: #161b3d
+      font-weight: bolder

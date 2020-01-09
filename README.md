@@ -334,8 +334,6 @@ hitokoto:
 
 ## 插入瀑布流 waterfall
 
-waterfall大小默认为`large`，可选大小有[`large`, `max`]
-
 如需要修改大小 添加参数`size="max"`
 
 ``` markdown
@@ -367,13 +365,11 @@ waterfall大小默认为`large`，可选大小有[`large`, `max`]
 
 ## 插入图片 image
 
-image可选大小有[`large`, `max`]
-
 如需要修改大小 添加参数`size="max"`
 
 ``` markdown
 <!-- src 地址(必填) title? 描述 size? 大小 -->
-{% image src="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" title="hello world" size="large" %}
+{% image src="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" title="hello world" size="max" %}
 ```
 
 

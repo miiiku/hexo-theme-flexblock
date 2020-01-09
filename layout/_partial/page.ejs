@@ -13,24 +13,26 @@
   <%# 输出自定义页面特有内容 %>
   <% if (page.type === "categories") { %>
     <article class="content-container next">
-      <div class="card-container card-categories">
-        <div class="card-wrap">
-          <% site.categories.each(function(categorie) { %>
-            <%
-              let isLarge = false;
-              if (theme.large_legnth && theme.large_legnth.short) {
-                if (categorie.name.length > theme.large_legnth.short) {
-                  isLarge = true
+      <div class="article-content">
+        <div class="card-container card-categories">
+          <div class="card-wrap">
+            <% site.categories.each(function(categorie) { %>
+              <%
+                let isLarge = false;
+                if (theme.large_legnth && theme.large_legnth.short) {
+                  if (categorie.name.length > theme.large_legnth.short) {
+                    isLarge = true
+                  }
                 }
-              }
-            %>
-            <div class="card-item<%= isLarge ? ' large' : '' %>">
-              <article>
-                <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
-                <p><%= categorie.name %> (<%= categorie.length %>)</p>
-              </article>
-            </div>
-          <% }) %>
+              %>
+              <div class="card-item<%= isLarge ? ' large' : '' %>">
+                <article>
+                  <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
+                  <p><%= categorie.name %> (<%= categorie.length %>)</p>
+                </article>
+              </div>
+            <% }) %>
+          </div>
         </div>
       </div>
     </article>
@@ -39,16 +41,18 @@
   <%# 输出自定义标签内容 %>
   <% if (page.type === "tags") { %>
     <article class="content-container next">
-      <div class="tags-cloud">
-        <%- tagcloud({
-          unit: "em",
-          min_font: 1,
-          max_font: 3,
-          color: "#6bd0ff",
-          start_color: "#f7c068",
-          end_color: "#ff5858",
-          amount: 100
-        }) %>
+      <div class="article-content">
+        <div class="tags-cloud">
+          <%- tagcloud({
+            unit: "em",
+            min_font: 1,
+            max_font: 3,
+            color: "#6bd0ff",
+            start_color: "#f7c068",
+            end_color: "#ff5858",
+            amount: 100
+          }) %>
+        </div>
       </div>
     </article>
   <% } %>
@@ -56,29 +60,20 @@
   <%# 输出自定义友链内容 %>
   <% if (page.type === "links") { %>
     <article class="content-container next">
-      <div class="card-container card-links">
-        <div class="card-wrap">
+      <div class="article-content">
+        <div class="article-entry">
           <% site.data.links.forEach(function(link) { %>
-            <%
-              let isLarge = false;
-              if (theme.large_legnth && theme.large_legnth.long) {
-                if (link.name.length > theme.large_legnth.long || link.describe.length > theme.large_legnth.long) {
-                  isLarge = true
-                }
-              }
-            %>
-            <div class="card-item<%= isLarge ? ' large' : '' %><%= link.cover ? ' img' : '' %>">
-              <article>
-                <% if (link.cover) { %>
-                <div class="card-cover" style="background-image: url(<%= link.cover %>)"></div>
-                <% } %>
-                <a class="card-link" href="<%= link.link %>" target="_blank"></a>
-                <strong><%= link.name %></strong>
-                <% if (link.describe) { %>
-                <p><%= link.describe %></p>
-                <% } %>
-              </article>
-            </div>
+            <figure class="bookmark-card">
+              <a class="bookmark-container" target="_blank" title="<%= link.name %>" href="<%= link.link %>">
+                <div class="bookmark-content">
+                  <div class="bookmark-name"><%= link.name %></div>
+                  <div class="bookmark-link"><%= link.link %></div>
+                </div>
+                <div class="bookmark-cover">
+                  <img src="<%= link.cover || link.link + '/favicon.ico' %>" alt="<%= link.name %>" />
+                </div>
+              </a>
+            </figure>
           <% }) %>
         </div>
       </div>
@@ -88,7 +83,9 @@
   <%# 输出自定义留言板内容 %>
   <% if (page.type === "messages") { %>
     <article class="content-container next">
-      <%- partial('../_widget/comment', { post: page }) %>
+      <div class="article-content">
+        <%- partial('../_widget/comment', { post: page }) %>
+      </div>
     </article>
   <% } %>
 </div>

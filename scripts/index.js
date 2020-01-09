@@ -1,5 +1,3 @@
-const sizeEnum = ["large", "max"];
-
 const buildDatas = (args) => {
   var datas = "";
 

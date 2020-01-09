@@ -18,6 +18,17 @@
 
 # 更新
 
+#### 2020.01
+
+
+* 修改顶部导航栏
+
+* header添加栏波浪，来源 [https://github.com/dusign/hexo-theme-snail](https://github.com/dusign/hexo-theme-snail)
+
+* 再次修改栏文章内容页面，效果比以前好些
+
+#### 2019.12
+
 * 优化了若干代码，结构更清晰，修复了几处CSS显示问题
 
 * 修改文章内容显示宽度，和一些标签样式

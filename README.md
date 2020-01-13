@@ -7,14 +7,11 @@
 
 # 预览
 
-### 首页
-![home.png](./img/home.png)
+![cover1](./img/blog1.png)
 
-### 内容页
-![content.png](./img/content.png)
+![cover2](./img/blog2.png)
 
-### 标签页
-![tags.png](./img/tags.png)
+![cover3](./img/blog3.png)
 
 # 更新
 

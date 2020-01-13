@@ -1,7 +1,14 @@
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
   const navBar = document.querySelector(".navbar");
   const navBtn = document.querySelector(".navbar-btn");
+  const images = Array.from(document.images);
   const navBarH = 54;
+
+  images.forEach(item => {
+    item.addEventListener("error", function () {
+      this.src = "/images/image-error.jpg";
+    });
+  });
 
   const getScrollTop = () => {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;

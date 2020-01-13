@@ -69,9 +69,11 @@
                   <div class="bookmark-name"><%= link.name %></div>
                   <div class="bookmark-link"><%= link.link %></div>
                 </div>
-                <div class="bookmark-cover">
-                  <img src="<%= link.cover || link.link + '/favicon.ico' %>" alt="<%= link.name %>" />
-                </div>
+                <% if (link.cover) { %>
+                  <div class="bookmark-cover">
+                    <img src="<%= link.cover %>" alt="<%= link.name %>" />
+                  </div>
+                <% } %>
               </a>
             </figure>
           <% }) %>

@@ -370,7 +370,7 @@ hitokoto:
 ## 插入书签 bookmark
 
 ``` markdown
-<!-- link 地址(必填) title? 标题 cover? 封面，如果没有 默认获取favicon.ico -->
+<!-- link 地址(必填) title? 标题 cover? 封面 -->
 {% bookmark title="我在这里" link="https://miiiku.xyz" cover="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" %}
 ```
 

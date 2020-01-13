@@ -55,8 +55,17 @@ hexo.extend.tag.register("image", function(args) {
  */
 hexo.extend.tag.register("bookmark", function(args) {
   let datas = buildDatasObj(args, { title: "", cover: "" });
+  let cover = "";
 
   if (!datas.link) return "";
+
+  if (datas.cover) {
+    cover = `
+      <div class="bookmark-cover">
+        <img src="${datas.cover}" alt="${datas.title}" />
+      </div>
+    `;
+  }
 
   return `
     <figure class="bookmark-card">
@@ -65,9 +74,7 @@ hexo.extend.tag.register("bookmark", function(args) {
           <div class="bookmark-name">${datas.title}</div>
           <div class="bookmark-link">${datas.link}</div>
         </div>
-        <div class="bookmark-cover">
-          <img src="${datas.cover || datas.link + '/favicon.ico'}" alt="${datas.title}" />
-        </div>
+        ${cover}
       </a>
     </figure>
   `;

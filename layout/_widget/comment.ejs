@@ -1,9 +1,11 @@
 <% if (post.comments) { %>
 
   <%# valine 评论 %>
+  <% if (theme.valine.enable) { %>
   <div class="valine-container">
     <div id="valine_thread" class="valine-thread"></div>
   </div>
+  <% } %>
 
   <%# disqus 评论 %>
   <% if (theme.disqus.enable && theme.disqus.website) { %>

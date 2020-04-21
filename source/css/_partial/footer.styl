@@ -1,17 +1,54 @@
-.footer
+.footer {
   width: 100%
   padding: 20px
 
-  .footer-container
+  .footer-container {
     margin: auto
     width: 100%
     max-width: max-content-width
     text-align: center
     color: #aeb5be
 
-    p
+    p {
       line-height: 2
+    }
 
-      a
-        color: #161b3d
-        font-weight: bolder
+    a {
+      color: #161b3d
+      font-weight: bolder
+    }
+  }
+
+  .footer-container .social-icons.social-icons-footer {
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    list-style: none
+    padding-bottom: 20px
+
+    a {
+      display: block
+      text-align: center
+      padding-bottom: 10px
+
+      &:not(:last-child) {
+        padding-right: 20px
+      }
+    }
+
+    svg.icon {
+      display: block
+      width: 22px
+      height: 22px
+      fill: #bbbbbb
+      opacity: 0.8
+      transition: all 0.3s ease
+
+      &:hover {
+        fill: #000000
+        opacity: 1
+      }
+    }
+  }
+}

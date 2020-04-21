@@ -1,9 +1,14 @@
 @import "_util/variables"
 @import "_util/mixins"
 
-@font-face
-  font-family: font-name
-  src: url(font-path)
+// @font-face
+//   font-family: font-name
+//   src: url(font-path)
+
+// 解决ios下overflow: hidden后仍然能滚动的问题，隐藏滚动条
+::-webkit-scrollbar {
+  display: none;
+}
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
 abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q,
@@ -16,7 +21,8 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video
   border: 0
   vertical-align: baseline
   // font: inherit
-  font-family: sans-serif, font-name
+  // font-family: sans-serif, font-name
+  font-family: sans-serif
   font-size: 100%
 
 html
@@ -63,68 +69,137 @@ b, strong
 i, em, dfn
   font-style: italic
 
-.body-container
+.body-container {
   position: relative
+}
+
+.back-to-top-fixed {
+  position: fixed
+  background-color: rgba(0, 0, 0, 0.05)
+  cursor: pointer
+  transition: all 0.3s ease
+  z-index: 10
+  opacity: 0
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.2)
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1)
+  }
+
+  .icon.icon-back-to-top {
+    position: absolute
+    fill: #bbbbbb
+    width: 30px
+    height: 30px
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+  }
+}
 
 // desktop >=768
-@media screen and (min-width: 768px)
-  body
+@media screen and (min-width: 768px) {
+  body {
     font-size: 16px
 
-    h1, h2, h3, h4, h5, h6
+    h1, h2, h3, h4, h5, h6 {
       line-height: 1.4;
       margin: 5px 0 25px;
+    }
 
-    h1
-      font-size: 50px;
+    h1 {
+      font-size: 32px;
+    }
       
-    h2
-      font-size: 40px;
+    h2 {
+      font-size: 28px;
+    }
       
-    h3
-      font-size: 30px;
+    h3 {
+      font-size: 24px;
+    }
       
-    h4
-      font-size: 25px;
-      
-    h5
+    h4 {
       font-size: 20px;
+    }
       
-    h6
+    h5 {
+      font-size: 18px;
+    }
+      
+    h6 {
       font-size: 16px;
+    }
+  }
 
-  
-  .body-container.float
+  .body-container.float {
     margin-top: -(desktop-banner-margin)
+  }
+
+  .back-to-top-fixed {
+    width: 60px
+    height: 60px
+    border-radius: 60px
+    right: 40px
+    bottom: 40px
+    transform: translate3d(0, 100%, 0)
+
+    &.show {
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+    }
+
+    .icon.icon-back-to-top {
+      width: 30px
+      height: 30px
+    }
+  }
+}
 
 // mobile 768<
-@media screen and (max-width: 767px)
-  body
+@media screen and (max-width: 767px) {
+  body {
     font-size: 12px;
 
-    h1, h2, h3, h4, h5, h6
+    h1, h2, h3, h4, h5, h6 {
       margin: 3px 0 20px;
+    }
 
-    h1
-      font-size: 37px;
+    h1 {
+      font-size: 26px;
+    }
       
-    h2
-      font-size: 31px;
+    h2 {
+      font-size: 22px;
+    }
       
-    h3
-      font-size: 25px;
-      
-    h4
+    h3 {
       font-size: 20px;
+    }
       
-    h5
-      font-size: 15px;
+    h4 {
+      font-size: 18px;
+    }
       
-    h6
+    h5 {
+      font-size: 14px;
+    }
+      
+    h6 {
       font-size: 12px;
+    }
+  }
 
-  .body-container.float
+  .body-container.float {
     margin-top: -(mobile-banner-margin)
+  }
+
+  .back-to-top-fixed {
+    display: none
+  }
+}
 
 @import "_partial/nav"
 @import "_partial/header"

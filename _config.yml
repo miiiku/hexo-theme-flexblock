@@ -27,7 +27,7 @@ hitokoto:
 # docs: https://valine.js.org
 # You can get your appid and appkey from https://leancloud.cn
 valine:
-  enable: true
+  enable: false
   appId: 
   appKey: 
   avatar: mm
@@ -37,7 +37,7 @@ valine:
   pageSize: 10
 
 disqus:
-  enable: true
+  enable: false
   website: 
   error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
 
@@ -86,3 +86,19 @@ gauges_analytics:
 baidu_analytics: 
 tencent_analytics: 
 favicon: /favicon.ico
+
+
+# Social Icon
+social_icon:
+  header_enable: false
+  footer_enable: false
+  icons:
+    - { type: email,      value: }
+    - { type: github,     value: }
+    - { type: google+,    value: }
+    - { type: ins,        value: }
+    - { type: twitter,    value: }
+    - { type: youtube,    value: }
+    - { type: weibo,      value: }
+    - { type: cloudmusic, value: }
+    - { type: zhihu,      value: }

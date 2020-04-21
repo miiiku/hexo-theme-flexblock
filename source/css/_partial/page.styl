@@ -1,67 +1,87 @@
 // 其次的页面内容容器
-.content-container.next
+.content-container.next {
   min-height: auto
+}
 
 // 文章标签列表
-.article-footer .article-tag-list
+.article-footer .article-tag-list {
   display: flex
   flex-wrap: wrap
 
-  a
+  a {
     display: block
     color: #999999
     margin-right: 10px
     margin-bottom: 10px
 
-    &:hover
+    &:hover {
       color: #555555
+    }
+  }
+}
 
 // 云标签样式
-.tags-cloud
+.tags-cloud {
   text-align: center
   
-  a
+  a {
     display: inline-block
 
-    &:hover
+    &:hover {
       text-decoration: underline
-
+    }
+  }
+}
 
 // desktop >=768
-@media screen and (min-width: 768px)
+@media screen and (min-width: 768px) {
   content-container-desktop()
   
-  .article-content
+  .article-content {
     width: inner-width
     max-width: 100%
     padding: inner-padding;
     margin: auto
-    & > div:not(:first-child)
+    
+    & > div:not(:first-child) {
       margin-top: 20px
+    }
+  }
 
-  .tags-cloud
+  .tags-cloud {
     font-size: font-desktop-commonly
-    a
+    a {
       margin: 0 20px
       line-height: 2
+    }
+  }
+}
 
 // mobile 768<
-@media screen and (max-width: 767px)
+@media screen and (max-width: 767px) {
   content-container-mobile()
   
-  .article-content
+  .article-content {
     width: 100%
     padding: inner-padding;
     margin: auto
-    & > div:not(:first-child)
-      margin-top: 10px
 
-    .article-navs .article-nav-title
+    & > div:not(:first-child) {
+      margin-top: 10px
+    }
+
+    .article-navs .article-nav-title {
       font-size: font-mobile-commonly
-  
-  .tags-cloud
+    }
+  }
+
+  .tags-cloud {
     font-size: font-mobile-commonly
-    a
+    
+    a {
       margin: 0 8px
       line-height: 1.3
+    }
+  }
+}
   

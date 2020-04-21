@@ -12,6 +12,17 @@
           <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
         <% } %>
       </div>
+      <% if (theme.social_icon.header_enable) { %>
+      <div class="social-icons social-icons-header">
+        <%-
+          icons(theme.social_icon.icons, {
+            render: function (icon, value) {
+              return partial("../_svg/" + icon, { icon, value, size: 30 })
+            }
+          })
+        -%>
+      </div>
+      <% } %> 
     </div>
   <% } %>
 

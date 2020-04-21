@@ -49,39 +49,47 @@ color-block-yellow()
   background-image: linear-gradient(40deg, #ffb040, #ffd62e)
 
 
+
 // Card
-card(margin, padding, minWidth, minHeight, borderRadius, number)
+card(margin, padding, minWidth, minHeight, borderRadius, number) {
   $basis = (100 / number)%
 
-  .card-wrap
+  .card-wrap {
     display: flex
     flex-wrap: wrap
     margin: 0 (-(margin))
+  }
 
-  .card-item
+  .card-item {
     display: flex
     flex: 1 1 $basis
 
-    &.large
+    &.large {
       flex: 1 1 $basis * 2
+    }
 
-    &:nth-child(1n) article
+    &:nth-child(1n) article {
       color-block-orange()
+    }
 
-    &:nth-child(2n) article
+    &:nth-child(2n) article {
       color-block-red()
+    }
 
-    &:nth-child(3n) article
+    &:nth-child(3n) article {
       color-block-violet()
+    }
 
-    &:nth-child(4n) article
+    &:nth-child(4n) article {
       color-block-blue()
+    }
 
-    &:nth-child(5n) article
+    &:nth-child(5n) article {
       color-block-yellow()
+    }
 
-    &.img
-      .card-cover
+    &.img {
+      .card-cover {
         position: absolute
         top: 0
         left: 0
@@ -92,7 +100,7 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
         background-position: center
         background-repeat: no-repeat
 
-        &:before
+        &:before {
           display: block
           content: ''
           width: 100%
@@ -100,8 +108,11 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
           opacity: 0.4
           background-color: #394245
           background-image: linear-gradient(234deg, #394245 0%, #000 100%)
+        }
+      }
+    }
     
-    article
+    article {
       position: relative
       z-index: 0
       flex: 1 1 100%
@@ -112,12 +123,16 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
       border-radius: borderRadius
       overflow: hidden
       word-break: break-all
-      transition: transform 0.2s ease
+      transition: all 0.2s ease
+      filter: grayscale(.7)
 
-      &:hover
+      &:hover {
         transform: translateY(-5px)
+        filter: grayscale(0)
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5)
+      }
 
-      .card-link
+      .card-link {
         position: absolute
         top: 0
         left: 0
@@ -126,18 +141,26 @@ card(margin, padding, minWidth, minHeight, borderRadius, number)
         width: 100%
         height: 100%
         z-index: 1
+      }
+    }
+  }
+}
 
 // ContentContainer 
-content-container-desktop()
-  .content-container
+content-container-desktop() {
+  .content-container {
     max-width: desktop-max-content-width
     width: 92vw
     min-height: desktop-banner-margin * 2
     margin: 0 auto
+  }
+}
 
-content-container-mobile()
-  .content-container
+content-container-mobile() {
+  .content-container {
     width: auto
     min-width: 70vw
     min-height: mobile-banner-margin * 2
     margin: 0 content-margin-min
+  }
+}

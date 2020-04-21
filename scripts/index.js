@@ -116,3 +116,22 @@ hexo.extend.tag.register("waterfall", function(args, content) {
   const text = hexo.render.renderSync({ text: content, engine: 'markdown' });
   return `<div class="waterfall-container ${datasObj.size}" ${datas}>${text}</div>`;
 }, { ends: true });
+
+
+/** 
+ * social-icon helper
+ * 
+ * build social icons
+ */
+hexo.extend.helper.register("icons", function(icons, args) {
+  let validIcons = icons.filter(icon => icon.value)
+  if (!validIcons.length) return ""
+  let result = ""
+  
+  if (args.render && validIcons.length) {
+    validIcons.forEach(icon => {
+      result += args.render(icon.type, icon.value)
+    })
+  }
+  return result
+});

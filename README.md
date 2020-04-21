@@ -15,6 +15,14 @@
 
 # 更新
 
+#### 2020.04
+
+* 添加[社交图标](#social-icon-社交图标)显示
+
+* 局部小更新css样式
+
+* 添加`返回到顶部`按钮
+
 #### 2020.01
 
 
@@ -30,13 +38,13 @@
 
 * 修改文章内容显示宽度，和一些标签样式
 
-* 更新了 **`waterfall`** (画廊)标签 可设置大小
+* 更新了 **[waterfall](#waterfall-瀑布流)** (画廊)标签 可设置大小
 
-* 新增 **`image`** (图片), **`bookmark`** (书签), **`aplayer`** 音频播放 标签
+* 新增 **[iamge](#插入图片-image)** (图片), **[bookmark](#插入书签-bookmark)** (书签), **[aplayer](#插入视频-aplayer)** 音频播放 标签
 
 # 变动
 
-关于 **`waterfall`** 标签，在更新主题后，会导致以前的视频不能正常播放，需要进行如下修改:
+关于 **[waterfall](#waterfall-瀑布流)** 标签，在更新主题后，会导致以前的视频不能正常播放，需要进行如下修改:
 
 ```markdown
 <!-- 旧版写法 -->
@@ -320,7 +328,7 @@ hitokoto:
 
 # 内建标签
 
-## 插入视频 aplayer
+## 插入音频 aplayer
 
 **更多参数可参考[https://aplayer.js.org/#/home?id=options](https://aplayer.js.org/#/home?id=options)中`audio`的属性**
 
@@ -417,3 +425,29 @@ tencent_analytics:
 ```
 
 接入常用网站统计第三方
+
+## social icon 社交图标
+
+添加常用到一些社交图标
+
+`header_enable` 首页导航栏是否显示社交图标
+
+`footer_enable` 底部导航栏是否显示社交图标
+
+如需要修改图标显示顺序，只需要移动`icons`下的列表顺序即可
+
+``` yml
+social_icon:
+  header_enable: false
+  footer_enable: false
+  icons:
+    - { type: email,      value: }
+    - { type: github,     value: }
+    - { type: google+,    value: }
+    - { type: ins,        value: }
+    - { type: twitter,    value: }
+    - { type: youtube,    value: }
+    - { type: weibo,      value: }
+    - { type: cloudmusic, value: }
+    - { type: zhihu,      value: }
+```

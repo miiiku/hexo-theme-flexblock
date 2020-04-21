@@ -1,6 +1,17 @@
 <!-- footer container -->
 <footer id="footer" class="footer">
   <div class="footer-container">
+    <% if (theme.social_icon.footer_enable) { %>
+    <div class="social-icons social-icons-footer">
+      <%-
+        icons(theme.social_icon.icons, {
+          render: function (icon, value) {
+            return partial("../_svg/" + icon, { icon, value, size: 30 })
+          }
+        })
+      -%>
+    </div>
+    <% } %> 
     <p>&copy; <%= date(new Date(), 'YYYY') %> <a href="/" target="_blank"><%= config.author %></a></p>
 
     <% if (theme.hitokoto && theme.hitokoto.enable) { %>

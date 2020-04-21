@@ -234,6 +234,18 @@
   // aplayer 样式
   .aplayer
     margin: 20px 0
+  
+  // dplayer 样式
+  .dplayer {
+    border-radius: 4px
+    overflow: hidden
+    box-shadow: 0 2px 10px rgba(#000000, 0.5)
+    transition: all 0.3s ease
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(#000000, 0.5)
+    }
+  }
 
   // 自定义插入图片
   .figure-image
@@ -304,25 +316,31 @@
 // 但是媒体查询匹配的是 desktop 桌面(>= 1200) 所以会不精确
 
 // desktop 桌面(>= 1200)
-@media screen and (min-width: desktop-max-content-width)
+@media screen and (min-width: desktop-max-content-width) {
 
-  .figure-image.max
+  .figure-image.max {
     margin-left: -((1200px - inner-width + inner-padding * 2) / 2)
     margin-right: -((1200px - inner-width + inner-padding * 2) / 2)
+  }
 
   // 自定义插入画廊
-  .waterfall-container.max
+  .waterfall-container.max {
     margin-left: -((1200px - inner-width + inner-padding * 2) / 2)
     margin-right: -((1200px - inner-width + inner-padding * 2) / 2)
+  }
+}
 
 // desktop 桌面(>=768 && < 1200 + 20)
-@media screen and (min-width: 768px) and (max-width: desktop-max-content-width)
+@media screen and (min-width: 768px) and (max-width: desktop-max-content-width) {
 
-  .figure-image.max
+  .figure-image.max {
     margin-left: 'calc((92vw - 100%) / 2 * -1)' % (inner-padding)
     margin-right: 'calc((92vw - 100%) / 2 * -1)' % (inner-padding)
+  }
 
   // 自定义插入画廊
-  .waterfall-container.max
+  .waterfall-container.max {
     margin-left: 'calc((92vw - 100%) / 2 * -1)' % (inner-padding)
     margin-right: 'calc((92vw - 100%) / 2 * -1)' % (inner-padding)
+  }
+}

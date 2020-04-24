@@ -7,11 +7,11 @@
 
 # 预览
 
-![cover1](./img/blog1.png)
+![cover1](https://cdn.jsdelivr.net/gh/miiiku/flex-block/img/blog1.png)
 
-![cover2](./img/blog2.png)
+![cover2](https://cdn.jsdelivr.net/gh/miiiku/flex-block/img/blog2.png)
 
-![cover3](./img/blog3.png)
+![cover3](https://cdn.jsdelivr.net/gh/miiiku/flex-block/img/blog3.png)
 
 # 更新
 

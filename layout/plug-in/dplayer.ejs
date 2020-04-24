@@ -1,7 +1,6 @@
 <% if (theme.dplayer.enable) { %>
 <!-- dplayer 视频 start -->
-<%- css('lib/DPlayer.min') %>
-<%- js('lib/DPlayer.min') %>
+<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
 <script type="text/javascript">
   const dplayer = document.querySelectorAll(".dplayer");
   dplayer && initDPlayer(dplayer);

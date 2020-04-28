@@ -95,7 +95,7 @@ hexo.extend.tag.register("aplayer", function(args) {
  * dplayer tag
  *
  * Syntax:
- *   {% dplayer {url cover?} %}
+ *   {% dplayer {url cover? subtitle?} %}
  */
 hexo.extend.tag.register("dplayer", function(args) {
   let datas = buildDatas(args);
@@ -117,6 +117,18 @@ hexo.extend.tag.register("waterfall", function(args, content) {
   return `<div class="waterfall-container ${datasObj.size}" ${datas}>${text}</div>`;
 }, { ends: true });
 
+/** 
+ * center tag
+ * 
+ * Syntax:
+ *  {% center %}
+ * 
+ *  {% endcenter %}
+ */
+hexo.extend.tag.register("center", function(args, content) {
+  const text = hexo.render.renderSync({ text: content, engine: 'markdown' });
+  return `<div class="flex-center">${text}</div>`;
+}, { ends: true });
 
 /** 
  * social-icon helper

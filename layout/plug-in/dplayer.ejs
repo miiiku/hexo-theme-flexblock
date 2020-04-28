@@ -9,14 +9,23 @@
     elsArr.forEach(el => {
       let url = el.dataset.url;
       let cover = el.dataset.cover;
-      new DPlayer({
+      let subtitle = el.dataset.subtitle;
+
+      let options = {
         container: el,
         video: { url: url, pic: cover },
         theme: "<%= theme.dplayer.theme %>",
         autoplay: <%= theme.dplayer.autoplay %>,
         loop: <%= theme.dplayer.loop %>,
         mutex: <%= theme.dplayer.mutex %>,
-      });
+      }
+
+      if (subtitle) {
+        options.subtitle = {
+          url: el.dataset.subtitle,
+        }
+      }
+      new DPlayer(options);
     });
   }
 </script>

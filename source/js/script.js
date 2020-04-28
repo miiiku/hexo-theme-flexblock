@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded", function() {
+  const html            = document.querySelector("html");
   const navBar          = document.querySelector(".navbar");
   const navBtn          = document.querySelector(".navbar-btn");
+  const navList         = document.querySelector(".navbar-list");
   const backToTopFixed  = document.querySelector(".back-to-top-fixed");
   const images          = Array.from(document.images);
   const navBarH         = 54;
@@ -39,8 +41,16 @@ window.addEventListener("DOMContentLoaded", function() {
 
   // mobile nav click
   navBtn.addEventListener("click", function () {
+    html.classList.toggle("show-mobile-nav");
     this.classList.toggle("active");
   });
+
+  // mobile nav link click
+  navList.addEventListener("click", function (e) {
+    if (e.target.nodeName == "A" && html.classList.contains("show-mobile-nav")) {
+      navBtn.click()
+    }
+  })
 
   // click back to top
   backToTopFixed.addEventListener("click", function(e) {

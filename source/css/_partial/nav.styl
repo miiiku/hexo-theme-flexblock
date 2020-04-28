@@ -1,4 +1,26 @@
-.navbar
+@keyframes showMobileNav {
+  from {
+    opacity: 0
+    transform: translateX(70%)
+  }
+
+  to {
+    opacity: 1
+    transform: translateX(0)
+  }
+}
+
+html.show-mobile-nav {
+  overflow: hidden
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+  .navbar-list {
+    display: flex
+    animation showMobileNav 0.4s ease-out forwards
+  }
+}
+
+.navbar {
   position: absolute
   top: 0
   left: 0
@@ -8,17 +30,20 @@
   border-bottom: 1px solid transparent
   z-index: 90
   transition: background-color 0.3s ease
+}
 
-.navbar.fixed
+.navbar.fixed {
   position: fixed
   top: -(navbar-height)
   background-color: rgb(255, 192, 210, 0.8)
   transition: transform 0.5s ease, background-color 0.3s ease
+}
 
-.navbar.visible
+.navbar.visible {
   transform: translate3d(0, 100%, 0)
+}
     
-.navbar-content
+.navbar-content {
   display: flex
   align-items: center
   justify-content: space-between
@@ -26,35 +51,74 @@
   height: 100%
   margin: auto
   color: #ffffff
+}
 
-.navbar-logo
+.navbar-logo {
   padding-right: 20px
   flex: 0 1 300px
   margin: 0
   font-weight: bolder
 
-  a
+  a {
     display: block
     text-decoration: none
     outline: 0
+  }
 
-  img
+  img {
     display: block
     max-width: 100%
     max-height: 50px
+  }
+}
 
-.navbar-link
+.navbar-link {
   text-align: right
   font-size: 15px
+}
 
-.navbar-btn
+.navbar-btn {
   display: none
   position: relative
   width: 46px
   height 46px
   cursor: pointer
 
-  div
+  &.active {
+    position: relative
+    z-index: 1000
+
+    div {
+      transition: transform 0.3s ease 0.3s
+
+      &::before {
+        background-color: #000000
+        transition: transform 0.3s ease, opacity 0.3s ease 0.3s, background-color 0.3s ease 0.3s
+      }
+
+      &:nth-child(1) {
+        transform: rotate(45deg)
+        
+        &::before {
+          transform: translateY(0)
+        }
+      }
+
+      &:nth-child(2)::before {
+        opacity: 0
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg)
+
+        &::before {
+          transform: translateY(0)
+        }
+      }
+    }
+  }
+
+  div {
     position: absolute;
     top: 0
     left: 0
@@ -63,7 +127,7 @@
     transform-origin: center
     transition: transform 0.3s ease;
     
-    &:before
+    &:before {
       position: absolute
       content: ""
       left: 0
@@ -74,101 +138,88 @@
       width: 80%
       height: 2px
       border-radius: 2px
-      background-color: #cccccc
-      transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s;
+      background-color: #ffffff
+      transition: transform 0.3s ease 0.3s, opacity 0.3s ease 0.3s, background-color 0.3s ease
+    }
 
-    &:nth-child(1):before
+    &:nth-child(1):before {
       transform: translateY(-12px)
+    }
 
-    &:nth-child(3):before
+    &:nth-child(3):before {
       transform: translateY(12px)
+    }
+  }
+}
 
-  &.active
-    div
-      transition: transform 0.3s ease 0.3s;
-
-      &::before
-        transition: transform 0.3s ease, opacity 0.3s ease 0.3s;
-
-      &:nth-child(1)
-          transform: rotate(45deg);
-          
-          &::before
-            transform: translateY(0);
-      
-      &:nth-child(2)::before
-        opacity: 0; 
-
-      &:nth-child(3)
-          transform: rotate(-45deg);
-
-          &::before
-            transform: translateY(0); 
-          
-
-.navbar-list
-  display: flex
-  justify-content: flex-end
-
-.navbar-list-item
+.navbar-list-item {
   display: block
   text-decoration: none
   user-select: none
-  margin-left: 10px
 
-  a
+  a {
     display: block
     padding: 10px
-    font-weight: 400
     font-weight: bolder
     transition: color 0.2s
 
-    &:hover
+    &:hover {
       opacity 0.8
-
-
+    }
+  }
+}
 
 // desktop >=768
-@media screen and (min-width: 768px)
-  .navbar-content
+@media screen and (min-width: 768px) {
+  .navbar-content {
     max-width: desktop-max-content-width
+  }
 
-  .navbar-logo
+  .navbar-logo {
     font-size: font-desktop-focus
+  }
+
+  .navbar-list {
+    display: flex
+    justify-content: flex-end
+  }
+
+  .navbar-list-item {
+    margin-left: 10px
+  }
+}
 
 // mobile 768<
-@media screen and (max-width: 767px)
-  .navbar-content
+@media screen and (max-width: 767px) {
+  .navbar-content {
     max-width: 100%
     padding: 0 10px
+  }
 
-  .navbar-logo
+  .navbar-logo {
     font-size: font-mobile-focus
+  }
 
-  .navbar-link
-    position: relative
-
-  .navbar-btn
+  .navbar-btn {
     display: inline-block
-    
-  .navbar-btn.active + .navbar-list
-    display: block
-            
-  .navbar-list
-    display: none
-    position: absolute
-    right: 0
-    margin-top: -5px
-    border-radius: 16px
-    padding: 20px 0;
-    background-color: #f7f7f7
-    min-width: 100px
-    z-index: 999
+  }
 
-  .navbar-list-item
-    display: block
-    margin: 0;
-    
-    a
-      color: #161b3d
-      font-weight: bolder
+  .navbar-list {
+    display: none
+    position: fixed
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    padding: 20px 0
+    background-color: #f7f7f7
+    z-index: 999
+  }
+
+  .navbar-list-item a {
+    color: #161b3d
+  }
+}

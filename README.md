@@ -23,6 +23,8 @@
 
 * 添加`返回到顶部`按钮
 
+* 添加水平居中标签 [center](#水平居中-center)
+
 #### 2020.01
 
 
@@ -40,7 +42,7 @@
 
 * 更新了 **[waterfall](#waterfall-瀑布流)** (画廊)标签 可设置大小
 
-* 新增 **[iamge](#插入图片-image)** (图片), **[bookmark](#插入书签-bookmark)** (书签), **[aplayer](#插入视频-aplayer)** 音频播放 标签
+* 新增 **[iamge](#插入图片-image)** (图片), **[bookmark](#插入书签-bookmark)** (书签), **[aplayer](#插入音频-aplayer)** 音频播放 标签
 
 # 变动
 
@@ -342,7 +344,7 @@ hitokoto:
 ## 插入视频 dplayer
 
 ``` markdown
-<!-- url 必填 cover 可选 -->
+<!-- url 必填 cover(封面) 可选 subtitle(字幕) 可选 -->
 {% dplayer url="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4" cover="https://qiniu.miiiku.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10" %} 
 ```
 
@@ -371,6 +373,16 @@ hitokoto:
 ```
 
 **注意: 需要开启`waterfall`插件才能正常使用本内置标签**
+
+## 水平居中 center
+
+使center标签内的内容水平居中
+
+``` markdown
+{% center %}
+...
+{% endcenter %}
+```
 
 ## 插入书签 bookmark
 

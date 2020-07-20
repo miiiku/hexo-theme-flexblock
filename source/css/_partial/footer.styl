@@ -1,54 +1,61 @@
 .footer {
   width: 100%
   padding: 20px
+}
 
-  .footer-container {
-    margin: auto
-    width: 100%
-    max-width: max-content-width
-    text-align: center
-    color: #aeb5be
+.footer-container {
+  margin: auto
+  text-align: center
+  color: var(--theme-text-color)
 
-    p {
-      line-height: 2
-    }
-
-    a {
-      color: #161b3d
-      font-weight: bolder
-    }
+  a {
+    color: var(--theme-link-color)
+    font-weight: bolder
   }
 
-  .footer-container .social-icons.social-icons-footer {
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-wrap: wrap
-    list-style: none
-    padding-bottom: 20px
+  p {
+    line-height: 1.5
+    margin: 6px 0
+  }
+}
 
-    a {
-      display: block
-      text-align: center
-      padding-bottom: 10px
+.social-icons.social-icons-footer {
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  list-style: none
+  padding-bottom: 20px
 
-      &:not(:last-child) {
-        padding-right: 20px
-      }
+  a {
+    display: block
+    text-align: center
+    margin: 10px;
+  }
+
+  svg.icon {
+    display: block
+    fill: light-low-color
+    transition: fill 0.3s ease
+
+    &:hover {
+      fill: var(--theme-stress-color)
     }
+  }
+}
 
-    svg.icon {
-      display: block
-      width: 22px
-      height: 22px
-      fill: #bbbbbb
-      opacity: 0.8
-      transition: all 0.3s ease
+.social-icons.social-icons-footer a {
+  @media mq-pc {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    soft-box(12px, 5px);
+  }
 
-      &:hover {
-        fill: #000000
-        opacity: 1
-      }
-    }
+  @media mq-mb {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    soft-box(8px, 3px);
   }
 }

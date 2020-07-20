@@ -1,13 +1,9 @@
 # Header
 menu:
   HOME: /
-  ABOUT: /about
-  LINK: /links
-  TAGS: /tags
-  CATEGORIES: /categories
-# logo: https://qiniu.miiiku.xyz/src/images/logo.png
 banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
 # banner: css/images/banner.jpg
+# logo: https://qiniu.miiiku.xyz/src/images/logo.png
 
 # large cover
 # long: [article, link]

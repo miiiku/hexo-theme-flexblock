@@ -47,8 +47,8 @@
   <% } %>
 
   <% if (config.highlight.enable){ %>
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/<%= config.highlight.theme || 'default' %>.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/<%= config.highlight.theme || 'monokai' %>.css">
   <% } %>
 
   <%- css('css/style') %>

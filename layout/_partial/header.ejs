@@ -5,23 +5,27 @@
   <%# index container %>
   <% if (is_home()) { %>
     <div class="header-content">
-      <div class="post-image" style="<%= `background-image: url(${theme.banner})` %>"></div>
+      <% if (theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${theme.banner})` %>"></div>
+      <% } %>
+      
       <div class="post-text">
         <h1 class="title-wrap"><%= config.title %></h1>
         <% if (config.subtitle) { %>
           <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
         <% } %>
       </div>
+
       <% if (theme.social_icon.header_enable) { %>
-      <div class="social-icons social-icons-header">
-        <%-
-          icons(theme.social_icon.icons, {
-            render: function (icon, value) {
-              return partial("../_svg/" + icon, { icon, value, size: 30 })
-            }
-          })
-        -%>
-      </div>
+        <div class="social-icons social-icons-header">
+          <%-
+            icons(theme.social_icon.icons, {
+              render: function (icon, value) {
+                return partial("../_svg/" + icon, { icon, value, size: 30 })
+              }
+            })
+          -%>
+        </div>
       <% } %> 
     </div>
   <% } %>
@@ -29,7 +33,10 @@
   <%# archive container %>
   <% if (is_archive()) { %>
     <div class="header-content">
-      <div class="post-image" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>"></div>
+      <% if (page.cover || theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+      <% } %>
+
       <div class="post-text">
         <h1 class="title-wrap">归档</h1>
         <h2 class="title-sub-wrap">共有<%= site.posts.length %>篇文章</h2>
@@ -46,7 +53,9 @@
       });
     %>
     <div class="header-content">
-      <div class="post-image" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>"></div>
+      <% if (page.cover || theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+      <% } %>
       <div class="post-text">
         <h1 class="title-wrap"><%= page.category %></h1>
         <h2 class="title-sub-wrap">当前分类下共有<%= length %>篇文章</h2>
@@ -63,7 +72,10 @@
       });
     %>
     <div class="header-content">
-      <div class="post-image" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>"></div>
+      <% if (page.cover || theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+      <% } %>
+
       <div class="post-text">
         <h1 class="title-wrap"><%= page.tag %></h1>
         <h2 class="title-sub-wrap">当前标签下共有<%= length %>篇文章</h2>
@@ -74,7 +86,10 @@
   <%# post banner %>
   <% if (is_post()) { %>
     <div class="header-content">
-      <div class="post-image" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>"></div>
+      <% if (page.cover || theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+      <% } %>
+
       <div class="post-text">
         <div class="type-wrap">
           <%- partial("../_widget/category", { class_name: "article-category", post: page }) %>
@@ -92,20 +107,17 @@
   <%# page banner %>
   <% if (is_page()) { %>
     <div class="header-content">
-      <div class="post-image" style="<%= page.cover ? `background-image: url(${page.cover})` : `background-image: url(${theme.banner})` %>"></div>
+      <% if (page.cover || theme.banner) { %>
+        <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+      <% } %>
+
       <div class="post-text">
         <h1 class="title-wrap"><%= page.title %></h1>
         <% if (page.subtitle) { %>
-        <h2 class="title-sub-wrap"><%= page.subtitle %></h2>
-        <% } else if (page.type === "categories") { %>
-        <h2 class="title-sub-wrap">共有<%= site.categories.length %>个分类</h2>
-        <% } else if (page.type === "tags") { %>
-        <h2 class="title-sub-wrap">共有<%= site.tags.length %>个标签</h2>
-        <% } else if (page.type === "links") { %>
-        <h2 class="title-sub-wrap">共有<%= site.data.links.length %>只小伙伴</h2>
+          <h2 class="title-sub-wrap"><%= page.subtitle %></h2>
         <% } %>
       </div>
     </div>
   <% } %>
-
-  </header>
+  
+</header>

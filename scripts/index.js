@@ -41,7 +41,7 @@ hexo.extend.tag.register("image", function(args) {
 
   return `
     <figure class="figure-image ${datas.size}">
-      <img src="${datas.url}" alt="${datas.title}" />
+      <img src="${datas.url}" alt="${datas.title}" onerror="this.src = '/images/image-error.jpg'" />
       <figcaption>${datas.title}</figcaption>
     </figure>
   `;

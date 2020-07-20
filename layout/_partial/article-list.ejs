@@ -2,14 +2,12 @@
 <div class="body-container float">
   <div class="content-container article-list">
     <div class="card-container card-articles">
-      <div class="card-wrap">
+      <div class="card-list">
         <% page.posts.each(function(post, i) { %>
           <%
             let isLarge = false;
-            if (theme.large_legnth && theme.large_legnth.long) {
-              if (post.title.length > theme.large_legnth.long) {
-                isLarge = true
-              }
+            if (theme.large_legnth && post.title.length > theme.large_legnth) {
+              isLarge = true
             }
           %>
           <div class="card-item<%= isLarge ? ' large' : '' %><%= post.cover ? ' img' : '' %>">

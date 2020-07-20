@@ -8,15 +8,18 @@
     function initaplayer(els) {
       let elsArr = Array.from(els);
       elsArr.forEach(el => {
-        new APlayer({
+        let params = {
           container: el,
           audio: { ...el.dataset },
           theme: "<%= theme.aplayer.theme %>",
-          lrcType: <%= theme.aplayer.lrcType %>,
           autoplay: <%= theme.aplayer.autoplay %>,
           loop: <%= theme.aplayer.loop %>,
           mutex: <%= theme.aplayer.mutex %>,
-        });
+        }
+        if (el.dataset.lrc) {
+          params['lrcType'] = <%= theme.aplayer.lrcType %>
+        }
+        new APlayer(params);
       });
     }
   </script>

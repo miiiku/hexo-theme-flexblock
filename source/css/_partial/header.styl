@@ -10,7 +10,7 @@
   flex-direction: column
   align-items: center
   justify-content: center
-  padding-top: navbar-height
+  padding-top: --navbar-height
 
   .social-icons.social-icons-header {
     display: flex
@@ -27,25 +27,20 @@
     svg.icon {
       display: block
       fill: #E7E7E7
-      opacity: 0.8
+      opacity: 0.6
       transition: all 0.3s ease
 
       &:hover {
         fill: #FFFFFF
-        opacity: 1
+        opacity: 0.9
       }
     }
   }
 }
 
 .post-image {
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: -1
   image-mask()
+  z-index: auto
 }
     
 // post text
@@ -54,7 +49,7 @@
   max-width 100%
   max-height: 100%
   overflow: hidden
-  padding: 0 inner-padding
+  padding: 0 --pc-padding
   text-align: center
   color: #ffffff
 }
@@ -71,6 +66,7 @@
   font-weight: 700
   letter-spacing: 1.5px
   transition: 0.3s all
+  opacity: 0.9
 
   &:hover {
     background-color: #2821fc
@@ -85,45 +81,17 @@
   overflow: hidden
   text-overflow: ellipsis
   word-break: break-word
+  opacity: 0.9
 }
 
 // sub title
 .title-sub-wrap {
   margin: 0
   line-height: 1.3
+  opacity: 0.9
 }
 
-// desktop >=768
-@media screen and (min-width: 768px)
-  @keyframes move {
-    0% {
-      transform: translate3d(0, 0, 0)
-    }
-    100% {
-      transform: translate3d(-50%, 0, 0)
-    }
-  }
-
-  .header-container {
-    position: relative
-    overflow: hidden
-
-    &::before {
-      position: absolute
-      left: 0
-      bottom: -1px
-      content: ""
-      width: 200%
-      height 100%
-      display: block
-      background-image: url("/images/wave-light.png")
-      background-repeat: repeat-x
-      background-position: left bottom 
-      background-size: 50% auto
-      animation move 10s linear infinite
-    }
-  }
-
+@media mq-pc {
   .header-content {
     min-height: desktop-banner-height
     padding-bottom: desktop-banner-margin
@@ -154,9 +122,9 @@
   .title-sub-wrap {
     font-size: font-desktop-commonly
   }
+}
 
-// mobile 768<
-@media screen and (max-width: 767px)
+@media mq-mb {
   .header-content {
     min-height: mobile-banner-height
     padding-bottom: mobile-banner-margin
@@ -187,3 +155,4 @@
   .title-sub-wrap {
     font-size: font-mobile-commonly
   }
+}

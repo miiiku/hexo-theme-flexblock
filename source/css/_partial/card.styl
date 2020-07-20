@@ -1,5 +1,5 @@
 /*
- * 所有的卡片样式都在这里
+ * 所有的卡片内容样式都在这里
  *
  * 卡片的通用样式在`mixins.styl`里
  */
@@ -9,97 +9,103 @@
   margin: 0 auto
 }
 
-// 文章列表卡片
-.card-container.card-articles
-  .article-title
+// 文章列表卡片样式
+.card-container.card-articles {
+  .article-title {
     font-weight: 700
     line-height: 1.3
     margin-bottom: 20px
+  }
 
-  .article-meta
+  .article-meta {
     line-height: 1.3
+  }
   
-  .article-category
-      position: absolute
-      z-index: 2
+  .article-category {
+    position: absolute
+    z-index: 2
 
-      .article-category-link
-        border-radius: 20px
-        padding: 4px 8px
-        transition: all 0.2s ease
+    .article-category-link {
+      border-radius: 20px
+      padding: 4px 8px
+      transition: all 0.2s ease
 
-        &:hover
-          color: #000000
-          background-color: #ffffff
+      &:hover {
+        color: #000000
+        background-color: #ffffff
+      }
+    }
+  }
+}
 
-
-// 文章导航卡片 分类列表样式 链接列表样式
-.card-container.card-article-nav,
-.card-container.card-categories
-  .card-item article
+// 文章导航器样式
+.card-container.card-article-nav {
+  article {
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+  }
 
-    strong
-      margin-bottom: 20px
+  strong {
+    margin-bottom: 20px
+  }
+}
 
-
-// desktop >=768
-@media screen and (min-width: 768px)
-  // 文章列表卡片
-  .card-container.card-articles
-    .article-title
+@media mq-pc {
+  .card-container.card-articles {
+    .article-title {
       font-size: font-desktop-focus
-    .article-meta
+    }
+    .article-meta {
       margin-bottom: 60px
-    .article-category
+    }
+    .article-category {
       bottom: 45px
       left: 30px // 38 - 8
-
-  // 文章导航卡片 分类列表样式 链接列表样式
-  .card-container.card-article-nav,
-  .card-container.card-categories
-    font-size: font-desktop-commonly
+    }
+  }
   
-  // 文章卡片
-  .card-container.card-articles
-    card(content-margin, 40px 38px 45px, 350px, 370px, 24px, 3)
+  .card-container.card-article-nav {
+    font-size: font-desktop-commonly
+  }
 
-  // 分类卡片
-  .card-container.card-categories
-    card(content-margin, 40px 38px 45px, 250px, 110px, 24px, 4)
+  // 文章卡片
+  .card-container.card-articles {
+    card-list(content-margin, 40px 38px 45px, 350px, 370px, 24px, 3)
+  }
 
   // 文章导航卡片
-  .card-container.card-article-nav
-    card(content-margin, 20px 38px 20px, auto, 110px, 24px, 2)
+  .card-container.card-article-nav {
+    card-list(content-margin, 20px 38px 20px, auto, 110px, 24px, 2)
+  }
+}
 
-// mobile 768<
-@media screen and (max-width: 767px)
-  // 文章列表卡片
-  .card-container.card-articles
-    .article-title
+@media mq-mb {
+  .card-container.card-articles {
+    .article-title {
       font-size: font-mobile-focus
-    .article-meta
+    }
+    .article-meta {
       margin-bottom: 40px
-    .article-category
+    }
+    .article-category {
       bottom: 40px
       left: 22px // 30 - 8
+    }
+  }
 
-  // 文章导航卡片 分类列表样式 链接列表样式
-  .card-container.card-article-nav,
-  .card-container.card-categories
+  .card-container.card-article-nav {
     font-size: font-mobile-commonly
+  }
   
   // 文章卡片
-  .card-container.card-articles
-    card(content-margin-min, 30px 30px 40px, 70vw, 200px, 24px, 1)
-  
-  // 分类卡片
-  .card-container.card-categories
-    card(content-margin-min, 30px 30px 40px, 70vw, 120px, 24px, 1)
+  .card-container.card-articles {
+    card-list(content-margin-min, 30px 30px 40px, 70vw, 200px, 24px, 1)
+  }
 
   // 文章导航卡片
-  .card-container.card-article-nav
-    card(content-margin-min, 18px 20px 18px, auto, 90px, 12px, 1)
+  .card-container.card-article-nav {
+    card-list(content-margin-min, 18px 20px 18px, auto, 90px, 12px, 1)
+  }
+}

@@ -10,53 +10,6 @@
   </article>
   <% } %>
 
-  <%# 输出自定义页面特有内容 %>
-  <% if (page.type === "categories") { %>
-    <article class="content-container next">
-      <div class="article-content">
-        <div class="card-container card-categories">
-          <div class="card-wrap">
-            <% site.categories.each(function(categorie) { %>
-              <%
-                let isLarge = false;
-                if (theme.large_legnth && theme.large_legnth.short) {
-                  if (categorie.name.length > theme.large_legnth.short) {
-                    isLarge = true
-                  }
-                }
-              %>
-              <div class="card-item<%= isLarge ? ' large' : '' %>">
-                <article>
-                  <a class="card-link" href="<%= url_for('/categories/'+categorie.name) %>"></a>
-                  <p><%= categorie.name %> (<%= categorie.length %>)</p>
-                </article>
-              </div>
-            <% }) %>
-          </div>
-        </div>
-      </div>
-    </article>
-  <% } %>
-
-  <%# 输出自定义标签内容 %>
-  <% if (page.type === "tags") { %>
-    <article class="content-container next">
-      <div class="article-content">
-        <div class="tags-cloud">
-          <%- tagcloud({
-            unit: "em",
-            min_font: 1,
-            max_font: 3,
-            color: "#6bd0ff",
-            start_color: "#f7c068",
-            end_color: "#ff5858",
-            amount: 100
-          }) %>
-        </div>
-      </div>
-    </article>
-  <% } %>
-
   <%# 输出自定义友链内容 %>
   <% if (page.type === "links") { %>
     <article class="content-container next">

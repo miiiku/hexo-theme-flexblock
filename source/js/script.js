@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", function() {
   const navBtn          = document.querySelector(".navbar-btn");
   const navList         = document.querySelector(".navbar-list");
   const backToTopFixed  = document.querySelector(".back-to-top-fixed");
-  const images          = Array.from(document.images);
   const navBarH         = 54;
 
   let scroll            = getScrollTop();
@@ -32,12 +31,6 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   toggleBackToTopBtn()
-
-  images.forEach(item => {
-    item.addEventListener("error", function () {
-      this.src = "/images/image-error.jpg";
-    });
-  });
 
   // mobile nav click
   navBtn.addEventListener("click", function () {

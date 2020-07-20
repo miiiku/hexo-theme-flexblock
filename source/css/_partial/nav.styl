@@ -25,18 +25,16 @@ html.show-mobile-nav {
   top: 0
   left: 0
   width: 100%
-  height: navbar-height
-  background-color: transparent
-  border-bottom: 1px solid transparent
   z-index: 90
-  transition: background-color 0.3s ease
-}
+  backdrop-filter: blur(6px)
+  -webkit-backdrop-filter: blur(6px)
+  -moz-backdrop-filter: blur(6px)
+  background-color: transparent
 
-.navbar.fixed {
-  position: fixed
-  top: -(navbar-height)
-  background-color: rgb(255, 192, 210, 0.8)
-  transition: transform 0.5s ease, background-color 0.3s ease
+  &.fixed {
+    position: fixed
+    transition: transform 0.5s ease-in-out
+  }
 }
 
 .navbar.visible {
@@ -77,11 +75,28 @@ html.show-mobile-nav {
   font-size: 15px
 }
 
+.navbar-list-item {
+  display: block
+  text-decoration: none
+  user-select: none
+
+  a {
+    display: block
+    padding: 10px
+    font-weight: bolder
+    transition: color 0.2s
+
+    &:hover {
+      opacity 0.8
+    }
+  }
+}
+  
 .navbar-btn {
-  display: none
+  display: block
   position: relative
-  width: 46px
-  height 46px
+  width: 24px;
+  height: 24px;
   cursor: pointer
 
   &.active {
@@ -135,7 +150,7 @@ html.show-mobile-nav {
       top: 0
       bottom: 0
       margin: auto
-      width: 80%
+      width: 100%
       height: 2px
       border-radius: 2px
       background-color: #ffffff
@@ -143,34 +158,24 @@ html.show-mobile-nav {
     }
 
     &:nth-child(1):before {
-      transform: translateY(-12px)
+      transform: translateY(-8px)
     }
 
     &:nth-child(3):before {
-      transform: translateY(12px)
+      transform: translateY(8px)
     }
   }
 }
 
-.navbar-list-item {
-  display: block
-  text-decoration: none
-  user-select: none
+@media mq-pc {
+  .navbar {
+    height: --navbar-height
 
-  a {
-    display: block
-    padding: 10px
-    font-weight: bolder
-    transition: color 0.2s
-
-    &:hover {
-      opacity 0.8
+    &.fixed {
+      top: -(--navbar-height)
     }
   }
-}
 
-// desktop >=768
-@media screen and (min-width: 768px) {
   .navbar-content {
     max-width: desktop-max-content-width
   }
@@ -187,10 +192,22 @@ html.show-mobile-nav {
   .navbar-list-item {
     margin-left: 10px
   }
+
+  .navbar-btn {
+    display: none;
+  }
 }
 
-// mobile 768<
-@media screen and (max-width: 767px) {
+@media mq-mb {
+  .navbar {
+    height: --mobile-navbar-height
+
+    &.fixed {
+      top: -(--mobile-navbar-height)
+      background-color: rgba(103, 101, 101, 0.5)
+    }
+  }
+
   .navbar-content {
     max-width: 100%
     padding: 0 10px

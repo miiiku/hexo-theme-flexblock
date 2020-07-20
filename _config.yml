@@ -6,11 +6,7 @@ banner: https://qiniu.miiiku.xyz/src/images/banner.jpg
 # logo: https://qiniu.miiiku.xyz/src/images/logo.png
 
 # large cover
-# long: [article, link]
-# short: [category, tag]
-large_legnth:
-  long: 20
-  short: 5
+large_legnth: 20
 
 # 一言
 # docs: https://hitokoto.cn/api

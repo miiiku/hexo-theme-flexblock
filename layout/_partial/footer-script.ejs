@@ -78,16 +78,18 @@
 <% if (theme.tencent_analytics) { %>
   <!-- Tencent Analytics START -->
   <script>
-    (function() {
-      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
-        return console.log("本地调试");
-      }
-      let s = document.querySelector("script");
-      let hm = document.createElement("script");
-      hm.charset = "UTF-8";
-      hm.src = "https://tajs.qq.com/stats?sId=<%= theme.tencent_analytics %>";
-      s.parentNode.insertBefore(hm, s);
-    })();
+      var _mtac = {"performanceMonitor":1};
+      (function() {
+        if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+          return console.log("本地调试");
+        }
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "<%= theme.tencent_analytics %>");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+      })();
   </script>
   <!-- Tencent Analytics End -->
 <% } %>

@@ -6,9 +6,14 @@
   .page-number, .extend {
     padding: 4px 6px
     margin: 8px
+    transition: color 0.3s ease
+
+    &:hover {
+      color: var(--theme-link-color)
+    }
   }
   
   .current {
-    color: var(--theme-stress-color)
+    color: var(--theme-text-color)
   }
 }

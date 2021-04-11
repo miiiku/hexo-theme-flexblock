@@ -2,40 +2,17 @@
   text-align: left
 }
 
-.header-content {
+.header-container {
   position: relative
+}
+
+.header-content {
   width: 100%
   margin: auto
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
-  padding-top: --navbar-height
-
-  .social-icons.social-icons-header {
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-wrap: wrap
-    list-style: none
-
-    a {
-      display: block
-      text-align: center
-    }
-
-    svg.icon {
-      display: block
-      fill: #E7E7E7
-      opacity: 0.6
-      transition: all 0.3s ease
-
-      &:hover {
-        fill: #FFFFFF
-        opacity: 0.9
-      }
-    }
-  }
 }
 
 .post-image {
@@ -59,17 +36,17 @@
   display: inline-block
   padding: 5px 12px
   margin: 0 2px 1px 0
-  color: #161b3d;
+  color: var(--theme-text-color);
   background-color: #f4f4f4
   border-radius: 20px
   font-size: 10px
   font-weight: 700
   letter-spacing: 1.5px
-  transition: 0.3s all
+  transition: background-color 0.3s ease, color 0.03s ease
   opacity: 0.9
 
   &:hover {
-    background-color: #2821fc
+    background-color: var(--theme-link-color)
     color: #ffffff
   }
 }
@@ -95,23 +72,6 @@
   .header-content {
     min-height: desktop-banner-height
     padding-bottom: desktop-banner-margin
-
-    .social-icons.social-icons-header {
-      padding-top: 40px
-
-      a {
-        padding-top: 10px
-
-        &:not(:last-child) {
-          padding-right: 30px
-        }
-      }
-
-      svg.icon {
-        width: 32px
-        height: 32px
-      }
-    }
   }
 
   .title-wrap {
@@ -128,23 +88,6 @@
   .header-content {
     min-height: mobile-banner-height
     padding-bottom: mobile-banner-margin
-
-    .social-icons.social-icons-header {
-      padding-top: 20px
-
-      a {
-        padding-top: 5px
-
-        &:not(:last-child) {
-          padding-right: 15px
-        }
-      }
-
-      svg.icon {
-        width: 24px
-        height: 24px
-      }
-    }
   }
 
   .title-wrap {

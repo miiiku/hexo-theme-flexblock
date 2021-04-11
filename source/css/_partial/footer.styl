@@ -9,8 +9,13 @@
   color: var(--theme-text-color)
 
   a {
-    color: var(--theme-link-color)
+    color: var(--theme-stree-color)
     font-weight: bolder
+    transition: color 0.3s ease
+
+    &:hover {
+      color: var(--theme-link-color)
+    }
   }
 
   p {
@@ -19,7 +24,7 @@
   }
 }
 
-.social-icons.social-icons-footer {
+.social-icons {
   display: flex
   align-items: center
   justify-content: center
@@ -35,7 +40,7 @@
 
   svg.icon {
     display: block
-    fill: light-low-color
+    fill: var(--theme-low-color)
     transition: fill 0.3s ease
 
     &:hover {
@@ -44,7 +49,7 @@
   }
 }
 
-.social-icons.social-icons-footer a {
+.social-icons a {
   @media mq-pc {
     width: 45px;
     height: 45px;

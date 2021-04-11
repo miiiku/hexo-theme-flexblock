@@ -21,24 +21,10 @@ html.show-mobile-nav {
 }
 
 .navbar {
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  z-index: 90
   backdrop-filter: blur(6px)
   -webkit-backdrop-filter: blur(6px)
   -moz-backdrop-filter: blur(6px)
   background-color: transparent
-
-  &.fixed {
-    position: fixed
-    transition: transform 0.5s ease-in-out
-  }
-}
-
-.navbar.visible {
-  transform: translate3d(0, 100%, 0)
 }
     
 .navbar-content {
@@ -48,13 +34,13 @@ html.show-mobile-nav {
   width: 100%
   height: 100%
   margin: auto
-  color: #ffffff
 }
 
 .navbar-logo {
   padding-right: 20px
-  flex: 0 1 300px
   margin: 0
+  flex: 0 1 300px
+  color: var(--theme-link-color)
   font-weight: bolder
 
   a {
@@ -84,10 +70,12 @@ html.show-mobile-nav {
     display: block
     padding: 10px
     font-weight: bolder
-    transition: color 0.2s
+    transition: opacity 0.3s ease, color 0.3s ease
+    color: #FFFFFF
 
     &:hover {
-      opacity 0.8
+      color: var(--theme-link-color)
+      opacity 0.7
     }
   }
 }
@@ -170,10 +158,6 @@ html.show-mobile-nav {
 @media mq-pc {
   .navbar {
     height: --navbar-height
-
-    &.fixed {
-      top: -(--navbar-height)
-    }
   }
 
   .navbar-content {
@@ -201,11 +185,6 @@ html.show-mobile-nav {
 @media mq-mb {
   .navbar {
     height: --mobile-navbar-height
-
-    &.fixed {
-      top: -(--mobile-navbar-height)
-      background-color: rgba(103, 101, 101, 0.5)
-    }
   }
 
   .navbar-content {

@@ -133,5 +133,8 @@ content-container-mobile() {
   .content-container {
     width: 100%
     min-height: mobile-banner-margin * 2
+    &:not(.article-list) {
+      padding: --mb-padding
+    }
   }
 }

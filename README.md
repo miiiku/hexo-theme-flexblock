@@ -444,16 +444,15 @@ tencent_analytics:
 
 添加常用到一些社交图标
 
-`header_enable` 首页导航栏是否显示社交图标
+`enable` 否显示社交图标
 
-`footer_enable` 底部导航栏是否显示社交图标
+`icons` 图标列表
 
 如需要修改图标显示顺序，只需要移动`icons`下的列表顺序即可
 
 ``` yml
 social_icon:
-  header_enable: false
-  footer_enable: false
+  enable: false
   icons:
     - { type: email,      value: }
     - { type: github,     value: }

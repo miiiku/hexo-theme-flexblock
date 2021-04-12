@@ -82,8 +82,7 @@ favicon: /favicon.ico
 
 # Social Icon
 social_icon:
-  header_enable: false
-  footer_enable: false
+  enable: true
   icons:
     - { type: email,      value: }
     - { type: github,     value: }

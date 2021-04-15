@@ -47,10 +47,12 @@
 
       script.onload = function() {
         gtag('js', new Date());
-        gtag('config', 'UA-165681463-1');
+        gtag('config', "<%= theme.google_analytics %>");
       }
 
       script.src = "https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics %>"
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(script, s);
     })()
   </script>
   <!-- Google Analytics End -->

@@ -3,7 +3,7 @@
 
 一个基于`Hexo`的主题
 
-模仿加瞎改`Ghost`里的一个主题`nurui`
+首页模仿加瞎改`Ghost`里的一个主题`nurui`
 
 # 预览
 
@@ -20,6 +20,12 @@
 * 删除顶部的社交图标，只保留底部的
 
 * 顶部导航栏固定在顶部
+
+* 取消书签标签bookmark的cover参数，只显示默认ICON
+
+* 居中center标签添加对flex css支持。
+
+* 添加meme小图片标签，与image标签的区别，图片为inline-block不会独占一行，支持设置高度或宽度，并且点击不会出发查看大图。
 
 #### 2020.07
 
@@ -400,6 +406,13 @@ hitokoto:
 ``` markdown
 <!-- src 地址(必填) title? 描述 size? 大小 -->
 {% image src="https://qiniu.miiiku.xyz/attach/2019/03/15529735091219953_175322076_H800.jpg" title="hello world" size="max" %}
+```
+
+## 插入小图 如动图 meme
+
+``` markdown
+<!-- src 地址(必填) title? 描述 width,height,max-width,max-height -->
+{% meme src="https://qiniu.sukoshi.xyz/src/meme/animal-2.jpg" title="meme image" %}
 ```
 
 

@@ -212,6 +212,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center
   }
 
   // aplayer 样式
@@ -242,6 +243,12 @@
     margin: --markdown-vertical 0
     overflow: hidden
     transition: all 0.3s ease
+  }
+
+  // meme 自定义表情包样式
+  .meme-img {
+    display: inline-block
+    margin: 0
   }
 
   // 自定义插入图片
@@ -296,19 +303,11 @@
       }
 
       .bookmark-cover {
-        position: relative
-        min-width: 25%
-        max-height: 100%
-
-        img {
-          display: block
-          position: absolute
-          top: 0
-          left: 0
-          width: 100%
-          height: 100%
-          object-fit: cover
-        }
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 20px
+        width: 80px
       }
     }
   }

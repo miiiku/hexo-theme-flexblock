@@ -18,7 +18,7 @@ $dark-text-color = #343434;
 $dark-low-color = #747474;
 $dark-stress-color = #212121;
 
-html.theme-light {
+.theme-light {
   --theme-bg-color: $light-bg-color;
   --theme-bg-high: $light-bg-high;
   --theme-bg-shadow: $light-bg-shadow;
@@ -29,7 +29,7 @@ html.theme-light {
   --theme-stress-color: $light-stress-color;
 }
 
-html.theme-dark {
+.theme-dark {
   --theme-bg-color: $dark-bg-color;
   --theme-bg-high: $dark-bg-high;
   --theme-bg-shadow: $dark-bg-shadow;
@@ -42,26 +42,26 @@ html.theme-dark {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --theme-bg-color: #FFFAFB;
-    --theme-bg-high: #ffffff;
-    --theme-bg-shadow: #d9d5d5;
+    --theme-bg-color: $light-bg-color;
+    --theme-bg-high: $light-bg-high;
+    --theme-bg-shadow: $light-bg-shadow;
 
-    --theme-link-color: #f857a6;
-    --theme-text-color: #131515;
-    --theme-low-color: #aeacb1;
-    --theme-stress-color: #14281D;
+    --theme-link-color: $light-link-color;
+    --theme-text-color: $light-text-color;
+    --theme-low-color: $light-low-color;
+    --theme-stress-color: $light-stress-color;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-bg-color: #5C2751;
-    --theme-bg-high: #767474;
-    --theme-bg-shadow: #585656;
+    --theme-bg-color: $dark-bg-color;
+    --theme-bg-high: $dark-bg-high;
+    --theme-bg-shadow: $dark-bg-shadow;
 
-    --theme-link-color: #76E5FC;
-    --theme-text-color: #4BC0D9;
-    --theme-low-color: #6457A6;
-    --theme-stress-color: #9DACFF;
+    --theme-link-color: $dark-link-color;
+    --theme-text-color: $dark-text-color;
+    --theme-low-color: $dark-low-color;
+    --theme-stress-color: $dark-stress-color;
   }
 }

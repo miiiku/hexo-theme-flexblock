@@ -26,22 +26,22 @@
   content-container-desktop()
   
   .article-content {
-    width: inner-width
+    width: $inner-width
     max-width: 100%
-    padding: --pc-padding;
-    margin: --pc-padding auto auto
+    padding: $pc-padding;
+    margin: $pc-padding auto auto
     soft-box(15px, 10px)
     
     & > div:not(:first-child) {
-      margin-top: --pc-padding;
+      margin-top: $pc-padding;
     }
 
     .article-navs {
-      margin-left: -(--pc-padding)
-      margin-right: -(--pc-padding)
+      margin-left: -($pc-padding)
+      margin-right: -($pc-padding)
       
       .article-nav-title {
-        font-size: font-desktop-commonly
+        font-size: $font-desktop-commonly
       }
     }
   }
@@ -52,20 +52,20 @@
   
   .article-content {
     width: 100%
-    padding: 0 (--mb-padding / 2)
+    padding: 0 ($mb-padding / 2)
     background-color: var(--theme-bg-color)
     border-radius: 12px 12px 0 0
 
     & > div:not(:first-child) {
-      margin-top: --mb-padding
+      margin-top: $mb-padding
     }
 
     .article-navs {
-      margin-left: -(--mb-padding)
-      margin-right: -(--mb-padding)
+      margin-left: -($mb-padding)
+      margin-right: -($mb-padding)
       
       .article-nav-title {
-        font-size: font-mobile-commonly
+        font-size: $font-mobile-commonly
       }
     }
   }

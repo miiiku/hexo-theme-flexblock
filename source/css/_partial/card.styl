@@ -55,7 +55,7 @@
 @media mq-pc {
   .card-container.card-articles {
     .article-title {
-      font-size: font-desktop-focus
+      font-size: $font-desktop-focus
     }
     .article-meta {
       margin-bottom: 60px
@@ -67,24 +67,24 @@
   }
   
   .card-container.card-article-nav {
-    font-size: font-desktop-commonly
+    font-size: $font-desktop-commonly
   }
 
   // 文章卡片
   .card-container.card-articles {
-    card-list(--pc-padding, 40px 38px 45px, 350px, 370px, 24px, 3)
+    card-list($pc-padding, 40px 38px 45px, 350px, 370px, 24px, 3)
   }
 
   // 文章导航卡片
   .card-container.card-article-nav {
-    card-list(--pc-padding, 20px 38px 20px, auto, 110px, 24px, 2)
+    card-list($pc-padding, 20px 38px 20px, auto, 110px, 24px, 2)
   }
 }
 
 @media mq-mb {
   .card-container.card-articles {
     .article-title {
-      font-size: font-mobile-focus
+      font-size: $font-mobile-focus
     }
     .article-meta {
       margin-bottom: 40px
@@ -96,16 +96,16 @@
   }
 
   .card-container.card-article-nav {
-    font-size: font-mobile-commonly
+    font-size: $font-mobile-commonly
   }
   
   // 文章卡片
   .card-container.card-articles {
-    card-list(--mb-padding, 30px 30px 40px, 70vw, 200px, 12px, 1)
+    card-list($mb-padding, 30px 30px 40px, 70vw, 200px, 12px, 1)
   }
 
   // 文章导航卡片
   .card-container.card-article-nav {
-    card-list(--mb-padding, 18px 20px 18px, auto, 90px, 12px, 1)
+    card-list($mb-padding, 18px 20px 18px, auto, 90px, 12px, 1)
   }
 }

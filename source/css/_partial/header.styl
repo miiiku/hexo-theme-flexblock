@@ -22,11 +22,11 @@
     
 // post text
 .post-text {
-  width: inner-width
+  width: $inner-width
   max-width 100%
   max-height: 100%
   overflow: hidden
-  padding: 0 --pc-padding
+  padding: 0 $pc-padding
   text-align: center
   color: #ffffff
 }
@@ -70,32 +70,32 @@
 
 @media mq-pc {
   .header-content {
-    min-height: desktop-banner-height
-    padding-bottom: desktop-banner-margin
+    min-height: $desktop-banner-height
+    padding-bottom: $desktop-banner-margin
   }
 
   .title-wrap {
-    font-size: font-desktop-large
+    font-size: $font-desktop-large
     margin: 25px 0
   }
 
   .title-sub-wrap {
-    font-size: font-desktop-commonly
+    font-size: $font-desktop-commonly
   }
 }
 
 @media mq-mb {
   .header-content {
-    min-height: mobile-banner-height
-    padding-bottom: mobile-banner-margin
+    min-height: $mobile-banner-height
+    padding-bottom: $mobile-banner-margin
   }
 
   .title-wrap {
-    font-size: font-mobile-large
+    font-size: $font-mobile-large
     margin: 20px 0
   }
 
   .title-sub-wrap {
-    font-size: font-mobile-commonly
+    font-size: $font-mobile-commonly
   }
 }

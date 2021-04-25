@@ -1,3 +1,10 @@
+// text ellipsis
+text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 // Image Mask
 image-mask() {
@@ -122,9 +129,9 @@ soft-box(radius, size) {
 // ContentContainer 
 content-container-desktop() {
   .content-container {
-    max-width: desktop-max-content-width
+    max-width: $desktop-max-content-width
     width: 92vw
-    min-height: desktop-banner-margin * 2
+    min-height: $desktop-banner-margin * 2
     margin: 0 auto
   }
 }
@@ -132,9 +139,9 @@ content-container-desktop() {
 content-container-mobile() {
   .content-container {
     width: 100%
-    min-height: mobile-banner-margin * 2
+    min-height: $mobile-banner-margin * 2
     &:not(.article-list) {
-      padding: --mb-padding
+      padding: $mb-padding
     }
   }
 }

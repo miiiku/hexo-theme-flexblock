@@ -16,8 +16,8 @@
   }
   
   p, table {
-    line-height: --markdown-vertical
-    margin: --markdown-vertical 0
+    line-height: $markdown-vertical
+    margin: $markdown-vertical 0
   }
   
   table {
@@ -50,8 +50,8 @@
   }
 
   ul, ol, dl {
-    margin-top: --markdown-vertical
-    margin-bottom: --markdown-vertical
+    margin-top: $markdown-vertical
+    margin-bottom: $markdown-vertical
   }
 
   ul, ol {
@@ -80,7 +80,7 @@
 
     footer {
       font-size: 14px
-      margin: --markdown-vertical 0
+      margin: $markdown-vertical 0
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 
       cite:before {
@@ -150,7 +150,7 @@
   }
 
   pre, .highlight {
-    margin: --markdown-vertical 0
+    margin: $markdown-vertical 0
     background: #2d2d2d
     overflow: auto
     color: #ccc
@@ -217,7 +217,7 @@
 
   // aplayer 样式
   .aplayer {
-    margin: --markdown-vertical 0
+    margin: $markdown-vertical 0
 
     .aplayer-info .aplayer-music .aplayer-author {
       color: var(--theme-stress-color)
@@ -240,7 +240,7 @@
   // dplayer 样式
   .dplayer {
     width: 100%
-    margin: --markdown-vertical 0
+    margin: $markdown-vertical 0
     overflow: hidden
     transition: all 0.3s ease
   }
@@ -253,7 +253,7 @@
 
   // 自定义插入图片
   .figure-image {
-    margin: --markdown-vertical 0;
+    margin: $markdown-vertical 0;
 
     img {
       display: block
@@ -274,7 +274,7 @@
     transition: all 0.3s ease
     border-radius: 10px
     overflow: hidden
-    margin: --markdown-vertical 0;
+    margin: $markdown-vertical 0;
 
     &:hover {
       transform: translateY(-3%)
@@ -286,35 +286,12 @@
       border: none
       color: var(--theme-stress-color)
       background-color: var(--theme-low-color)
-
-      .bookmark-content {
-        flex: 1
-        padding: 20px
-
-        .bookmark-name {
-          font-size: 20px
-          font-weight: bolder
-          margin-bottom: 15px
-        }
-        
-        .bookmark-link {
-          font-size: 14px
-        }
-      }
-
-      .bookmark-cover {
-        display: flex
-        align-items: center
-        justify-content: center
-        padding: 20px
-        width: 80px
-      }
     }
   }
 
   // 自定义插入画廊
   .waterfall-container {
-    margin: --markdown-vertical 0;
+    margin: $markdown-vertical 0;
 
     p {
       display: block
@@ -336,8 +313,8 @@
     }
 
     .highlight {
-      margin-left: -(--pc-padding)
-      margin-right: -(--pc-padding)
+      margin-left: -($pc-padding)
+      margin-right: -($pc-padding)
     }
 
     .highlight .gutter pre {
@@ -354,13 +331,41 @@
   }
 
   .figure-image.max {
-    margin-left: -(--pc-padding)
-    margin-right: -(--pc-padding)
+    margin-left: -($pc-padding)
+    margin-right: -($pc-padding)
+  }
+
+  .article-entry .bookmark-card {
+    .bookmark-content {
+      flex: 1
+      padding: $pc-padding
+      overflow: hidden
+
+      .bookmark-name {
+        font-size: $font-desktop-focus
+        font-weight: bolder
+        margin-bottom: 15px
+        text-ellipsis()
+      }
+      
+      .bookmark-link {
+        font-size: $font-desktop-small
+        text-ellipsis()
+      }
+    }
+
+    .bookmark-cover {
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: $pc-padding
+      width: 80px
+    }
   }
 
   .waterfall-container.max {
-    margin-left: -(--pc-padding)
-    margin-right: -(--pc-padding)
+    margin-left: -($pc-padding)
+    margin-right: -($pc-padding)
   }
 }
 
@@ -375,8 +380,8 @@
     }
 
     .highlight {
-      margin-left: -(--mb-padding)
-      margin-right: -(--mb-padding)
+      margin-left: -($mb-padding)
+      margin-right: -($mb-padding)
     }
 
     .highlight .gutter pre {
@@ -393,12 +398,40 @@
   }
 
   .figure-image.max {
-    margin-left: -(--mb-padding)
-    margin-right: -(--mb-padding)
+    margin-left: -($mb-padding)
+    margin-right: -($mb-padding)
+  }
+
+  .article-entry .bookmark-card {
+    .bookmark-content {
+      flex: 1
+      padding: $mb-padding
+      overflow: hidden
+
+      .bookmark-name {
+        font-size: $font-mobile-focus
+        font-weight: bolder
+        margin-bottom: 15px
+        text-ellipsis()
+      }
+      
+      .bookmark-link {
+        font-size: $font-mobile-small
+        text-ellipsis()
+      }
+    }
+
+    .bookmark-cover {
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: $mb-padding
+      width: 60px
+    }
   }
 
   .waterfall-container.max {
-    margin-left: -(--mb-padding)
-    margin-right: -(--mb-padding)
+    margin-left: -($mb-padding)
+    margin-right: -($mb-padding)
   }
 }

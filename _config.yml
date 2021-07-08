@@ -15,7 +15,7 @@ notice: flex-block主题部分重构，详情查看https://github.com/miiiku/fle
 author:
   name: Sukoshi
   avatar: https://s.gravatar.com/avatar/2d6b803eea37de0257620d5fabee7e64?s=200&r=g&d=retro
-  description: 要坚持健身鸭
+  description: 贵在坚持
 
 toc:
   max_depth: 3 # 生成 TOC 的最大深度
@@ -29,8 +29,8 @@ comments:
   # You can get your appid and appkey from https://leancloud.cn
   # 这里appId和appKey一定一定要改成自己的，没有的话去https://leancloud.cn这个网站注册创建一个
   valine:
-    appId: oTmfgIaoB7PfPATvA9tsOwTu-gzGzoHsz
-    appKey: PPbJycuezKD3BJlhHUy8zOnG
+    appId: 
+    appKey: 
     avatar: mm
     placeholder: 随便说点什么叭～
     notify: true
@@ -39,7 +39,7 @@ comments:
   # disqus 评论
   # docs: https://disqus.com/
   disqus:
-    website: sukoshi95
+    website: 
     error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
 
 # dplayer 视频播放
@@ -62,16 +62,16 @@ aplayer:
   lrcType: 3
 
 # 国内备案信息
-beian: 蜀ICP备15014309号
+beian: 
 
 # 谷歌分析
-google_analytics: UA-165681463-1
+google_analytics: 
 # gauges分析
 gauges_analytics: 
 # 百度分析
-baidu_analytics: 77cce6624f1114785af5e77d00cbf93c
+baidu_analytics: 
 # 腾讯分析
-tencent_analytics: 66537616
+tencent_analytics: 
 # 站点ico
 favicon: /favicon.ico
 
@@ -82,6 +82,6 @@ social_icon:
   icons:
     ins     :
     zhihu   :
-    weibo   : https://twitter.com/guanquanhong
+    weibo   : 
     github  : https://github.com/miiiku/
     twitter : https://twitter.com/guanquanhong

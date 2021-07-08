@@ -1,147 +1,26 @@
-// text ellipsis
-text-ellipsis() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-// Image Mask
-image-mask() {
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: -1
-  background-size: cover
-  background-position: center
-  background-repeat: no-repeat
-
-  &:before {
-    position: absolute
-    top: 0
-    left: 0
-    display: block
-    content: ''
-    width: 100%
-    height: 100%
-    opacity: 0.4
-    background-color: #394245
-    background-image: linear-gradient(234deg, #394245 0%, #000 100%)
-  }
-}
-
-// Card
-card-list(margin, padding, minWidth, minHeight, borderRadius, number) {
-  $basis = (100 / number)%
-
-  .card-list {
-    display: flex
-    flex-wrap: wrap
-  }
-
-  .card-item {
-    display: flex
-    flex: 1 1 $basis
-
-    &.large {
-      flex: 1 1 $basis * 2
-    }
-
-    &:nth-child(1n) article {
-      color: #ffffff
-      background-color: #e77842
-      background-image: linear-gradient(45deg, #e77842, #f7c068)
-    }
-
-    &:nth-child(2n) article {
-      color: #ffffff
-      background-image: #ff5858
-      background-image: linear-gradient(1deg, #f857a6, #ff5858)
-    }
-
-    &:nth-child(3n) article {
-      color: #ffffff
-      background-color: #b53cff
-      background-image: linear-gradient(20deg, #b53cff, #f952ff)
-    }
-
-    &:nth-child(4n) article {
-      color: #ffffff
-      background-color: #6bd0ff
-      background-image: linear-gradient(40deg, #327ae7, #6bd0ff)
-    }
-
-    &:nth-child(5n) article {
-      color: #ffffff
-      background-color: #ffd62e
-      background-image: linear-gradient(40deg, #ffb040, #ffd62e)
-    }
-
-    &.img .card-cover {
-      image-mask()
-    }
-    
-    article {
-      position: relative
-      z-index: 0
-      flex: 1 1 100%
-      margin: margin
-      padding: padding
-      min-width: minWidth
-      min-height: minHeight
-      border-radius: borderRadius
-      overflow: hidden
-      word-break: break-all
-      transition: all 0.2s ease
-      filter: grayscale(.7)
-
-      &:hover {
-        transform: translateY(-5px)
-        filter: grayscale(0)
-        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5)
-      }
-
-      .card-link {
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        width: 100%
-        height: 100%
-        z-index: 1
-      }
-    }
-  }
+soft-text() {
+  color: var(--theme-text-primary);
+  text-shadow:
+    2px 2px 4px var(--theme-bg-shadow),
+    -2px -2px 4px var(--theme-bg-high);
 }
 
 // Soft style
-soft-box(radius, size) {
-  border-radius: radius;
+soft-box($radius) {
   overflow: hidden;
-  background-color: var(--theme-bg-color);
-  box-shadow: size size size*2 var(--theme-bg-shadow),
-              (-(size)) (-(size)) size*2 var(--theme-bg-high);
+  border-radius: $radius;
+  background-color: var(--theme-bg-primary);
+  box-shadow:
+    var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow),
+    calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
 }
 
-// ContentContainer 
-content-container-desktop() {
-  .content-container {
-    max-width: $desktop-max-content-width
-    width: 92vw
-    min-height: $desktop-banner-margin * 2
-    margin: 0 auto
-  }
-}
-
-content-container-mobile() {
-  .content-container {
-    width: 100%
-    min-height: $mobile-banner-margin * 2
-    &:not(.article-list) {
-      padding: $mb-padding
-    }
-  }
+soft-box--active($radius) {
+  overflow: hidden;
+  border-radius: $radius;
+  background-color: var(--theme-bg-primary);
+  background-image: linear-gradient(145deg, var(--theme-text-active1), var(--theme-text-active2));
+  box-shadow:
+    inset var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow),
+    inset calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
 }

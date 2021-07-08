@@ -23,26 +23,25 @@ html.show-mobile-nav {
 .navbar {
   position: relative
   z-index: 2
-  backdrop-filter: blur(6px)
-  -webkit-backdrop-filter: blur(6px)
-  -moz-backdrop-filter: blur(6px)
-  background-color: transparent
 }
     
 .navbar-content {
   display: flex
   align-items: center
   justify-content: space-between
+  max-width: var(--layout-max-width)
   width: 100%
   height: 100%
   margin: auto
+  padding: 0 var(--layout-padding)
 }
 
 .navbar-logo {
   padding-right: 20px
   margin: 0
   flex: 0 1 300px
-  color: var(--theme-link-color)
+  color: var(--theme-text-light)
+  font-size: var(--font-stress-size)
   font-weight: bolder
 
   a {
@@ -70,13 +69,11 @@ html.show-mobile-nav {
 
   a {
     display: block
-    padding: 10px
     font-weight: bolder
-    transition: opacity 0.3s ease, color 0.3s ease
-    color: #FFFFFF
+    transition: opacity 0.3s ease
+    color: var(--theme-text-light)
 
     &:hover {
-      color: var(--theme-link-color)
       opacity 0.7
     }
   }
@@ -157,27 +154,15 @@ html.show-mobile-nav {
   }
 }
 
-@media mq-pc {
+@media $mq-pc {
   .navbar {
     height: $navbar-height
-  }
-
-  .navbar-content {
-    padding: 0 20px
-    max-width: $desktop-max-content-width
-  }
-
-  .navbar-logo {
-    font-size: $font-desktop-focus
   }
 
   .navbar-list {
     display: flex
     justify-content: flex-end
-  }
-
-  .navbar-list-item {
-    margin-left: 10px
+    gap: 20px
   }
 
   .navbar-btn {
@@ -185,18 +170,9 @@ html.show-mobile-nav {
   }
 }
 
-@media mq-mb {
+@media $mq-mb {
   .navbar {
     height: $mobile-navbar-height
-  }
-
-  .navbar-content {
-    max-width: 100%
-    padding: 0 10px
-  }
-
-  .navbar-logo {
-    font-size: $font-mobile-focus
   }
 
   .navbar-btn {
@@ -209,6 +185,7 @@ html.show-mobile-nav {
     flex-direction: column
     align-items: center
     justify-content: center
+    gap: 20px
     top: 0
     left: 0
     width: 100vw

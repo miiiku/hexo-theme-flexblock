@@ -3,21 +3,16 @@
   <div class="footer-container">
     <% if (theme.social_icon.enable) { %>
     <div class="social-icons">
-      <%-
-        icons(theme.social_icon.icons, {
-          render: function (icon, value) {
-            return partial("../_svg/" + icon, { icon, value, size: 30 })
-          }
-        })
-      -%>
+      <% for (var i in theme.social_icon.icons) { %>
+        <% if (theme.social_icon.icons[i]) { %>
+          <a href="<%= theme.social_icon.icons[i] %>" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <%- partial("../_svg/social-"+ i +".svg") %>
+          </a>
+        <% } %>
+      <% } %>
     </div>
     <% } %> 
     <p>&copy; <%= date(new Date(), 'YYYY') %> <a href="/" target="_blank"><%= config.author %></a></p>
-
-    <% if (theme.hitokoto && theme.hitokoto.enable) { %>
-      <p id="hitokoto"></p>
-      <script src="https://v1.hitokoto.cn/?<%= theme.hitokoto.type ? 'c=' + theme.hitokoto.type + '&' : '' %>encode=js&select=%23hitokoto" defer></script>
-    <% } %>
 
     <% if (theme.beian) { %>
       <p><a href="http://www.miitbeian.gov.cn" target="_blank"><%= theme.beian %></a></p>

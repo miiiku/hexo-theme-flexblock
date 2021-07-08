@@ -1,0 +1,5 @@
+<ul class="wrap-list <%= class_name %>">
+  <% page.tags.each(function (tag) { %>
+    <li><a href="<%= url_for(tag.path) %>">🏷️ <%= tag.name %></a></li>
+  <% }) %>
+</ul>

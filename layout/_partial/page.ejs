@@ -1,46 +1,49 @@
 <!-- 自定义页面 -->
 
 <div class="body-container">
-  <%# 输出自定义页面文章内容 %>
-  <% if (page.content) { %>
-  <article class="content-container article-container">
-    <div class="article-content">
-      <div class="article-entry"><%- page.content %></div>
-    </div>
-  </article>
-  <% } %>
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      <%# 输出Markdown内容 %>
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <%- page.content %>
+      </section>
 
-  <%# 输出自定义友链内容 %>
-  <% if (page.type === "links") { %>
-    <article class="content-container next">
-      <div class="article-content">
-        <div class="article-entry">
+      <%# 输出自定义友链内容 %>
+      <% if (page.layout === "links") { %>
+        <section class="page-link-container">
           <% site.data.links.forEach(function(link) { %>
-            <figure class="bookmark-card">
-              <a class="bookmark-container" target="_blank" title="<%= link.name %>" href="<%= link.link %>">
-                <div class="bookmark-content">
-                  <div class="bookmark-name"><%= link.name %></div>
-                  <div class="bookmark-link"><%= link.link %></div>
-                </div>
-                <div class="bookmark-cover">
-                  <svg class="icon icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path d="M306.05312 361.6768a61.44 61.44 0 0 1 4.21888 82.20672l-4.21888 4.66944-106.9056 106.9056a190.464 190.464 0 0 0 262.30784 276.15232l7.08608-6.7584 106.9056-106.9056a61.44 61.44 0 0 1 91.09504 82.24768l-4.21888 4.66944-106.9056 106.9056A313.344 313.344 0 0 1 104.448 476.61056l7.7824-8.11008 106.9056-106.9056a61.44 61.44 0 0 1 86.91712 0z m385.024-27.81184a61.44 61.44 0 0 1 4.21888 82.20672l-4.21888 4.66944-270.336 270.336a61.44 61.44 0 0 1-91.09504-82.20672l4.21888-4.66944 270.336-270.336a61.44 61.44 0 0 1 86.8352 0z m220.65152-221.5936a313.344 313.344 0 0 1 7.7824 435.07712l-7.7824 8.11008-106.9056 106.9056a61.44 61.44 0 0 1-91.09504-82.24768l4.21888-4.66944 106.9056-106.9056a190.464 190.464 0 0 0-262.30784-276.15232l-7.08608 6.7584-106.9056 106.9056a61.44 61.44 0 0 1-91.09504-82.24768l4.21888-4.66944 106.9056-106.9056a313.344 313.344 0 0 1 443.1872 0z" p-id="2361" fill="#8a8a8a"></path>
-                  </svg>
+            <div class="link-item layout-padding">
+              <a href="<%= link.link %>" title="<%= link.name %>" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+                <% if (link.cover) { %>
+                <img src="<%= link.cover %>" alt="<%= link.name %>" class="soft-size--round soft-style--box">
+                <% } %>
+                <div>
+                  <h4 class="text-ellipsis"><%= link.name %></h4>
+                  <% if (link.describe) { %>
+                  <p class="text-ellipsis"><%= link.describe %></p>
+                  <% } %>
                 </div>
               </a>
-            </figure>
+            </div>
           <% }) %>
-        </div>
-      </div>
-    </article>
-  <% } %>
+        </section>
+      <% } %>
 
-  <%# 输出自定义留言板内容 %>
-  <% if (page.type === "messages") { %>
-    <article class="content-container next">
-      <div class="article-content">
-        <%- partial('../_widget/comment', { post: page }) %>
-      </div>
-    </article>
-  <% } %>
+      <%# 输出自定义留言板内容 %>
+      <% if (page.layout === "messages") { %>
+        <section class="page-message-container layout-padding">
+          <%- partial('../_widget/comment', { post: page }) %>
+        </section>
+      <% } %>
+    </div>
+    <div class="widget-info">
+      <%- partial("../_widget/widget-author") %>
+
+      <%- partial("../_widget/widget-notice") %>
+
+      <%- partial("../_widget/widget-categorys") %>
+
+      <%- partial("../_widget/widget-tags") %>
+    </div>
+  </article>
 </div>

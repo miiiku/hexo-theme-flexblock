@@ -1,8 +1,0 @@
-
-<div class="<%= class_name || 'gallery-photos' %>">
-  <% post.photos.forEach(function(photo, i){ %>
-    <a class="<%= class_name %>-img" href="<%- url_for(photo) %>" target="_blank" rel="gallery-<%= post._id %>">
-      <img src="<%- url_for(photo) %>" gallery itemprop="image">
-    </a>
-  <% }) %>
-</div>

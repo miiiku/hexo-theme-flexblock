@@ -2,29 +2,78 @@
 $navbar-height = 54px
 $mobile-navbar-height = 32px
 
-$inner-width = 860px
-
-$pc-padding = 20px
-$mb-padding = 12px
 $markdown-vertical = 1.6em
 
-// desktop 桌面(>=1200)
-$desktop-max-content-width = 1240px
-$desktop-banner-margin = 85px
-$desktop-banner-height = 460px
-$font-desktop-large = 28px
-$font-desktop-focus = 24px
-$font-desktop-commonly = 16px
-$font-desktop-small = 14px
-
-// mobile 手机(768<)
-$mobile-banner-margin = 40px
-$mobile-banner-height = 280px
-$font-mobile-large = 20px
-$font-mobile-focus = 18px
-$font-mobile-commonly = 14px
-$font-mobile-small = 12px
-
 // Media queries
-mq-pc = "screen and (min-width: 768px)"
-mq-mb = "screen and (max-width: 767px)"
+$mq-pc = "screen and (min-width: 768px)"
+$mq-mb = "screen and (max-width: 767px)"
+
+$soft-large-size = 24px 6px
+$soft-small-size = 10px 4px
+$soft-radius-size = 50% 5px
+
+@media $mq-pc {
+  :root {
+    --layout-max-width: 1200px;
+    --layout-padding: 20px;
+
+    --content-large-padding: 40px 38px 46px;
+    --content-small-padding: 20px 19px 23px;
+
+    --font-large-size: 46px;
+    --font-stress-size: 22px;
+    --font-common-size: 16px;
+    --font-base-size: 14px;
+    --font-base-lh: 1.8;
+
+    --banner-height: 460px;
+
+    // 导航栏，文章卡片，右侧widget
+    --content-large-padding: 40px 38px 46px;
+    // 标签term，子内容children，上下一篇article-nav，友链link
+    --content-primary-padding: 23px;
+
+    // 导航栏，文章卡片，右侧widget
+    --soft-large-radius: 24px;
+    // social社交图标 返回顶部按钮 404按钮 标签term 子内容children，上下一篇article-nav，友链link
+    --soft-primary-radius: 12px;
+    // soft类文字 如导航栏，分页按钮，右侧widget term，文章内容中img，aplery，dplayer等
+    --soft-small-radius: 6px;
+
+  }
+}
+
+@media $mq-mb {
+  :root {
+    --layout-max-width: 100%;
+    --layout-padding: 10px;
+
+    --content-large-padding: 30px 28px 34px;
+    --content-small-padding: 14px 12px 16px;
+
+    --font-large-size: 22px;
+    --font-stress-size: 18px;
+    --font-common-size: 14px;
+    --font-base-size: 12px;
+    --font-base-lh: 1.4;
+
+    --banner-height: 280px;
+
+    // 导航栏，文章卡片，右侧widget
+    --content-large-padding: 30px 28px 34px;
+    // 标签term，子内容children，上下一篇article-nav，友链link
+    --content-primary-padding: 16px;
+
+    // 导航栏，文章卡片，右侧widget
+    --soft-large-radius: 16px;
+    // social社交图标 返回顶部按钮 404按钮 标签term 子内容children，上下一篇article-nav，友链link
+    --soft-primary-radius: 6px;
+    // soft类文字 如导航栏，分页按钮，右侧widget term，文章内容中img，aplery，dplayer等
+    --soft-small-radius: 4px;
+  }
+}
+
+:root {
+  // 全局统一soft UI阴影 3px
+  --soft-shadow: 3px;
+}

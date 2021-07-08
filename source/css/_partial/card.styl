@@ -6,106 +6,50 @@
 
 // 卡片容器
 .card-container {
-  margin: 0 auto
-}
+  position: relative
+  height: 100%
 
-// 文章列表卡片样式
-.card-container.card-articles {
-  .article-title {
-    font-weight: 700
-    line-height: 1.3
-    margin-bottom: 20px
-  }
+  .card-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-  .article-meta {
-    line-height: 1.3
-  }
-  
-  .article-category {
-    position: absolute
-    z-index: 2
-
-    .article-category-link {
-      border-radius: 20px
-      padding: 4px 8px
-      transition: color 0.3s ease, background-color 0.3s ease
-
-      &:hover {
-        color: var(--theme-link-color)
-        background-color: #ffffff
-      }
-    }
-  }
-}
-
-// 文章导航器样式
-.card-container.card-article-nav {
-  article {
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-  }
-
-  strong {
-    margin-bottom: 20px
-  }
-}
-
-@media mq-pc {
-  .card-container.card-articles {
-    .article-title {
-      font-size: $font-desktop-focus
-    }
-    .article-meta {
-      margin-bottom: 60px
-    }
-    .article-category {
-      bottom: 45px
-      left: 30px // 38 - 8
-    }
-  }
-  
-  .card-container.card-article-nav {
-    font-size: $font-desktop-commonly
-  }
-
-  // 文章卡片
-  .card-container.card-articles {
-    card-list($pc-padding, 40px 38px 45px, 350px, 370px, 24px, 3)
-  }
-
-  // 文章导航卡片
-  .card-container.card-article-nav {
-    card-list($pc-padding, 20px 38px 20px, auto, 110px, 24px, 2)
-  }
-}
-
-@media mq-mb {
-  .card-container.card-articles {
-    .article-title {
-      font-size: $font-mobile-focus
-    }
-    .article-meta {
-      margin-bottom: 40px
-    }
-    .article-category {
-      bottom: 40px
-      left: 22px // 30 - 8
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      background-image: linear-gradient(234deg, #394245 0%, #000 100%);
     }
   }
 
-  .card-container.card-article-nav {
-    font-size: $font-mobile-commonly
-  }
-  
-  // 文章卡片
-  .card-container.card-articles {
-    card-list($mb-padding, 30px 30px 40px, 70vw, 200px, 12px, 1)
+  .card-cover + .card-text {
+    color: var(--theme-text-light)
   }
 
-  // 文章导航卡片
-  .card-container.card-article-nav {
-    card-list($mb-padding, 18px 20px 18px, auto, 90px, 12px, 1)
+  .card-text {
+    position: relative;
+    color: var(--theme-text-primary);
+    line-height: var(--font-base-lh);
+    transition: color 0.3s ease;
+
+    .card-text--title {
+      font-size: var(--font-stress-size);
+      font-weight: bolder;
+    }
+
+    .card-text--row {
+      font-size: var(--font-common-size);
+      margin-top: 20px;
+    }
   }
 }

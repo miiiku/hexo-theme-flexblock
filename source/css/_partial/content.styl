@@ -1,6 +1,5 @@
-// 文章内容样式
-.article-entry {
-  color: var(--theme-text-color)
+.markdown-body {
+  color: var(--theme-text-primary)
 
   &:before, &:after {
     content: ""
@@ -11,12 +10,48 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold
-    line-height: 1
     margin: 1em 0
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h1, h2 {
+    font-weight: 600;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--theme-border-secondary);
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h3, h4 {
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h5, h6 {
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 12px;
   }
   
   p, table {
-    line-height: $markdown-vertical
     margin: $markdown-vertical 0
   }
   
@@ -30,11 +65,22 @@
     font-weight: bold
     border-bottom: 3px solid #ddd
     padding-bottom: 0.5em
+    text-align: left
   }
 
   td {
     border-bottom: 1px solid #ddd
     padding: 10px 0
+  }
+
+  hr {
+    height: 0;
+    margin: 15px 0;
+    overflow: hidden;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--theme-border-primary);
+    transition: border-color 0.3s ease;
   }
   
   a {
@@ -42,10 +88,10 @@
     word-break: break-all
     border-bottom: 2px solid #dde0e0
     transition: border 0.3s ease
-    color: var(--theme-link-color)
+    color: var(--theme-text-active)
 
     &:hover {
-      border-color: var(--theme-link-color)
+      border-color: var(--theme-text-active)
     }
   }
 
@@ -56,7 +102,6 @@
 
   ul, ol {
     padding-left: 2em
-    line-height: 1.6
   }
 
   ul { list-style-type: disc }
@@ -64,10 +109,13 @@
   ol { list-style-type: decimal }
   
   img, video {
-    max-width: 100%
-    height: auto
     display: block
+    height: auto
     margin: auto
+    max-width: 100%;
+    box-sizing: initial;
+    background-color: var(--theme-bg-primary);
+    soft-box(var(--soft-small-radius));
   }
   
   iframe { border: none }
@@ -75,8 +123,9 @@
   blockquote {
     font-family: Georgia, "Times New Roman", serif
     font-size: 1em
-    color: var(--theme-low-color)
-    border-left: 3px solid var(--theme-low-color)
+    color: var(--theme-text-low)
+    border-left: 3px solid var(--theme-text-low)
+    padding-left: 1em
 
     footer {
       font-size: 14px
@@ -120,6 +169,7 @@
     padding-top: 56.25%
     height: 0
     overflow: hidden
+    soft-box(var(--soft-small-radius));
 
     iframe, object, embed {
       position: absolute
@@ -131,7 +181,7 @@
     }
   }
   
-  del { color: var(--theme-low-color) }
+  del { color: var(--theme-text-low) }
 
   pre, code {
     font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
@@ -139,7 +189,7 @@
 
   code {
     padding: 0 0.3em
-    background: var(--theme-low-color)
+    background: var(--theme-text-low)
     text-shadow: 0 1px var(--theme-bg-high)
   }
 
@@ -150,15 +200,15 @@
   }
 
   pre, .highlight {
-    margin: $markdown-vertical 0
     background: #2d2d2d
     overflow: auto
     color: #ccc
+    padding: 15px 20px
   }
 
   .highlight .gutter pre, .gist .gist-file .gist-data .line-numbers {
     color: #666
-    font-size: 0.85em
+    padding-right: 20px
   }
 
   .highlight {
@@ -178,260 +228,43 @@
       padding: 0
     }
 
-    figcaption {
-      font-size: 0.85em
-      color: #999
-      line-height: 1em
-      margin-bottom: 1em
-
-      &:before, &:after {
-        content: ""
-        display: table
-        clear: both
-      }
-
-      a { float: right }
-    }
-
     .gutter pre {
       text-align: right
       padding-right: 20px
     }
-
-    .line {
-      height: 22.400000000000002px
-
-      &.marked {
-        background: #515151
-      }
-    }
-  }
-
-  // flex center
-  .flex-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center
-  }
-
-  // aplayer 样式
-  .aplayer {
-    margin: $markdown-vertical 0
-
-    .aplayer-info .aplayer-music .aplayer-author {
-      color: var(--theme-stress-color)
-    }
-    .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-      fill: var(--theme-stress-color)
-    }
-
-    .aplayer-lrc:before {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--theme-bg-color))
-    }
-    .aplayer-lrc:after {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--theme-bg-color))
-    }
-    .aplayer-lrc p {
-      color: var(--theme-text-color)
-    }
-  }
-  
-  // dplayer 样式
-  .dplayer {
-    width: 100%
-    margin: $markdown-vertical 0
-    overflow: hidden
-    transition: all 0.3s ease
-  }
-
-  // meme 自定义表情包样式
-  .meme-img {
-    display: inline-block
-    margin: 0
-  }
-
-  // 自定义插入图片
-  .figure-image {
-    margin: $markdown-vertical 0;
-
-    img {
-      display: block
-      max-width: 100%
-    }
-
-    figcaption {
-      padding: 0 1rem
-      margin-top: 0.8rem
-      line-height: 1.5
-      text-align: center
-      color: #999999
-    }
-  }
-
-  // 自定义插入书签
-  .bookmark-card {
-    transition: all 0.3s ease
-    border-radius: 10px
-    overflow: hidden
-    margin: $markdown-vertical 0;
-
-    &:hover {
-      transform: translateY(-3%)
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2)
-    }
-
-    .bookmark-container {
-      display: flex
-      border: none
-      color: var(--theme-stress-color)
-      background-color: var(--theme-low-color)
-    }
-  }
-
-  // 自定义插入画廊
-  .waterfall-container {
-    margin: $markdown-vertical 0;
-
-    p {
-      display: block
-      border-radius: 4px
-      overflow: hidden
-      margin: 0
-    }
   }
 }
 
-@media mq-pc {
-  .article-entry {
-    blockquote {
-      padding-left: 1em
-    }
+.markdown-body .aplayer.aplayer-box { /** aplayer */
+  margin: 0;
+  margin-bottom: 20px;
+  background-color: var(--theme-bg-color);
+  soft-box(var(--soft-small-radius));
 
-    pre, .highlight {
-      padding: 15px 20px
-    }
-
-    .highlight {
-      margin-left: -($pc-padding)
-      margin-right: -($pc-padding)
-    }
-
-    .highlight .gutter pre {
-      padding-right: 20px
-    }
+  .aplayer-info .aplayer-controller .aplayer-time {
+    line-height: normal;
   }
 
-  .article-entry .aplayer {
-    soft-box(12px, 5px)
+  .aplayer-lrc:before {
+    background: linear-gradient(180deg, var(--theme-bg-color) 0, hsla(0,0%,100%,0));
   }
 
-  .article-entry .dplayer {
-    soft-box(12px, 5px)
-  }
-
-  .figure-image.max {
-    margin-left: -($pc-padding)
-    margin-right: -($pc-padding)
-  }
-
-  .article-entry .bookmark-card {
-    .bookmark-content {
-      flex: 1
-      padding: $pc-padding
-      overflow: hidden
-
-      .bookmark-name {
-        font-size: $font-desktop-focus
-        font-weight: bolder
-        margin-bottom: 15px
-        text-ellipsis()
-      }
-      
-      .bookmark-link {
-        font-size: $font-desktop-small
-        text-ellipsis()
-      }
-    }
-
-    .bookmark-cover {
-      display: flex
-      align-items: center
-      justify-content: center
-      padding: $pc-padding
-      width: 80px
-    }
-  }
-
-  .waterfall-container.max {
-    margin-left: -($pc-padding)
-    margin-right: -($pc-padding)
+  .aplayer-lrc:after {
+    background: linear-gradient(180deg, hsla(0,0%,100%,0) 0, var(--theme-bg-color));
   }
 }
 
-@media mq-mb {
-  .article-entry {
-    blockquote {
-      padding-left: 0.5em
-    }
+.markdown-body .dplayer.dplayer-box { /** dplayer */
+  margin-bottom: 20px;
+  soft-box(var(--soft-small-radius));
+}
 
-    pre, .highlight {
-      padding: 7px 10px
-    }
+.markdown-body .figure-image { /** figure image */
+  margin-bottom: 16px;
 
-    .highlight {
-      margin-left: -($mb-padding)
-      margin-right: -($mb-padding)
-    }
-
-    .highlight .gutter pre {
-      padding-right: 10px
-    }
-  }
-
-  .article-entry .aplayer {
-    soft-box(8px, 3px)
-  }
-
-  .article-entry .dplayer {
-    soft-box(8px, 3px)
-  }
-
-  .figure-image.max {
-    margin-left: -($mb-padding)
-    margin-right: -($mb-padding)
-  }
-
-  .article-entry .bookmark-card {
-    .bookmark-content {
-      flex: 1
-      padding: $mb-padding
-      overflow: hidden
-
-      .bookmark-name {
-        font-size: $font-mobile-focus
-        font-weight: bolder
-        margin-bottom: 15px
-        text-ellipsis()
-      }
-      
-      .bookmark-link {
-        font-size: $font-mobile-small
-        text-ellipsis()
-      }
-    }
-
-    .bookmark-cover {
-      display: flex
-      align-items: center
-      justify-content: center
-      padding: $mb-padding
-      width: 60px
-    }
-  }
-
-  .waterfall-container.max {
-    margin-left: -($mb-padding)
-    margin-right: -($mb-padding)
+  figcaption {
+    margin-top: 12px;
+    text-align: center;
+    color: var(--theme-text-low);
   }
 }

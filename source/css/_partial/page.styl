@@ -1,72 +1,250 @@
-// 其次的页面内容容器
-.content-container.next {
-  min-height: auto
-}
-
-// 文章标签列表
-.article-footer .article-tag-list {
+/** page list */
+.content-container.article-list {
   display: flex
   flex-wrap: wrap
 
-  a {
-    display: block
-    color: var(--theme-low-color)
-    margin-right: 10px
-    margin-bottom: 10px
-    transition: color 0.3s ease
-
-    &:hover {
-      color: var(--theme-stress-color)
-    }
-  }
-}
-
-
-@media mq-pc {
-  content-container-desktop()
-  
-  .article-content {
-    width: $inner-width
+  .article-item {
+    flex: 1 0 auto
+    min-width: 25%
     max-width: 100%
-    padding: $pc-padding;
-    margin: $pc-padding auto auto
-    soft-box(15px, 10px)
-    
-    & > div:not(:first-child) {
-      margin-top: $pc-padding;
-    }
+  }
 
-    .article-navs {
-      margin-left: -($pc-padding)
-      margin-right: -($pc-padding)
-      
-      .article-nav-title {
-        font-size: $font-desktop-commonly
-      }
-    }
+  .card-container.article-card {
+    padding: var(--content-large-padding)
   }
 }
 
-@media mq-mb {
-  content-container-mobile()
-  
-  .article-content {
-    width: 100%
-    padding: 0 ($mb-padding / 2)
-    background-color: var(--theme-bg-color)
-    border-radius: 12px 12px 0 0
 
-    & > div:not(:first-child) {
-      margin-top: $mb-padding
+/** post content */
+.content-container.post-container {
+  display: flex
+  align-items: flex-start;
+  overflow: visible;
+
+  .article-info {
+    // 文章导航
+    .article-nav {
+      display: flex
+      width: 100%
+      overflow: hidden
+
+      .article-nav-item {
+        flex: 1 1 auto
+        min-width: 50%
+        text-align: center
+      }
     }
 
-    .article-navs {
-      margin-left: -($mb-padding)
-      margin-right: -($mb-padding)
+    /** link page 独立内容 */
+    .page-link-container {
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+
+      .link-item {
+        @media $mq-pc {
+          max-width: 100%;
+          min-width: 33.333%;
+          flex: 1 0 auto;
+        }
+
+        @media $mq-mb {
+          max-width: 100%;
+          flex: 1 1 50%;
+        }
+
+        > a {
+          display: flex;
+          align-items: center;
+          transition: color 0.3s ease;
+          height: 100%;
       
-      .article-nav-title {
-        font-size: $font-mobile-commonly
+          img {
+            display: block;
+            width: 46px;
+            min-width: 46px;
+            height: 46px;
+            margin-right: 12px;
+            object-fit: cover;
+            flex: 0 0 46px;
+          }
+      
+          div {
+            overflow: hidden;
+            line-height: var(--font-base-lh);
+          }
+      
+          h4 {
+            font-weight: bold;
+            color: var(--theme-text-stress);
+          }
+      
+          p {
+            color: var(--theme-text-primary);
+          }
+        }
       }
+    }
+  }
+
+  .widget-info {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 360px;
+    min-width: 360px;
+    color: var(--theme-text-primary)
+
+    .widget-title {
+      display: flex;
+      align-items: center;
+      font-size: var(--font-stress-size)
+      font-weight: bolder
+      margin-bottom: 12px
+
+      svg {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+    }
+
+    .widget-author .widget-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 60px;
+        height: 60px;
+        display: block;
+      }
+
+      h2 {
+        font-weight: bolder
+        font-size: var(--font-stress-size)
+        line-height: var(--font-base-lh)
+      }
+
+      .count-box {
+        display: flex;
+        width: 100%;
+        margin-top: 16px;
+
+        .count-box--item {
+          display: flex
+          align-items: center
+          justify-content: center
+          flex: 0 0 33.3333%
+
+          svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    .widget-site .widget-body {
+      .site-info {
+        display: flex
+        flex-direction: column
+        gap: 10px 0
+
+        .site-info-item {
+          color: var(--theme-text-primary)
+        }
+      }
+    }
+
+    .widget-toc .widget-body {
+      ol {
+        &:not(:first-child) {
+          padding-left: 20px;
+        }
+
+        > li {
+          margin: 16px 0;
+
+          &::marker {
+            color: var(--theme-text-primary);
+          }
+
+          > a {
+            color: var(--theme-text-primary);
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: var(--theme-text-active);
+            }
+          }
+        }
+      }
+    }
+
+    .widget-categorys .widget-body {
+      .categorys-list-item {
+        &:not(:last-child) {
+          margin-bottom: 14px
+        }
+
+        a {
+          color: var(--theme-text-primary)
+          transition: color 0.3s ease, border-color 0.3s ease
+          font-weight: bolder
+          border-bottom: 2px solid var(--theme-border-primary)
+
+          &:hover {
+            color: var(--theme-text-active)
+            border-color: var(--theme-text-active)
+          }
+        }
+      }
+    }
+
+    .widget-tags .widget-body {
+      .tags-cloud {
+        display: flex
+        flex-wrap: wrap
+        align-items: center;
+        margin: 0 -8px;
+
+        a {
+          margin: 3px
+          display: block
+          padding: 4px 8px
+          color: var(--theme-text-primary)
+          transition: box-shadow 0.3s ease
+
+          &:hover {
+            soft-box(var(--soft-small-radius))
+          }
+        }
+      }
+    }
+  }
+
+  @media $mq-pc {
+    .article-info {
+      flex: 0 1 calc(100% - 360px)
+      min-width: calc(100% - 360px)
+    }
+    .widget-info {
+      display: flex;
+    }
+  }
+
+  @media $mq-mb {
+    .article-info {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+    .widget-info {
+      display: none;
     }
   }
 }

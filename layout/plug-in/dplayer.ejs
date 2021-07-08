@@ -3,18 +3,18 @@
 <script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
 <script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
 <script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer");
+  const dplayer = document.querySelectorAll(".dplayer-box");
   dplayer && initDPlayer(dplayer);
   function initDPlayer(els) {
     let elsArr = Array.from(els);
     elsArr.forEach(el => {
       let url = el.dataset.url;
-      let cover = el.dataset.cover;
+      let pic = el.dataset.pic;
       let subtitle = el.dataset.subtitle;
 
       let options = {
         container: el,
-        video: { url: url, pic: cover },
+        video: { url: url, pic: pic },
         theme: "<%= theme.dplayer.theme %>",
         autoplay: <%= theme.dplayer.autoplay %>,
         loop: <%= theme.dplayer.loop %>,

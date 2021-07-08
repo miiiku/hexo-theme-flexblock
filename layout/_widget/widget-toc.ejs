@@ -1,0 +1,14 @@
+<% if (page.toc) { %>
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <%- partial("../_svg/icon-toc.svg") %>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <%- toc(page.content, {
+      max_depth: theme.toc.max_depth,
+      min_depth: theme.toc.min_depth
+    }) %>
+  </div>
+</section>
+<% } %>

@@ -1,9 +1,12 @@
-<%- partial('../plug-in/valine') %>
-<%- partial('../plug-in/disqus') %>
+<!-- aplayer -->
+<% if (page.aplayer) { %>
 <%- partial('../plug-in/aplayer') %>
+<% } %>
+
+<!-- dplayer -->
+<% if (page.dplayer) { %>
 <%- partial('../plug-in/dplayer') %>
-<%- partial('../plug-in/waterfall') %>
-<%- partial('../plug-in/zoom')%>
+<% } %>
 
 <%# Gaug.es Analytics %>
 <% if (theme.gauges_analytics) { %>

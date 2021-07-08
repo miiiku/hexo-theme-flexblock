@@ -1,0 +1,28 @@
+<section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    <% if (theme.author.avatar) { %>
+      <img src="<%= theme.author.avatar %>" class="soft-size--round soft-style--box" alt="<%= theme.author.name %>">
+    <% } %>
+    <% if (theme.author.name) { %>
+      <h2><%= theme.author.name %></h2>
+    <% } %>
+    <% if (theme.author.description) { %>
+      <p><%= theme.author.description %></p>
+    <% } %>
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <%- partial("../_svg/icon-article.svg") %>
+        <span><%= site.posts.length %></span>
+      </div>
+      <div class="count-box--item">
+        <%- partial("../_svg/icon-categories.svg") %>
+        <%= site.categories.length %>
+      </div>
+      <div class="count-box--item">
+        <%- partial("../_svg/icon-tags.svg") %>
+        <%= site.tags.length %>
+      </div>
+    </div>
+  </div>
+</section>

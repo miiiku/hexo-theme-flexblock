@@ -74,6 +74,9 @@ window.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("scroll", function () {
     toggleBackToTopBtn()
   }, { passive: true });
+
+  /** handle lazy bg iamge */
+  handleLazyBG();
 });
 
 /**
@@ -83,4 +86,35 @@ window.addEventListener("DOMContentLoaded", function() {
  */
 function getScrollTop () {
   return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+}
+
+function querySelectorArrs (selector) {
+  return Array.from(document.querySelectorAll(selector))
+}
+
+
+function handleLazyBG () {
+  const lazyBackgrounds = querySelectorArrs('[background-image-lazy]')
+  let lazyBackgroundsCount = lazyBackgrounds.length
+  if (lazyBackgroundsCount > 0) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function({ isIntersecting, target }) {
+        if (isIntersecting) {
+          let img = target.dataset.img
+          if (img) {
+            target.style.backgroundImage = `url(${img})`
+          }
+          lazyBackgroundObserver.unobserve(target)
+          lazyBackgroundsCount --
+        }
+        if (lazyBackgroundsCount <= 0) {
+          lazyBackgroundObserver.disconnect()
+        }
+      })
+    })
+
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground)
+    })
+  }
 }

@@ -6,7 +6,7 @@
 .footer-container {
   margin: auto
   text-align: center
-  color: var(--theme-text-color)
+  color: var(--theme-text-primary)
 
   a {
     color: var(--theme-stree-color)
@@ -14,7 +14,7 @@
     transition: color 0.3s ease
 
     &:hover {
-      color: var(--theme-link-color)
+      color: var(--theme-text-active)
     }
   }
 
@@ -29,38 +29,36 @@
   align-items: center
   justify-content: center
   flex-wrap: wrap
+  gap: 20px
   list-style: none
   padding-bottom: 20px
 
   a {
     display: block
     text-align: center
-    margin: 10px;
   }
 
   svg.icon {
     display: block
-    fill: var(--theme-low-color)
+    fill: var(--theme-text-low)
     transition: fill 0.3s ease
 
     &:hover {
-      fill: var(--theme-stress-color)
+      fill: var(--theme-text-stress)
     }
   }
 }
 
 .social-icons a {
-  @media mq-pc {
+  @media $mq-pc {
     width: 45px;
     height: 45px;
     padding: 10px;
-    soft-box(12px, 5px);
   }
 
-  @media mq-mb {
+  @media $mq-mb {
     width: 32px;
     height: 32px;
     padding: 8px;
-    soft-box(8px, 3px);
   }
 }

@@ -7,7 +7,9 @@
 }
 
 .header-content {
+  position: relative
   width: 100%
+  height: var(--banner-height)
   margin: auto
   display: flex
   flex-direction: column
@@ -16,86 +18,50 @@
 }
 
 .post-image {
-  image-mask()
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
   z-index: auto
+
+  &:before {
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    content: ''
+    width: 100%
+    height: 100%
+    opacity: 0.4
+    background-color: #394245
+    background-image: linear-gradient(234deg, #394245 0%, #000 100%)
+  }
 }
     
 // post text
 .post-text {
-  width: $inner-width
-  max-width 100%
-  max-height: 100%
   overflow: hidden
-  padding: 0 $pc-padding
   text-align: center
-  color: #ffffff
-}
-
-// tag
-.type-wrap a {
-  display: inline-block
-  padding: 5px 12px
-  margin: 0 2px 1px 0
-  color: var(--theme-text-color);
-  background-color: #f4f4f4
-  border-radius: 20px
-  font-size: 10px
-  font-weight: 700
-  letter-spacing: 1.5px
-  transition: background-color 0.3s ease, color 0.03s ease
-  opacity: 0.9
-
-  &:hover {
-    background-color: var(--theme-link-color)
-    color: #ffffff
-  }
+  color: var(--theme-text-light)
+  padding: var(--content-large-padding)
 }
 
 // title
 .title-wrap {
-  font-weight: 700
-  line-height: 1.5
+  font-size: var(--font-large-size)
+  font-weight: bolder
   overflow: hidden
   text-overflow: ellipsis
   word-break: break-word
-  opacity: 0.9
 }
 
 // sub title
 .title-sub-wrap {
-  margin: 0
-  line-height: 1.3
-  opacity: 0.9
-}
-
-@media mq-pc {
-  .header-content {
-    min-height: $desktop-banner-height
-    padding-bottom: $desktop-banner-margin
-  }
-
-  .title-wrap {
-    font-size: $font-desktop-large
-    margin: 25px 0
-  }
-
-  .title-sub-wrap {
-    font-size: $font-desktop-commonly
-  }
-}
-
-@media mq-mb {
-  .header-content {
-    min-height: $mobile-banner-height
-    padding-bottom: $mobile-banner-margin
-  }
-
-  .title-wrap {
-    font-size: $font-mobile-large
-    margin: 20px 0
-  }
-
-  .title-sub-wrap {
-    font-size: $font-mobile-commonly
-  }
+  margin-top: 18px
+  font-size: var(--font-common-size)
 }

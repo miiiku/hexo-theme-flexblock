@@ -10,7 +10,7 @@
   <%# index container %>
   <% if (is_home()) { %>
     <div class="header-content">
-      <div class="post-text">
+      <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= config.title %></h1>
         <% if (config.subtitle) { %>
           <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
@@ -22,7 +22,7 @@
   <%# archive container %>
   <% if (is_archive()) { %>
     <div class="header-content">
-      <div class="post-text">
+      <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap">归档</h1>
         <h2 class="title-sub-wrap">共有<%= site.posts.length %>篇文章</h2>
       </div>
@@ -38,7 +38,7 @@
       });
     %>
     <div class="header-content">
-      <div class="post-text">
+      <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.category %></h1>
         <h2 class="title-sub-wrap">当前分类下共有<%= length %>篇文章</h2>
       </div>
@@ -54,7 +54,7 @@
       });
     %>
     <div class="header-content">
-      <div class="post-text">
+      <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.tag %></h1>
         <h2 class="title-sub-wrap">当前标签下共有<%= length %>篇文章</h2>
       </div>
@@ -64,16 +64,17 @@
   <%# post banner %>
   <% if (is_post()) { %>
     <div class="header-content">
-      <div class="post-text">
-        <div class="type-wrap">
-          <%- partial("../_widget/category", { class_name: "article-category", post: page }) %>
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap"><%= page.title %></h1>
+          <h2 class="title-sub-wrap">
+            <strong><%= page.author || config.author %></strong>
+            <span>发布于</span>
+            <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null }) %>
+          </h2>
+          <%- partial("../_widget/category", { page: page, class_name: 'dark' }) %>
+          <%- partial("../_widget/tag", { page: page, class_name: 'dark' }) %>
         </div>
-        <h1 class="title-wrap"><%= page.title %></h1>
-        <h2 class="title-sub-wrap">
-          <strong><%= page.author || config.author %></strong>
-          <span>发布于</span>
-          <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null, link: false }) %>
-        </h2>
       </div>
     </div>
   <% } %>
@@ -81,7 +82,7 @@
   <%# page banner %>
   <% if (is_page()) { %>
     <div class="header-content">
-      <div class="post-text">
+      <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.title %></h1>
         <% if (page.subtitle) { %>
           <h2 class="title-sub-wrap"><%= page.subtitle %></h2>

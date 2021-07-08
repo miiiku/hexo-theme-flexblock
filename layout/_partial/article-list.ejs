@@ -1,38 +1,32 @@
 <!-- post list container -->
 <div class="body-container">
-  <div class="content-container article-list">
-    <div class="card-container card-articles">
-      <div class="card-list">
-        <% page.posts.each(function(post, i) { %>
-          <%
-            let isLarge = false;
-            if (theme.large_legnth && post.title.length > theme.large_legnth) {
-              isLarge = true
-            }
-          %>
-          <div class="card-item<%= isLarge ? ' large' : '' %><%= post.cover ? ' img' : '' %>">
-            <article>
-              <% if (post.cover) { %>
-                <div class="card-cover" style="background-image: url(<%= post.cover %>)"></div>
-              <% } %>
-              <% if (post.link) { %>
-                <a class="article-link card-link" href="<%- url_for(post.link) %>" itemprop="url" target="_blank"></a>
-              <% } else { %>
-                <a class="article-link card-link" href="<%- url_for(post.path) %>" itemprop="url"></a>
-              <% } %>
-              <h2 class="article-title"><%= post.title %></h2>
-              <div class="article-meta">
-                <strong><%= post.author || config.author %></strong>
-                <span>发布于</span>
-                <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null, link: true }) %>
-              </div>
-              <div class="article-category">
-                <%- partial("../_widget/category", { class_name: "article-category", post: post }) %>
-              </div>
-            </article>
+  <div class="content-container layout-block article-list">
+    <% page.posts.each(function(post, i) { %>
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          <% if (post.cover) { %>
+            <div class="card-cover" background-image-lazy data-img="<%= post.cover %>"></div>
+          <% } %>
+
+          <div class="card-text">
+            <% if (post.link) { %>
+              <a href="<%- url_for(post.link) %>" itemprop="url" target="_blank">
+                <h2 class="card-text--title"><%= post.title || "(no title)" %></h2>
+              </a>
+            <% } else { %>
+              <a href="<%- url_for(post.path) %>" itemprop="url">
+                <h2 class="card-text--title"><%= post.title || "(no title)" %></h2>
+              </a>
+            <% } %>
+            <div class="card-text--row">
+              <span>发布于</span>
+              <%- partial("../_widget/date", { class_name: null, post: post, date_format: null }) %>
+            </div>
+            <%- partial("../_widget/category", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
+            <%- partial("../_widget/tag", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
           </div>
-        <% }) %>
+        </article>
       </div>
-    </div>
+    <% }) %>
   </div>
 </div>

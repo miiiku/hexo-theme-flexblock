@@ -1,37 +1,46 @@
 # Header
 menu:
-  HOME: /
-banner: https://qiniu.sukoshi.xyz/src/images/banner.jpg
-# banner: css/images/banner.jpg
-# logo: https://qiniu.miiiku.xyz/src/images/logo.png
+  首页: /
+  友链: /links
+  留言: /messages
+  关于: /about
 
-# large cover
-large_legnth: 20
+# 主页banner图
+banner: https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg
 
-# 一言
-# docs: https://hitokoto.cn/api
-# type: [a, b, c, d, e, f, g]
-hitokoto:
+# 站点通知信息
+notice: flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block
+
+# 作者信息
+author:
+  name: Sukoshi
+  avatar: https://s.gravatar.com/avatar/2d6b803eea37de0257620d5fabee7e64?s=200&r=g&d=retro
+  description: 要坚持健身鸭
+
+toc:
+  max_depth: 3 # 生成 TOC 的最大深度
+  min_depth: 2 # 生成 TOC 的最小深度
+
+comments:
   enable: true
-  type: a
-
-# valine 评论
-# docs: https://valine.js.org
-# You can get your appid and appkey from https://leancloud.cn
-valine:
-  enable: false
-  appId: 
-  appKey: 
-  avatar: mm
-  placeholder: 随便说点什么叭～
-  notify: true
-  visitor: true
-  pageSize: 10
-
-disqus:
-  enable: false
-  website: 
-  error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
+  use: 'valine' # valine || disqus
+  # valine 评论
+  # docs: https://valine.js.org
+  # You can get your appid and appkey from https://leancloud.cn
+  # 这里appId和appKey一定一定要改成自己的，没有的话去https://leancloud.cn这个网站注册创建一个
+  valine:
+    appId: oTmfgIaoB7PfPATvA9tsOwTu-gzGzoHsz
+    appKey: PPbJycuezKD3BJlhHUy8zOnG
+    avatar: mm
+    placeholder: 随便说点什么叭～
+    notify: true
+    visitor: true
+    pageSize: 10
+  # disqus 评论
+  # docs: https://disqus.com/
+  disqus:
+    website: sukoshi95
+    error: 如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w
 
 # dplayer 视频播放
 # docs: http://dplayer.js.org/#/zh-Hans/
@@ -52,31 +61,18 @@ aplayer:
   mutex: true
   lrcType: 3
 
-# waterfall 瀑布流
-# docs: https://github.com/miiiku/waterfall
-# Specific configuration information go to `layout/plug-in/waterfall.ejs`
-waterfall:
-  enable: true
+# 国内备案信息
+beian: 蜀ICP备15014309号
 
-# zoom 图片预览
-# docs: https://github.com/miiiku/zoom
-# Specific configuration information go to `layout/plug-in/zoom.ejs`
-zoom:
-  enable: true
-
-
-# widget behavior
-archive_type: 'monthly'
-show_count: false
-
-# beian
-beian: 
-
-# Miscellaneous
-google_analytics: 
+# 谷歌分析
+google_analytics: UA-165681463-1
+# gauges分析
 gauges_analytics: 
-baidu_analytics: 
-tencent_analytics: 
+# 百度分析
+baidu_analytics: 77cce6624f1114785af5e77d00cbf93c
+# 腾讯分析
+tencent_analytics: 66537616
+# 站点ico
 favicon: /favicon.ico
 
 
@@ -84,12 +80,8 @@ favicon: /favicon.ico
 social_icon:
   enable: true
   icons:
-    - { type: email,      value: }
-    - { type: github,     value: }
-    - { type: google+,    value: }
-    - { type: ins,        value: }
-    - { type: twitter,    value: }
-    - { type: youtube,    value: }
-    - { type: weibo,      value: }
-    - { type: cloudmusic, value: }
-    - { type: zhihu,      value: }
+    ins     :
+    zhihu   :
+    weibo   : https://twitter.com/guanquanhong
+    github  : https://github.com/miiiku/
+    twitter : https://twitter.com/guanquanhong

@@ -1,17 +1,53 @@
-<% if (post.comments) { %>
+<%
+  var useComments = theme.comments.use
+  var valine = theme.comments.valine
+  var disqus = theme.comments.disqus
+  var show_comments = post.comments
+  if (show_comments === undefined) {
+    show_comments = theme.comments.enable
+  }
+%>
+
+<% if (show_comments) { %>
   <%# valine 评论 %>
-  <% if (theme.valine.enable) { %>
-    <div class="valine-container">
+  <% if (useComments === 'valine' && valine.appId && valine.appKey) { %>
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
       <div id="valine_thread" class="valine-thread"></div>
     </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "<%= valine.appId %>",
+        appKey: "<%= valine.appKey %>",
+        avatar: "<%= valine.avatar %>",
+        placeholder: "<%= valine.placeholder %>",
+        notify: <%= valine.notify %>,
+        visitor: <%= valine.visitor %>,
+        pageSize: <%= valine.pageSize %>,
+      });
+    </script>
   <% } %>
 
   <%# disqus 评论 %>
-  <% if (theme.disqus.enable && theme.disqus.website) { %>
-    <div class="disqus-container">
-      <p id="disqus_error" class="disqus-error" style="display: none;"><%= theme.disqus.error %></p>
+  <% if (useComments === 'disqus' && disqus.website) { %>
+    <div class="disqus-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <p id="disqus_error" class="disqus-error" style="display: none;"><%= disqus.error %></p>
       <div id="disqus_thread" class="disqus-thread"></div>
     </div>
+    <script type="text/javascript">
+      (function() {
+        var d = document, s = d.createElement('script'), c = d.querySelector(".disqus-container");
+        if (!c) return;
+        s.src = 'https://<%= disqus.website %>.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        s.onerror = () => {
+          document.querySelector("#disqus_error").style.display = "block";
+        }
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
   <% } %>
 
 <% } %>

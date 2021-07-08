@@ -1,26 +1,51 @@
 <!-- 文章内容 -->
-
 <div class="body-container">
-  <article class="content-container article-container">
-    <div class="article-content">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
       <%# 如果文章设置了photos内容 %>
       <% if (page.photos && page.photos.length) { %>
-      <section class="article-gallery">
-        <%- partial("../_widget/gallery", { class_name: "article-gallery-photos", post: page }) %>
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <% page.photos.forEach(function(photo, i) { %>
+          <p>
+            <a href="<%- url_for(photo) %>" target="_blank">
+              <img src="<%- url_for(photo) %>" itemprop="image" loading="lazy" />
+            </a>
+          </p>
+        <% }) %>
       </section>
       <% } %>
-
-      <section class="article-entry">
+      
+      <%# 输出Markdown内容 %>
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <%- page.content %>
       </section>
 
-      <section class="article-footer">
-        <%- partial("../_widget/tags", { class_name: "article-tag", post: page }) %>
-      </section>
+      <%# 输出上一篇，下一篇内容 %>
+      <% if (page.prev || page.next){ %>
+        <nav class="article-nav">
+          <% if (page.prev) { %>
+            <%- partial("../_widget/article-nav", { page: page.prev, keyword: 'newer' }) %>
+          <% } %>
+          <% if (page.next) { %>
+            <%- partial("../_widget/article-nav", { page: page.next, keyword: 'older' }) %>
+          <% } %>
+        </nav>
+      <% } %>
 
-      <section class="article-navs">
-        <%- partial('../_widget/article-nav', { post: page }) %>
+      <section class="page-message-container layout-padding">
+        <%- partial('../_widget/comment', { post: page }) %>
       </section>
+    </div>
+    <div class="widget-info">
+      <%- partial("../_widget/widget-author") %>
+
+      <%- partial("../_widget/widget-toc", { page: page }) %>
+
+      <%- partial("../_widget/widget-notice") %>
+
+      <%- partial("../_widget/widget-categorys") %>
+
+      <%- partial("../_widget/widget-tags") %>
     </div>
   </article>
 </div>

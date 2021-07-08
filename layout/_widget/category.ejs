@@ -1,8 +1,5 @@
-<%-
-  list_categories(post.categories, {
-    class: class_name || "article-category",
-    show_count: false,
-    style: 'none',
-    separator: ''
-  })
-%>
+<ul class="wrap-list <%= class_name %>">
+  <% page.categories.each(function (categorie) { %>
+    <li><a href="<%= url_for(categorie.path) %>">📒 <%= categorie.name %></a></li>
+  <% }) %>
+</ul>

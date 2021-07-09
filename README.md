@@ -16,15 +16,15 @@
 
 ## Document
 
-Change description: [flex-block改动说明](https://kiyori.xyz/2021/07/080920.html)
+Change description: [flex-block改动说明](https://kyori.xyz/2021/07/080920.html)
 
-doc list: [docs](https://kiyori.xyz/categories/doc/)
+doc list: [docs](https://kyori.xyz/categories/doc/)
 
-- [_config.yml配置](https://kiyori.xyz/2021/07/081144.html)
+- [_config.yml配置](https://kyori.xyz/2021/07/081144.html)
 
-- [front-matter配置](https://kiyori.xyz/2021/07/081100.html)
+- [front-matter配置](https://kyori.xyz/2021/07/081100.html)
 
-- [插入图片，音频和视频](https://kiyori.xyz/2021/07/081010.html)
+- [插入图片，音频和视频](https://kyori.xyz/2021/07/081010.html)
 
 
 ### Install

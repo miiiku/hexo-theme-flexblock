@@ -7,7 +7,7 @@
 
 ![flex-block--post](./screenshots/flex-block--post.jpeg)
 
-### v2.0以发布，重构部分代码。如需要查看v1.0的代码请访问:[v1.0](https://github.com/miiiku/flex-block/tree/v1.0)
+### v2.0以发布，重构部分代码。如需要查看v1.0的代码请访问:[v1.0](https://github.com/miiiku/hexo-theme-flexblock/tree/v1.0)
 
 
 ## Example Site
@@ -39,7 +39,7 @@ doc list: [docs](https://kyori.xyz/categories/doc/)
 git clone https://github.com/miiiku/flex-block.git ./themes/flex-block
 ```
 
-如果你不是`git`用户也可以从[https://github.com/miiiku/flex-block/archive/refs/heads/master.zip](https://github.com/miiiku/flex-block/archive/refs/heads/master.zip)下载压缩包解压到你的网站目录下的`theme`文件夹下并重命名`hugo-theme-kagome-main`为`kagome`。
+如果你不是`git`用户也可以从[https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip](https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip)下载压缩包解压到你的网站目录下的`theme`文件夹下并重命名`hexo-theme-flexblock`为`flex-block`。
 
 #### 修改一些主题配置
 

@@ -36,10 +36,10 @@ doc list: [docs](https://kyori.xyz/categories/doc/)
 进入你的网站目录并执行以下代码:
 
 ```
-git clone https://github.com/miiiku/flex-block.git ./themes/flex-block
+git clone https://github.com/miiiku/hexo-theme-flexblock.git ./themes/flex-block
 ```
 
-如果你不是`git`用户也可以从[https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip](https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip)下载压缩包解压到你的网站目录下的`theme`文件夹下并重命名`hexo-theme-flexblock`为`flex-block`。
+如果你不是`git`用户也可以从[https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip](https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip)下载压缩包解压到你的网站目录下的`theme`文件夹下并重命名`hexo-theme-flexblock-master`为`flex-block`。
 
 #### 修改一些主题配置
 

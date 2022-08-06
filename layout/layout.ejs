@@ -8,6 +8,19 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
+  <% if (theme.mathjax.enable){ %>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+      }
+      });
+      </script>
+      <!--latex数学显示公式支持-->
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+  <% } %>
+
   <%- meta_generator() %>
 
   <% if (config.description) { %>

@@ -7,6 +7,10 @@ menu:
 # 主页banner图
 banner: https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg
 
+# LaTeX公式支持
+mathjax:
+    enable: false
+
 # 站点通知信息
 notice: flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block
 

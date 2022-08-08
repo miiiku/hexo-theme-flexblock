@@ -8,6 +8,13 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
+  <!--latex数学显示公式支持-->
+  <% if (theme.mathjax.enable){ %>
+      
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <% } %>
+
   <%- meta_generator() %>
 
   <% if (config.description) { %>

@@ -7,10 +7,6 @@ menu:
 # 主页banner图
 banner: https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg
 
-# LaTeX公式支持
-mathjax:
-    enable: false
-
 # 站点通知信息
 notice: flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block
 
@@ -63,6 +59,11 @@ aplayer:
   loop: false
   mutex: true
   lrcType: 3
+
+# mathjax LaTeX公式支持
+#docs: http://docs.mathjax.org/en/latest/
+mathjax:
+    enable: true
 
 # 国内备案信息
 beian: 

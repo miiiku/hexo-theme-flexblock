@@ -8,12 +8,7 @@
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
   
-  <!--latex数学显示公式支持-->
-  <% if (theme.mathjax.enable){ %>
-      
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <% } %>
+
 
   <%- meta_generator() %>
 
@@ -53,6 +48,12 @@
 
   <% if (theme.favicon){ %>
     <%- favicon_tag(theme.favicon) %>
+  <% } %>
+
+  <% if (theme.mathjax.enable&&page.mathjax){ %> 
+    <!--mathjax latex数学公式显示支持-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <% } %>
 
   <% if (config.highlight.enable){ %>

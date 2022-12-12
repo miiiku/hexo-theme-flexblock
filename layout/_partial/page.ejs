@@ -14,13 +14,13 @@
           <% site.data.links.forEach(function(link) { %>
             <div class="link-item layout-padding">
               <a href="<%= link.link %>" title="<%= link.name %>" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-                <% if (link.cover) { %>
-                <img src="<%= link.cover %>" alt="<%= link.name %>" class="soft-size--round soft-style--box">
+                <% if (link.avatar) { %>
+                <img src="<%= link.avatar %>" alt="<%= link.name %>" class="soft-size--round soft-style--box">
                 <% } %>
                 <div>
                   <h4 class="text-ellipsis"><%= link.name %></h4>
-                  <% if (link.describe) { %>
-                  <p class="text-ellipsis"><%= link.describe %></p>
+                  <% if (link.description) { %>
+                  <p class="text-ellipsis"><%= link.description %></p>
                   <% } %>
                 </div>
               </a>

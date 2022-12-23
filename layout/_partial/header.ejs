@@ -72,6 +72,10 @@
             <span>发布于</span>
             <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null }) %>
           </h2>
+          <h2 class="title-sub-wrap">
+            <span>最后更新于</span>
+            <%- partial("../_widget/updated", { class_name: 'article-updated', post: page, date_format: null }) %>
+          </h2>
           <%- partial("../_widget/category", { page: page, class_name: 'dark' }) %>
           <%- partial("../_widget/tag", { page: page, class_name: 'dark' }) %>
         </div>

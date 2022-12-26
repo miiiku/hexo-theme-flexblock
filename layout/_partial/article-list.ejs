@@ -20,8 +20,14 @@
             <% } %>
             <div class="card-text--row">
               <span>发布于</span>
-              <%- partial("../_widget/date", { class_name: null, post: post, date_format: null }) %>
+              <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null }) %>
             </div>
+            <% if ( date(post.updated, null) != date(post.date, null) ) { %>
+              <div class="card-text--row new-date">
+                <span>更新于</span>
+                <%- partial("../_widget/updated", { class_name: 'article-updated', post: post, date_format: null }) %>
+              </div>
+            <% } %>
             <%- partial("../_widget/category", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
             <%- partial("../_widget/tag", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
           </div>

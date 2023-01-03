@@ -14,18 +14,25 @@
     <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
       <div id="valine_thread" class="valine-thread"></div>
     </div>
-    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src="//unpkg.com/leancloud-storage@3.15.0/dist/av-min.js"></script>
     <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <script type="text/javascript">
       new Valine({
         el: "#valine_thread",
         appId: "<%= valine.appId %>",
         appKey: "<%= valine.appKey %>",
-        avatar: "<%= valine.avatar %>",
         placeholder: "<%= valine.placeholder %>",
-        notify: <%= valine.notify %>,
-        visitor: <%= valine.visitor %>,
+        avatar: "<%= valine.avatar %>",
         pageSize: <%= valine.pageSize %>,
+        lang: "<%= valine.lang %>",
+        visitor: <%= valine.visitor %>,
+        recordIP: <%= valine.recordIP %>,
+        enableQQ: <%= valine.enableQQ %>,
+        meta: <%- valine.meta %>,
+        requiredFields: <%- valine.requiredFields %>,
+        <% if (valine.bilibiliEmoji) { %>
+        <%- partial("../plug-in/bilibili-emoji") %>
+        <% } %>
       });
     </script>
   <% } %>

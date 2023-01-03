@@ -30,11 +30,16 @@ comments:
   valine:
     appId: 
     appKey: 
-    avatar: mm
-    placeholder: 随便说点什么叭～
-    notify: true
-    visitor: true
-    pageSize: 10
+    placeholder: 随便说点什么叭～ # 评论框占位提示符
+    avatar: mp # Gravatar 头像展示方式
+    pageSize: 10 # 评论列表分页，每页条数
+    lang: zh-cn # 多语言支持
+    visitor: true # 文章访问量统计
+    recordIP: true # 是否记录评论者IP
+    enableQQ: false # 是否启用昵称框自动获取QQ昵称和QQ头像，开启后是在昵称框输入QQ号码进行获取
+    meta: "['nick', 'mail', 'link']" # 评论者相关属性，可选值：['nick']，['nick','mail']，['nick', 'mail', 'link']
+    requiredFields: "['nick']" # 设置必填项，默认匿名
+    bilibiliEmoji: true # 是否启用Bilibili表情
   # disqus 评论
   # docs: https://disqus.com/
   disqus:

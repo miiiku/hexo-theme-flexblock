@@ -68,7 +68,11 @@ aplayer:
 # mathjax LaTeX公式支持
 #docs: http://docs.mathjax.org/en/latest/
 mathjax:
-    enable: true
+  enable: true
+
+polyfill:
+  enable: false
+
 
 # 国内备案信息
 beian: 

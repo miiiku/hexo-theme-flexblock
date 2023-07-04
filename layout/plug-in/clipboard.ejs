@@ -1,0 +1,32 @@
+<% if (theme.copy_button.enable) { %>
+    <script src="
+    https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js
+    "></script>
+    <script type="text/javascript">
+            
+        let copyButtonClass = 'copy-btn'
+        
+        //  instantiate clipboardjs 
+        new ClipboardJS('.'+copyButtonClass)
+
+        document.querySelectorAll('td.code').forEach((elem)=>{
+            let copyButton = document.createElement('button')
+            copyButton.setAttribute("class",copyButtonClass)
+            copyButton.innerText = 'copy'
+
+            // style
+            copyButton.style.padding = "4px 8px"
+            copyButton.style.marginTop = '6px'
+            
+            copyButton.onclick = ()=>{
+                copyButton.innerText = 'copied'
+                setInterval( ()=>{
+                    copyButton.innerText = 'copy'
+                },3000)
+            }
+            copyButton.setAttribute("data-clipboard-text",elem.innerText)
+            elem.appendChild(copyButton)
+})
+    </script>
+    <% } %>
+  

@@ -26,7 +26,7 @@ comments:
   # valine 评论
   # docs: https://valine.js.org
   # You can get your appid and appkey from https://leancloud.cn
-  # 这里appId和appKey一定一定要改成自己的，没有的话去https://leancloud.cn这个网站注册创建一个
+  # 这里appId和appKey一定一定要改成自己的，没有的话去 https://leancloud.cn 这个网站注册创建一个
   valine:
     appId: 
     appKey: 
@@ -66,9 +66,20 @@ aplayer:
   lrcType: 3
 
 # mathjax LaTeX公式支持
-#docs: http://docs.mathjax.org/en/latest/
+# docs: http://docs.mathjax.org/en/latest/
 mathjax:
-    enable: true
+  enable: true
+
+# clipboard.js
+# docs: https://clipboardjs.com/
+copy_button:
+  enable: false
+
+# polyfill 提供老版浏览器对新语法的支持
+# website: https://polyfill.io/v3/ 
+polyfill:
+  enable: false
+
 
 # 国内备案信息
 beian: 

@@ -70,11 +70,6 @@ aplayer:
 mathjax:
   enable: true
 
-# clipboard.js
-# docs: https://clipboardjs.com/
-copy_button:
-  enable: false
-
 # polyfill 提供老版浏览器对新语法的支持
 # website: https://polyfill.io/v3/ 
 polyfill:

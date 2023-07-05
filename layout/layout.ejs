@@ -7,8 +7,6 @@
   <meta name="theme-color" content="#3367D6"/>
   <link rel="apple-touch-icon" href="/icons-192.png">
   <link rel="manifest" href="/manifest.json">
-
-
   
   <%- meta_generator() %>
 
@@ -50,10 +48,10 @@
     <%- favicon_tag(theme.favicon) %>
   <% } %>
 
+  <!--mathjax latex数学公式显示支持-->
   <% if (theme.polyfill.enable) { %>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <% } %>
-  <!--mathjax latex数学公式显示支持-->
   <% if (theme.mathjax.enable && page.mathjax) { %> 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <% } %>
@@ -61,6 +59,17 @@
   <% if (config.highlight.enable) { %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/<%= config.highlight.theme || 'monokai' %>.min.css">
+  <% } %>
+
+  <% if (config.prismjs.enable) { %>
+    <% if (config.prismjs.preprocess) { %>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <% } else { %>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <% } %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
   <% } %>
 
   <%- css('css/style') %>

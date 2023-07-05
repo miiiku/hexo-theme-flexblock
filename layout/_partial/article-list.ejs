@@ -23,7 +23,7 @@
               <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null }) %>
             </div>
             <% if ( date(post.updated, null) != date(post.date, null) ) { %>
-              <div class="card-text--row new-date">
+              <div class="last-time">
                 <span>更新于</span>
                 <%- partial("../_widget/updated", { class_name: 'article-updated', post: post, date_format: null }) %>
               </div>

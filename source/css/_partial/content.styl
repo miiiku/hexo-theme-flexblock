@@ -1,76 +1,111 @@
 .markdown-body {
-  color: var(--theme-text-primary)
+  line-height: 2;
+  color: var(--theme-text-primary);
 
   &:before, &:after {
-    content: ""
-    display: table
+    content: "";
+    display: table;
+    clear: both;
   }
 
-  &:after { clear: both }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: bold
-    margin: 1em 0
+  & > :first-child {
+    margin-top: 0;
   }
 
-  h1 {
-    font-size: 32px;
+  & > :last-child {
+    margin-bottom: 0;
+  }
+  
+  ul { list-style-type: disc }
+  
+  ol { list-style-type: decimal }
+
+  ul, ol {
+    padding-left: 2em
+    line-height: 1.75rem;
+    margin-top: $markdown-vertical;
+    margin-bottom: $markdown-vertical;
+
+    ul, ol {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  cite, em, i {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: bolder;
+  }
+
+  p + p {
+    margin-top: $markdown-vertical;
   }
 
   h1, h2 {
-    font-weight: 600;
-    padding-bottom: .3em;
+    margin-top: 30px;
+    margin-bottom: 16px;
     border-bottom: 1px solid var(--theme-border-secondary);
   }
 
+  h3, h4, h5, h6 {
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    padding-bottom: .2em;
+    font-size: 1.7em
+  }
+
   h2 {
-    font-size: 24px;
+    padding-bottom: .3em;
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 20px;
-  }
-
-  h3, h4 {
-    font-weight: 600;
+    font-size: 1.3em;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 1.1em;
   }
 
   h5 {
-    font-size: 14px;
-  }
-
-  h5, h6 {
-    font-weight: 600;
+    font-size: 1em;
   }
 
   h6 {
-    font-size: 12px;
-  }
-  
-  p, table {
-    margin: $markdown-vertical 0
+    font-size: .9em;
   }
   
   table {
     width: 100%
     border-collapse: collapse
     border-spacing: 0
-  }
 
-  th {
-    font-weight: bold
-    border-bottom: 3px solid #ddd
-    padding-bottom: 0.5em
-    text-align: left
-  }
+    th {
+      font-weight: bold
+      border-bottom: 3px solid #ddd
+      padding-bottom: 0.5em
+      text-align: left
+    }
 
-  td {
-    border-bottom: 1px solid #ddd
-    padding: 10px 0
+    td {
+      border-bottom: 1px solid #ddd
+      padding: 10px 0
+    }
   }
 
   hr {
@@ -94,19 +129,6 @@
       border-color: var(--theme-text-active)
     }
   }
-
-  ul, ol, dl {
-    margin-top: $markdown-vertical
-    margin-bottom: $markdown-vertical
-  }
-
-  ul, ol {
-    padding-left: 2em
-  }
-
-  ul { list-style-type: disc }
-  
-  ol { list-style-type: decimal }
   
   img, video {
     display: block
@@ -119,50 +141,6 @@
   }
   
   iframe { border: none }
-    
-  blockquote {
-    font-family: Georgia, "Times New Roman", serif
-    font-size: 1em
-    color: var(--theme-text-low)
-    border-left: 3px solid var(--theme-text-low)
-    padding-left: 1em
-
-    footer {
-      font-size: 14px
-      margin: $markdown-vertical 0
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
-
-      cite:before {
-        content: "—"
-        padding: 0 0.5em
-      }
-    }
-  }
-
-  .pullquote {
-    text-align: left
-    width: 45%
-    margin: 0
-
-    &.left {
-      margin-left: 0.5em
-      margin-right: 1em
-    }
-
-    &.right {
-      margin-right: 0.5em
-      margin-left: 1em
-    }
-  }
-
-  .caption {
-    color: #999
-    display: block
-    font-size: 0.9em
-    margin-top: 0.5em
-    position: relative
-    text-align: center
-  }
 
   .video-container {
     position: relative
@@ -184,60 +162,213 @@
   del { color: var(--theme-text-low) }
 
   pre, code {
-    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   }
 
-  code {
-    padding: 0 0.3em
-    margin-left: 0.3em
-    margin-right: 0.3em
-    background-color: var(--theme-bg-shadow)
+  p code {
+    padding: 0.1em 0.3em;
+    background-color: var(--theme-bg-shadow);
+  }
+}
+
+/** details */
+.markdown-body details {
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
+  border-radius: var(--soft-small-radius);
+  border: 1px solid var(--theme-border-secondary);
+  color: var(--theme-text-primary);
+  font-size: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px -2px #00000026;
+
+  &[open] summary {
+    border-bottom: 1px solid var(--theme-border-secondary);
+    background-color: var(--theme-bg-primary);
   }
 
-  pre code {
-    background: none
-    text-shadow: none
-    padding: 0
+  summary {
+    padding: 8px 12px;
+    font-weight: bolder;
+    color: var(--theme-text-stress);
+    cursor: pointer;
+    outline: 0;
   }
 
-  pre, .highlight {
-    background: #2d2d2d
-    overflow: auto
-    color: #ccc
-    padding: 15px 20px
+  summary + *, .details-content {
+    padding: 8px 12px;
+
+    & > * {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/** blockquote */
+.markdown-body blockquote, .markdown-body .pullquote {
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
+  border-left: 3px solid #9dacb7;
+  padding: 2px 0 2px .7em;
+  color: var(--theme-text-low);
+
+  & > :first-child  {
+    margin-top: 0;
   }
 
-  .highlight .gutter pre, .gist .gist-file .gist-data .line-numbers {
-    color: #666
-    padding-right: 20px
+  & > :last-child {
+    margin-bottom: 0;
   }
 
-  .highlight {
-    pre {
-      border: none
-      margin: 0
-      padding: 0
+  p {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+/** highlight */
+.markdown-body figure.highlight {
+  position: relative;
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
+  overflow: auto
+  color: #ccc
+  background: #2d2d2d;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: var(--soft-small-radius);
+
+  &:has(> figcaption) {
+    padding-top: 0;
+  }
+
+  &:has(> figcaption) button.copy-btn {
+    top: 6px;
+  }
+
+  &:hover button.copy-btn {
+    opacity: 1;
+  }
+
+  button.copy-btn {
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #3a3d50;
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+
+    &.copied {
+      border-radius: 0 4px 4px 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+      
+      &::before {
+        display: block;
+        padding-left: 8px;
+        padding-right: 8px;
+        width: fit-content;
+        height: 32px;
+        line-height: 32px;
+        color: #cccccc;
+        text-align: center;
+        font-weight: bolder;
+        box-sizing: border-box;
+        white-space: normal;
+        border-radius: 4px 0 0 4px;
+        content: "Copied";
+        background-color: #3a3d50;
+        transform: translateX(calc(-100% - 2px));
+      }
+    }
+  }
+
+  figcaption {
+    display: flex;
+    align-items: center
+    gap: 16px;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    background-color: #434343;
+    border-radius: 4px 4px 0 0;
+
+    & > a {
+      text-decoration: none;
+      border-bottom: none;
     }
 
-    table {
-      margin: 0
-      width: auto
+    & > span {
+      display: inline-block;
+      padding: 2px 8px;
+      background-color: #4b4b4b;
+      border-radius: 4px;
     }
+  }
+
+  table {
+    margin: 0
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
 
     td {
       border: none
       padding: 0
     }
 
-    .gutter pre {
-      text-align: right
-      padding-right: 20px
+    .gutter {
+      width: 56px;
+      pre {
+        color: #666666;
+        text-align: right
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+    }
+
+    .code {
+      width: auto;
+      pre {
+        padding-left: 5px;
+        padding-right: 20px;
+      }
+    }
+
+    pre code {
+      background: none
+      text-shadow: none
+      padding: 0
     }
   }
 }
 
-.markdown-body .aplayer.aplayer-box { /** aplayer */
-  margin: 20px 0;
+/** prismjs */
+.markdown-body pre[class*="language-"] {
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
+  overflow: auto
+  color: #ccc
+  background: #2d2d2d;
+  border-radius: var(--soft-small-radius);
+
+  // todo
+}
+
+/** aplayer */
+.markdown-body .aplayer.aplayer-box {
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
   background-color: var(--theme-bg-color);
   soft-box(var(--soft-small-radius));
 
@@ -254,18 +385,29 @@
   }
 }
 
-.markdown-body .dplayer.dplayer-box { /** dplayer */
-  margin: 20px 0;
+/** dplayer */
+.markdown-body .dplayer.dplayer-box { 
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
   soft-box(var(--soft-small-radius));
 }
 
-.markdown-body .figure-image { /** figure image */
-  margin-top: 16px;
-  margin-bottom: 16px;
+/** figure image */
+.markdown-body .figure-image {
+  margin-top: $markdown-vertical;
+  margin-bottom: $markdown-vertical;
+
+  img {
+    display: table;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--soft-small-radius);
+  }
 
   figcaption {
-    margin-top: 12px;
+    display: block;
     text-align: center;
+    margin: $markdown-vertical 0;
     color: var(--theme-text-low);
   }
 }

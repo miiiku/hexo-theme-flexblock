@@ -1,32 +1,58 @@
-<% if (theme.copy_button.enable) { %>
-    <script src="
-    https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js
-    "></script>
-    <script type="text/javascript">
-            
-        let copyButtonClass = 'copy-btn'
-        
-        //  instantiate clipboardjs 
-        new ClipboardJS('.'+copyButtonClass)
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
 
-        document.querySelectorAll('td.code').forEach((elem)=>{
-            let copyButton = document.createElement('button')
-            copyButton.setAttribute("class",copyButtonClass)
-            copyButton.innerText = 'copy'
+<!-- https://clipboardjs.com/ -->
 
-            // style
-            copyButton.style.padding = "4px 8px"
-            copyButton.style.marginTop = '6px'
-            
-            copyButton.onclick = ()=>{
-                copyButton.innerText = 'copied'
-                setInterval( ()=>{
-                    copyButton.innerText = 'copy'
-                },3000)
-            }
-            copyButton.setAttribute("data-clipboard-text",elem.innerText)
-            elem.appendChild(copyButton)
-})
-    </script>
-    <% } %>
-  
+<% if (config.highlight.enable) { %>
+<script type="text/javascript">
+	(function () {
+		function getCodeType (elem) {
+			const classs = Array.from(elem.classList.values());
+			if (classs && classs.length > 1) {
+				return classs[1];
+			}
+			return "plain";
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			const copyBtnClass = "copy-btn";
+			//  instantiate clipboardjs 
+			const clipboard = new ClipboardJS('.' + copyBtnClass);
+
+			clipboard.on('success', function (e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				if (e.trigger) {
+					e.trigger.classList.add("copied");
+					setTimeout(() => {
+						e.trigger.classList.remove("copied");
+					}, 3000);
+				}
+				e.clearSelection();
+			});
+
+			clipboard.on('error', function (e) {
+				console.error('Action:', e.action);
+				console.error('Trigger:', e.trigger);
+			});
+
+			document.querySelectorAll('figure.highlight').forEach((elem) => {
+				const codeContent = elem.querySelector("td.code");
+				const copyButton = document.createElement('button');
+				copyButton.setAttribute("class", copyBtnClass);
+				copyButton.setAttribute("title", "Copy Code");
+				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
+				elem.insertBefore(copyButton, elem.children[0]);
+			});
+		})
+	})();
+</script>
+<% } %>
+
+<% if (config.prismjs.enable) { %>
+<script type="text/javascript">
+	(function () {
+		// todo
+	})();
+</script>
+<% } %>

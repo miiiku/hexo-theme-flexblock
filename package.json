@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-flexblock",
-  "version": "2.12.0",
+  "version": "2.12.1",
   "description": "A Card UI Design and Neumorphism Design theme for Hexo",
   "license": "MIT",
   "main": "package.json",

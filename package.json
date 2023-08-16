@@ -1,0 +1,51 @@
+{
+  "name": "hexo-theme-flexblock",
+  "version": "2.12.1",
+  "description": "A Card UI Design and Neumorphism Design theme for Hexo",
+  "license": "MIT",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "flexblock",
+    "card",
+    "neumorphism"
+  ],
+  "homepage": "https://kyori.xyz",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/miiiku/hexo-theme-flexblock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/miiiku/hexo-theme-flexblock/issues"
+  },
+  "author": {
+      "name": "miiiku",
+      "email": "guanquanhong@163.com",
+      "url": "https://github.com/miiiku"
+  },
+  "contributors": [
+    {
+      "name": "seeleclover",
+      "email": "seeleclover@outlook.com",
+      "url": "https://github.com/seeleclover"
+    },
+    {
+      "name": "dangjinghao",
+      "email": "dangjinghaoemail@163.com",
+      "url": "https://github.com/dangjinghao"
+    },
+    {
+      "name": "LunaroakF",
+      "email": "smallkay063@foxmail.com",
+      "url": "https://github.com/LunaroakF"
+    }
+  ],
+  "dependencies": {
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-stylus": "^2.1.0"
+  }
+}

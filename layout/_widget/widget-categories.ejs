@@ -1,0 +1,17 @@
+<section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <%- partial("../_svg/icon-categories.svg") %>
+      <span>categories</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      <% site.categories.each(function (category) { %>
+        <li class="categories-list-item">
+          <a href="<%= url_for(category.path) %>">
+            <%= category.name %> (<%= category.length %>)
+          </a>
+        </li>
+        <% }) %>
+    </ul>
+  </div>
+</section>

@@ -33,8 +33,8 @@
   <% if (is_category()) { %>
     <%
       var length = 0;
-      site.categories.each(function (categorie) {
-        if (categorie.name === page.category) length = categorie.length
+      site.categories.each(function (category) {
+        if (category.name === page.category) length = category.length
       });
     %>
     <div class="header-content">

@@ -1,5 +1,5 @@
 <ul class="wrap-list <%= class_name %>">
-  <% page.categories.each(function (categorie) { %>
-    <li><a href="<%= url_for(categorie.path) %>">📒 <%= categorie.name %></a></li>
-  <% }) %>
+  <% page.categories.each(function (category) { %>
+    <li><a href="<%= url_for(category.path) %>">📒 <%= category.name %></a></li>
+    <% }) %>
 </ul>

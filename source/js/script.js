@@ -11,7 +11,8 @@ window.addEventListener("DOMContentLoaded", function() {
   const goScrollTop = () => {
     let currentTop = getScrollTop()
     let speed = Math.floor(-currentTop / 10)
-    if (currentTop > lastTop) {
+    if (currentTop > lastTop + 0.5 || currentTop < lastTop - 0.5 ) {
+      // interrupt the animation
       return lastTop = 0
     }
     let distance = currentTop + speed;

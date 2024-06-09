@@ -75,6 +75,9 @@ mathjax:
 polyfill:
   enable: false
 
+# jsdelivr镜像域名
+# e.g. cdn.example.com
+jsdelivr_mirror: 
 
 # 国内备案信息
 beian: 

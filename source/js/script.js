@@ -4,14 +4,36 @@ window.addEventListener("DOMContentLoaded", function() {
   const navList         = document.querySelector(".navbar-list");
   const backToTopFixed  = document.querySelector(".back-to-top-fixed");
   let lastTop           = 0;
+  let lastRefreshTime   = 0;
+  let frameCount        = 0;
+  let refreshRate       = 0;
   let theme             = window.localStorage.getItem('theme') || '';
 
   theme && html.classList.add(theme)
 
+
+  /**
+   * 初始化刷新率估计
+   */
+  const estimateRefreshRate = () => {
+      const currentTime = performance.now();
+      if (currentTime - lastRefreshTime >= 1000) { // fps
+          refreshRate = frameCount;
+          frameCount = 0;
+          lastRefreshTime = currentTime;
+      } else {
+          frameCount++;
+      }
+      requestAnimationFrame(estimateRefreshRate);
+  }
+  
+  estimateRefreshRate();
+
   const goScrollTop = () => {
     let currentTop = getScrollTop()
-    let speed = Math.floor(-currentTop / 10)
-    if (currentTop > lastTop) {
+    let speed = Math.floor(-currentTop / (refreshRate / 6))
+    if (currentTop > lastTop + 0.5 || currentTop < lastTop - 0.5 ) {
+      // interrupt the animation
       return lastTop = 0
     }
     let distance = currentTop + speed;

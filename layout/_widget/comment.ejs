@@ -14,8 +14,8 @@
     <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
       <div id="valine_thread" class="valine-thread"></div>
     </div>
-    <script type="text/javascript" src="//unpkg.com/leancloud-storage@3.15.0/dist/av-min.js"></script>
-    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript" src="https://<%= theme.jsdelivr_mirror || 'cdn.jsdelivr.net' %>/npm/leancloud-storage@3.15.0/dist/av-min.min.js"></script>
+    <script type="text/javascript" src="https://<%= theme.jsdelivr_mirror || 'cdn.jsdelivr.net' %>/npm/valine/dist/Valine.min.js"></script>
     <script type="text/javascript">
       new Valine({
         el: "#valine_thread",

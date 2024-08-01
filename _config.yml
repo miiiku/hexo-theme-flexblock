@@ -69,8 +69,9 @@ aplayer:
 # docs: http://docs.mathjax.org/en/latest/
 mathjax:
   enable: true
+  inlineMathMark: [['\\(', '\\)'],] #内联公式标记, e.g. [['\\(', '\\)'],['$', '$']]
 
-# polyfill 提供老版浏览器对新语法的支持
+# polyfill 提供旧版本浏览器对新语法的支持
 # website: https://polyfill.io/v3/ 
 polyfill:
   enable: false

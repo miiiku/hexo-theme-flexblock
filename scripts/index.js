@@ -24,11 +24,12 @@ const buildDatasObj = (args, defaultObj = {}) => {
 
   if (args.length > 0) {
     args.forEach(item => {
-      let kv = item.split("=");
-      params[kv[0]] = kv[1];
+      let sepIdx = item.indexOf("=");
+      if(sepIdx == -1) return;
+      let k = item.slice(0,sepIdx)
+      params[k] = item.slice(sepIdx+1)
     });
   }
-
   return Object.assign({}, defaultObj, params);
 }
 

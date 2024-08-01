@@ -48,23 +48,8 @@
     <%- favicon_tag(theme.favicon) %>
   <% } %>
 
-  <!--mathjax latex数学公式显示支持-->
   <% if (theme.polyfill.enable) { %>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <% } %>
-  <% if (theme.mathjax.enable && page.mathjax) { %> 
-  <script>
-MathJax = {
-  tex: {
-    inlineMath: 
-	[<% theme.mathjax.inlineMathMark.forEach((pair) =>{ %>
-		['<%= pair[0] %>','<%= pair[1] %>'],
-    <% }) %>]
-  }
-};
-</script>
-
-    <script id="MathJax-script" async src="https://<%= theme.jsdelivr_mirror || 'cdn.jsdelivr.net' %>/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <% } %>
 
   <% if (config.highlight.enable) { %>

@@ -72,7 +72,7 @@ mathjax:
   inlineMathMark: [['\\(', '\\)'],] #内联公式标记, e.g. [['\\(', '\\)'],['$', '$']]
 
 # polyfill 提供旧版本浏览器对新语法的支持
-# website: https://polyfill.io/v3/ 
+# website: https://cdnjs.cloudflare.com/polyfill
 polyfill:
   enable: false
 

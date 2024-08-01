@@ -1,15 +1,22 @@
-<!-- aplayer -->
 <% if (page.aplayer) { %>
+<!-- aplayer -->
 <%- partial('../plug-in/aplayer') %>
 <% } %>
 
-<!-- dplayer -->
 <% if (page.dplayer) { %>
+<!-- dplayer -->
 <%- partial('../plug-in/dplayer') %>
 <% } %>
 
+<% if (page.mathjax) { %> 
+<!-- mathjax -->
+<%- partial('../plug-in/mathjax') %>
+<% } %>
+
+<% if (is_post() || is_page()) { %>
 <!-- copy button  -->
 <%- partial('../plug-in/clipboard') %>
+<% } %>
 
 
 <%# Gaug.es Analytics %>

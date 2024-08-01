@@ -1,0 +1,17 @@
+<% if (theme.mathjax.enable) { %>
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: 
+    [
+    <% theme.mathjax.inlineMathMark.forEach((pair) =>{ %>
+        ['<%= pair[0] %>','<%= pair[1] %>'],
+    <% }) %>
+    ]
+    }
+};
+</script>
+<script id="MathJax-script" async src="https://<%= theme.jsdelivr_mirror || 'cdn.jsdelivr.net' %>/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<% } %>

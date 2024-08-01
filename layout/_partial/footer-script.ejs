@@ -13,8 +13,10 @@
 <%- partial('../plug-in/mathjax') %>
 <% } %>
 
+<% if (is_post() || is_page()) { %>
 <!-- copy button  -->
 <%- partial('../plug-in/clipboard') %>
+<% } %>
 
 
 <%# Gaug.es Analytics %>

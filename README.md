@@ -15,7 +15,7 @@
 
 ## Example Site
 
-**[DEMO](https://kiyori.xyz)**
+**[DEMO](https://kyori.xyz)**
 
 ## Document
 

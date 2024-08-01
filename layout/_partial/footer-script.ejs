@@ -1,11 +1,16 @@
-<!-- aplayer -->
 <% if (page.aplayer) { %>
+<!-- aplayer -->
 <%- partial('../plug-in/aplayer') %>
 <% } %>
 
-<!-- dplayer -->
 <% if (page.dplayer) { %>
+<!-- dplayer -->
 <%- partial('../plug-in/dplayer') %>
+<% } %>
+
+<% if (theme.mathjax.enable && page.mathjax) { %> 
+<!-- mathjax -->
+<%- partial('../plug-in/mathjax') %>
 <% } %>
 
 <!-- copy button  -->

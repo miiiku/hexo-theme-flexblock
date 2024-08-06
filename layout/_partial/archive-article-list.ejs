@@ -1,0 +1,37 @@
+<!-- post list container -->
+
+<%
+  let sorted_posts = site.posts.sort('date').reverse(); //from new to old
+  let years = []
+  let posts_by_year = sorted_posts.reduce((acc,p) => {
+    let y = p.date.format('YYYY')
+    if (acc[y]) acc[y].push(p)
+    else {
+      acc[y] = [p]
+      years.push(y)
+    }
+    return acc
+  },{})
+%>
+
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+  <div class="article-info">
+    <% for(const y of years){ %>
+        <%- partial("../_widget/archive-year-card", { year: y, posts: posts_by_year[y] }) %>
+    <% } %>
+  </div>
+  <div class="widget-info">
+    <%- partial("../_widget/widget-author") %>
+
+    <%- partial("../_widget/widget-notice") %>
+
+    <%- partial("../_widget/widget-categories") %>
+
+    <%- partial("../_widget/widget-tags") %>
+  </div>
+</article>
+
+</div>
+
+

@@ -1,0 +1,21 @@
+<!-- archive card -->
+<div class="markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+  <h1><%= year %></h1>  
+  <% posts.forEach(function(post, i) { %>
+      <div>
+        <span>
+          <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null }) %>
+        </span>
+          <% if (post.link) { %>
+            <a href="<%- url_for(post.link) %>" itemprop="url" target="_blank">
+              <h2><%= post.title || "(no title)" %></h2>
+            </a>
+          <% } else { %>
+            <a href="<%- url_for(post.path) %>" itemprop="url">
+              <strong><%= post.title || "(no title)" %></strong>
+            </a>
+          <% } %>
+
+      </div>
+  <% }) %>
+</div>

@@ -1,0 +1,21 @@
+<% if (theme.mermaid.enable) { %>
+<script type="module">
+  import mermaid from "https://<%= theme.jsdelivr_mirror || 'cdn.jsdelivr.net' %>/npm/mermaid@11.12.2/+esm";
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: "<%= theme.mermaid.theme || 'default' %>"
+  });
+  // Remove the class `hljs` from `pre code.hljs.mermaid` to ignore hljs theme
+  const mermaidCodes = document.querySelectorAll('pre code.hljs.mermaid');
+  mermaidCodes.forEach((code) => {
+    code.classList.remove('hljs');
+    // To avoid affecting the situation where mermaid feature is disabled,
+    // we need to add those style by Javascript dynamiclly.
+    code.style.padding = '16px';
+    // center the mermaid diagram
+    code.style.display = 'flex';
+    code.style.justifyContent = 'center';
+  });
+
+</script>
+<% } %>

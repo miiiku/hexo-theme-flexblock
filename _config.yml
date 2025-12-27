@@ -77,6 +77,13 @@ mathjax:
 polyfill:
   enable: false
 
+# mermaid 流程图支持
+# docs: https://mermaid.js.org/
+# 需要在博客配置文件的highlight.exclude_languages中添加mermaid才能正常使用
+mermaid:
+  enable: true
+  theme: 'default'
+
 # jsdelivr镜像域名
 # e.g. cdn.example.com
 jsdelivr_mirror: 
